@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 HEROKU_HOSTNAME = os.environ.get('HEROKU_HOSTNAME')
-ALLOWED_HOSTS = ['HEROKU_HOSTNAME', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = [HEROKU_HOSTNAME, '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io']
 
 
 # Application definition
