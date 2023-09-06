@@ -158,6 +158,13 @@ Gamers Insight strives to create an immersive and interactive environment for us
 - [Manage and Categorize Articles (could-have)](https://github.com/KimBergstroem/PP4/issues/14) #14 SPRINT 4
 - [Track User Engagement and Analytics (could-have)](https://github.com/KimBergstroem/PP4/issues/15) #15 SPRINT 4
 
+<br>
+
+We have organized the user stories and epics into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP4/milestones), which will redirect you to the sprint information.
+
+![Sprints](/docs/Milstones.png) 
+
+
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
 ## Database
@@ -342,7 +349,17 @@ The project board efficiently manages user stories, with the "Not started" colum
 
 Emphasizing that the project timeline is expedited, the iterative approach maintains adaptability, enabling ongoing refinements and improvements aligned with evolving user needs.
 
-For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board]([https://github.com/users/YourGitHubUsername/projects/your_project_number](https://github.com/users/KimBergstroem/projects/8/views/1)).
+**Labels and User Story Distribution (MoSCoW):**
+
+- **Must-Have:** 6/19
+- **Should-Have:** 6/19
+- **Could-Have:** 5/19
+- **Wont-Have:** 1/19
+- **Task:** 2/19
+
+For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/KimBergstroem/projects/9).
+
+
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
  
