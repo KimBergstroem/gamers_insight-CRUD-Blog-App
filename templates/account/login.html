@@ -3,32 +3,52 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block content %}
+<section>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-8 col-md-8 col-lg-8 mx-auto" style="max-width: 500px;">
+                <div class="card bg-dark text-white shadow-sm" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-md-2 mt-md-4 pb-5">
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
+                            <h3 class="fw-bold mb-2 text-uppercase">{% trans "Log In" %}</h3>
+                            <p class="text-white-50 mb-5">Please Enter Your User and Password!</p>
 
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
-                you
-                have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-                first.{% endblocktrans %}</p>
+                            <div class="form-outline form-white mb-4 form-group">
+                                <!-- Login form -->
+                                <form class="login" method="POST" action="{% url 'account_login' %}">
+                                    {% csrf_token %}
+
+                                    <div class="form-group">
+                                        {{ form.login.label_tag }}
+                                        <input type="text" class="form-control mb-4" name="login">
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ form.password.label_tag }}
+                                        <input type="password" class="form-control mb-4" name="password">
+                                    </div>
+
+                                    <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-5"
+                                        type="submit">{% trans "Log In" %} &raquo;</button>
+                                </form>
+
+                            </div>
+                            <!-- Sign up Link -->
+                            <div>
+                                <hr class="my-4">
+                                <p class="mb-0">Don't have an account? <a href="{{ signup_url }}"
+                                        class="text-primary fw-bold">Sign Up Now!</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                {{ form.as_p }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
-            </form>
-        </div>
-    </div>
-</div>
+</section>
 {% endblock %}

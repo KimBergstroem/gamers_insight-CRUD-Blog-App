@@ -401,7 +401,9 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 
 ### Fixed bugs 
+Couldnt run django.allauth, and couldnt seems to have it to work. FIXED: I as added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY
 
+COULDNT RUN "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory". FIXING: By using shell, typing "python" -> "import site"->"print(site.getsitepackages())"->Copy the path and then redo the command in shell for installing the templates of auth.
 
 ## Deployment
 
