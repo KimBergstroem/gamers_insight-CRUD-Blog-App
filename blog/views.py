@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import TemplateView, ListView, DetailView
 from .models import Post
 
 class PostList(generic.ListView):

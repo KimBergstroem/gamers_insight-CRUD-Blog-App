@@ -45,19 +45,19 @@
                     </li>
                     {% else %}
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white" href="#">About</a>
+                        <a class="nav-link text-white" href="#">About Us</a>
                     </li>
                     {% endif %}
                 </ul>
                 {% if user.is_authenticated %}
                 <span class="navbar-text text-muted d-flex justify-content-center align-item-center gap-3">
                     <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="#">Profile</a>
-                    <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="#">Log Out</a>
+                    <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="{% url 'account_logout' %}">Log Out</a>
                 </span>
                 {% else %}
                 <span class="navbar-text text-muted d-flex justify-content-center align-item-center gap-3">
-                    <a class="nav-link text-white px-3 py-1 rounded-3 dark-bg" href="#">Log In</a>
-                    <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="#">Sign Up</a>
+                    <a class="nav-link text-white px-3 py-1 rounded-3 dark-bg" href="{% url 'account_login' %}">Log In</a>
+                    <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="{% url 'account_signup' %}">Sign Up</a>
                 </span>
                 {% endif %}
             </div>
