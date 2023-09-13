@@ -4,7 +4,7 @@
     --clr-second: hsl(236, 26%, 31%);
     --clr-accent: hsl(227, 79%, 46%);
 
-    --clr-white: hsl(0, 0%, 94%);
+    --clr-white: hsl(0, 0%, 100%);
     --clr-black: hsl(0, 0%, 3%);
 }
 
@@ -110,12 +110,12 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: var(--clr-white);
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: var(--clr-accent);
 }
 
 .post-title {
