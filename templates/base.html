@@ -4,18 +4,29 @@
 <html class="h-100">
 
 <head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Gaming Blog that will reveal all the secrets inside your favorite games!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
     <title>Gamers Insight - Blog</title>
 
+    <!-- Preconnect to Google Fonts for custom fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- Fontawesome -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- MDB -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
+
+    <!-- Static CSS file -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -26,7 +37,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="{% url 'home' %}">GAMERS INSIGHT</a>
+            {% if user.is_authenticated %}
+            <a class="navbar-brand text-white mx-5 fw-bolder" href="{% url 'index' %}">GAMERS INSIGHT</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,37 +46,53 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white active" aria-current="page" href="{% url 'home' %}">Home</a>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item mx-2">
-                        <a class="nav-link text-white" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link text-white" href="#">Contact Us</a>
+                        <a class="nav-link text-white active" aria-current="page" href="{% url 'index' %}">Home</a>
                     </li>
                     {% else %}
-                    <li class="nav-item mx-2">
-                        <a class="nav-link text-white" href="#">About Us</a>
-                    </li>
-                    {% endif %}
-                </ul>
-                {% if user.is_authenticated %}
-                <span class="navbar-text text-muted d-flex justify-content-center align-item-center gap-3">
-                    <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="#">Profile</a>
-                    <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="{% url 'account_logout' %}">Log
-                        Out</a>
-                </span>
-                {% else %}
-                <span class="navbar-text text-muted d-flex justify-content-center align-item-center gap-3">
-                    <a class="nav-link text-white px-3 py-1 rounded-3 dark-bg" href="{% url 'account_login' %}">Log
-                        In</a>
-                    <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="{% url 'account_signup' %}">Sign
-                        Up</a>
-                </span>
-                {% endif %}
+                    <a class="navbar-brand text-white mx-5 fw-bolder" href="{% url 'landing_page' %}">GAMERS INSIGHT</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item mx-2">
+                                <a class="nav-link text-white active" aria-current="page"
+                                    href="{% url 'landing_page' %}">Home</a>
+                            </li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <li class="nav-item mx-2">
+                                <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link text-white" href="#">Contact Us</a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item mx-2">
+                                <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                        {% if user.is_authenticated %}
+                        <span class="navbar-text text-muted d-flex justify-content-center align-item-center gap-3">
+                            <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary" href="#">Profile</a>
+                            <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary mx-5"
+                                href="{% url 'account_logout' %}">Log
+                                Out</a>
+                        </span>
+                        {% else %}
+                        <span class="navbar-text text-muted d-flex justify-content-center align-item-center gap-3">
+                            <a class="nav-link text-white px-3 py-1 rounded-3 dark-bg"
+                                href="{% url 'account_login' %}">Log
+                                In</a>
+                            <a class="nav-link text-white px-3 py-1 rounded-3 bg-primary mx-5"
+                                href="{% url 'account_signup' %}">Sign
+                                Up</a>
+                        </span>
+                        {% endif %}
+                    </div>
             </div>
-        </div>
     </nav>
 
     <main class="flex-shrink-0">
@@ -83,6 +111,12 @@
             <i class="fab fa-instagram-square ms-3 fa-lg"></i>
         </p>
     </footer>
+
+    <!-- Bootstrap JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+
 </body>
 
 </html>
