@@ -397,13 +397,18 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 ## Bugs
 
 ### Known bugs
-
+| **Bug** | **Fix** |
+| ----------- | ----------- |
+|||
 
 
 ### Fixed bugs 
-Couldnt run django.allauth, and couldnt seems to have it to work. FIXED: I as added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY
+| **Bug** | **Fix** |
+| ----------- | ----------- |
+|[Couldnt run django.allauth, and couldnt seems to have it to work.]()|I as added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY, as this is a new requirement from allauth.|
+|[COULDNT RUN "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory"]()|By using shell, typing "python" -> "import site"->"print(site.getsitepackages())"->Copy the path and then redo the command in shell for installing the templates of auth.|
+|[Cant style my crispy form as i want to. Couldnt add bootstrap classes]()|added every input seperately inside a div and used "as_crispy_field". For example put margin space on every input box and form-row.|
 
-COULDNT RUN "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory". FIXING: By using shell, typing "python" -> "import site"->"print(site.getsitepackages())"->Copy the path and then redo the command in shell for installing the templates of auth.
 
 ## Deployment
 
@@ -415,19 +420,31 @@ COULDNT RUN "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates
 
 
 ### Django Documentation:
+The official Django documentation has been an invaluable resource throughout the project, providing comprehensive guidance on models, forms, templates, and various aspects of Django development.
+
+- [Models](https://docs.djangoproject.com/en/4.2/topics/db/models/)
+- [Model Field Types](https://docs.djangoproject.com/en/4.2/ref/models/fields/#model-field-types)
+- [CSRF Trusted Origins](https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins)
+- [Form Validation](https://docs.djangoproject.com/en/4.1/ref/forms/validation/)
+- [Built-in template tags and filters](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/)
+- [Creating forms from models](https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/)
+- [Model instance reference](https://docs.djangoproject.com/en/4.2/ref/models/instances/)
+- [Signals](https://docs.djangoproject.com/en/4.2/topics/signals/)
+- [Using mixins with class-based views](https://docs.djangoproject.com/en/4.2/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object)
 
 
 ### W3 Schools:
-
-
-### Stackoverflow:
+- [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
 
 
 ### Geeksforgeeks: 
-
+- [Using crisp form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
 
 ### Various tutorials and YouTube channels:
-
+I would like to extend my appreciation to the authors of the tutorials and YouTube channels that have shared their knowledge and expertise in Django development, enabling me to learn and apply best practices in building the Gamers Insight.
+- [Python Django Tutorial: Full-Featured Web App Part 1 - Getting Started](https://www.youtube.com/watch?v=UmljXZIypDchttps://www.youtube.com/watch?v=UmljXZIypDc)
+- [Python and Django - Django Blog ](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
+- [Django Tutorial - Setup](https://www.youtube.com/watch?v=Z4D3M-NSN58&list=PLzMcBGfZo4-kQkZp-j9PNyKq7Yw5VYjq9)
 
 ### Other open-source projects and packages:
 
@@ -438,3 +455,4 @@ I'd like to give recognition to the individuals who supported me in completing t
 * My family, for their patience and assistance in identifying spelling mistakes and testing issues. Their support has been invaluable in improving the quality of this project.
 * Testers [Debbie B](https://github.com/DebbieBergstrom) and [Sandra B](https://github.com/SandraBergstrom) for their significant contributions in providing feedback, identifying errors, and offering valuable insights.
 * [Brian](https://github.com/Brain), my Code Institute Mentor, for his exceptional guidance and expertise, which greatly contributed to my growth as a developer.
+* [Alan Bushell](https://github.com/Alan-Bushell), our cohort facilitator, for his dedication and weekly meetings where he has provided guidance, support, and encouragement to our cohort.
