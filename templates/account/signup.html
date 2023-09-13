@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
@@ -13,43 +15,35 @@
                 <div class="card bg-dark text-white shadow-sm" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
                         <div class="mb-md-2 mt-md-4 pb-5">
-                            <h3 class="fw-bold mb-2 text-uppercase">{% trans "Register Now!" %}</h3>
-                            <p class="text-white-50 mb-5">Join the community and start sharing your gaming knowledge!
+                            <h3 class="fw-bold mb-2 text-uppercase">{% trans "Register" %}</h3>
+                            <p class="text-white-50 mb-5">Join the community and start share your gaming knowledge!
                             </p>
                             <div class="form-outline form-white mb-4 form-group">
                                 <!-- Sign Up form -->
-                                <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+                                <form method="post">
                                     {% csrf_token %}
-
-                                    <div class="form-group">
-                                        <label type="password" aria-describedby="password">Username*</label>
-                                        <input type="text" class="form-control mb-4" name="login">
+                                    <div class="form-row mb-4">
+                                        {{ form.username|as_crispy_field }}
+                                    </div>
+                                    <div class="form-row mb-4">
+                                        {{ form.email|as_crispy_field }}
+                                    </div>
+                                    <div class="form-row mb-4">
+                                        {{ form.password1|as_crispy_field }}
+                                    </div>
+                                    <div class="form-row mb-4">
+                                        {{ form.password2|as_crispy_field }}
                                     </div>
 
-                                    <div class="form-group">
-                                        <label type="password" aria-describedby="password">Email*</label>
-                                        <input type="email" class="form-control mb-4" name="email">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label type="password" aria-describedby="password">Password*</label>
-                                        <input type="password" class="form-control mb-4" name="password">
-                                    </div>
-
-                                    <div class="form-group">
-                                        {{ form.password2.label_tag }}
-                                        <input type="password" class="form-control mb-4" name="password2">
-                                    </div>
                                     <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-5"
                                         type="submit">{% trans "Sign Up" %} &raquo;</button>
                                 </form>
                             </div>
-
                             <!-- Log In Redirect -->
                             <div>
                                 <hr class="my-4">
-                                <p class="mb-0">Already have an account? <a href="{{ login_url }}"
-                                        class="text-primary fw-bold">Log In!</a>
+                                <p class="mb-0">{% blocktrans %}Already have an account? <a class="text-primary fw-bold"
+                                        href="{{ login_url }}">Log In!</a> {% endblocktrans %}</p>
                                 </p>
                             </div>
                         </div>
