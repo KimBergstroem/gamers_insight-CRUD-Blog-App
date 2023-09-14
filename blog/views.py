@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -86,11 +86,11 @@ def landing_page(request):
 def about(request):
     return render(request, 'about.html')
 
+
 def contactus(request):
     messages.success(request, 'Profile details updated.')
     return render(request, 'contactus.html')
 
+
 def profile(request):
     return render(request, 'profile.html')
-
-
