@@ -13,13 +13,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-development = os.environ.get('DEVELOPMENT', False)
-DEBUG = development
 
-if development:
-    ALLOWED_HOSTS = [os.environ.get('LOCALHOST')]
-else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME'), 'localhost']
+DEBUG = True
+ALLOWED_HOSTS = ['game-insight-1cff11f2b2d5.herokuapp.com', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io']
 
 
 # Application definition
@@ -88,7 +84,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'game_insight.wsgi.application'
 
 
-# Database
+""" # Database
 if development:
     DATABASES = {
         'default': {
@@ -97,7 +93,12 @@ if development:
         }
     }
 else:
-    DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) }
+    DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) } """
+
+DATABASES = {
+    'default':
+    dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 # Password validation
 
