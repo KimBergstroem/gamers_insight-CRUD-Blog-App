@@ -16,7 +16,7 @@
                             <h3 class="fw-bold mb-4 text-uppercase">{% trans "Please Wait..." %}</h3>
                             <p class="text-white-50 mb-5">{% trans 'Are you sure you want to Log Out?' %}</p>
                             <form method="post" action="{% url 'account_logout' %}">
-                                {% csrf_token %}
+                                {% csrf_token %} <!-- Security token from django against attackers -->
                                 {% if redirect_field_value %}
                                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                                 {% endif %}

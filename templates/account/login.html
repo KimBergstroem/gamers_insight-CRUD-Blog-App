@@ -20,7 +20,7 @@
                             <div class="form-outline form-white mb-4 form-group">
                                 <!-- Login form -->
                                 <form class="login" method="POST" action="{% url 'account_login' %}">
-                                    {% csrf_token %}
+                                    {% csrf_token %} <!-- Security token from django against attackers -->
 
                                     <div class="form-group">
                                         {{ form.login.label_tag }}

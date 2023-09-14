@@ -8,6 +8,11 @@
     --clr-black: hsl(0, 0%, 3%);
 }
 
+/* Remove underline for all links */
+* {
+    text-decoration: none !important;
+}
+
 .bg-white{
     background-color: var(--clr-white);
 }
@@ -161,4 +166,8 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }

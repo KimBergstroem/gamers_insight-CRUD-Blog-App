@@ -20,8 +20,8 @@
                             </p>
                             <div class="form-outline form-white mb-4 form-group">
                                 <!-- Sign Up form -->
-                                <form method="post">
-                                    {% csrf_token %}
+                                <form method="post" action="{% url 'account_signup' %}">
+                                    {% csrf_token %} <!-- Security token from django against attackers -->
                                     <div class="form-row mb-4">
                                         {{ form.username|as_crispy_field }}
                                     </div>
