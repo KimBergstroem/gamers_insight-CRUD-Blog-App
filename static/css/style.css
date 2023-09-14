@@ -13,16 +13,8 @@
     text-decoration: none !important;
 }
 
-.bg-white{
-    background-color: var(--clr-white);
-}
-
-.light-bg {
-    background-color: var(--clr-white);
-}
-
 .dark-bg {
-    background-color: var(--clr-second);
+    background-color: var(--clr-second) !important;
 }
 
 .bg-dark {
@@ -30,7 +22,7 @@
 }
 
 .main-bg {
-    background-color: var(--clr-dom);
+    background-color: var(--clr-dom) !important;;
 }
 
 body {
