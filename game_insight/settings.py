@@ -14,6 +14,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 DEBUG = True
 ALLOWED_HOSTS = ['game-insight-1cff11f2b2d5.herokuapp.com', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io']
@@ -45,6 +46,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+# Make Messages declared by Bootstrap class
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
     messages.INFO: 'alert.info',
