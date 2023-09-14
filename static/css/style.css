@@ -1,32 +1,27 @@
-
-:root {
-    --clr-dom: hsl(242, 44%, 12%);
-    --clr-second: hsl(236, 26%, 31%);
-    --clr-accent: hsl(227, 79%, 46%);
-
-    --clr-white: hsl(0, 0%, 100%);
-    --clr-black: hsl(0, 0%, 3%);
-}
-
 /* Remove underline for all links */
 * {
     text-decoration: none !important;
 }
 
-.dark-bg {
-    background-color: var(--clr-second) !important;
+/* My custom colors declared in variables */
+.bg-clr-second {
+    background-color: #3a3d64 !important;
 }
 
-.bg-dark {
+.bg-clr-dom {
+    background-color: #12112c !important;
+}
+
+.bg-clr-dom-light {
     background-color: #181636 !important;
 }
 
-.main-bg {
-    background-color: var(--clr-dom) !important;;
+.-clr-accent {
+    color: hsl(227, 79%, 46%);
 }
 
+/* Body */
 body {
-    background-color: rgba(14, 38, 173, 0.3);
     background-blend-mode: multiply;
     background-position: center;
     background-size: cover;
