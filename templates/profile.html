@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+<title>{% block title %} Create Post {% endblock %}</title>
+
+{% block content %}
+
+
+<div class="container bg-dark text-center">
+    <div class="row">
+        <div class="media col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-4">
+            <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+            <div class="media-body">
+                <h2 class="account-heading">{{ user.username }}</h2>
+                <p class="text-secondary">{{ user.email }}</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
