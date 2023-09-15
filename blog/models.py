@@ -47,7 +47,7 @@ class Comment(models.Model):
 
 
 # The user profile model
-class Profile(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
     profile_picture = CloudinaryField('image', default='https://res.cloudinary.com/dpwnz6ieo/image/upload/v1694794787/illustration-user-avatar-icon_53876-5907_uvdvsz.avif', blank=True)
@@ -57,11 +57,11 @@ class Profile(models.Model):
     @receiver(post_save, sender=User) 
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
-            Profile.objects.create(user=instance)
+            UserProfile.objects.create(user=instance)
 
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
-        instance.profile.save()
+        instance.userprofile.save()
 
     def __str__(self):
         return self.user.username
