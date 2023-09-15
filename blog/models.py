@@ -1,9 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
+# The Post model
 class Post(models.Model):
     content = models.TextField()
     excerpt = models.TextField(blank=True)
@@ -26,6 +30,7 @@ class Post(models.Model):
         return self.likes.count()
 
 
+# The Comment model
 class Comment(models.Model):  
     body = models.TextField()
     email = models.EmailField()
@@ -39,3 +44,24 @@ class Comment(models.Model):
     
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+
+# The user profile model
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(max_length=500, blank=True)
+    profile_picture = CloudinaryField('image', default='https://res.cloudinary.com/dpwnz6ieo/image/upload/v1694794787/illustration-user-avatar-icon_53876-5907_uvdvsz.avif', blank=True)
+    country = models.CharField(max_length=200, default='Citizen of the Cyber world')
+
+    # If a user are created from the built in user model, then this profile will be linked to that user.
+    @receiver(post_save, sender=User) 
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
+
+    def __str__(self):
+        return self.user.username
