@@ -1,10 +1,24 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
-from django.contrib import messages
 from django.views.generic import TemplateView, ListView, DetailView
-from .models import Post
-from .forms import CommentForm
+from django.views.generic.edit import (
+    FormView, 
+    CreateView, 
+    UpdateView, 
+    DeleteView
+    )
+from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
+from django.contrib import messages
+from cloudinary.models import CloudinaryField
+from .models import Post, UserProfile
+from .forms import (
+    CommentForm, 
+    UserForm, 
+    ProfileForm
+)
 
 
 class PostList(generic.ListView):
@@ -92,5 +106,34 @@ def contactus(request):
     return render(request, 'contactus.html')
 
 
-def profile(request):
-    return render(request, 'profile.html')
+class ProfileView(LoginRequiredMixin, TemplateView):
+    model = UserProfile
+    template_name = 'profile.html'
+
+
+class ProfileUpdateView(LoginRequiredMixin, TemplateView):
+    model = UserProfile
+    user_form = UserForm
+    profile_form = ProfileForm
+    template_name = 'profile_update.html'
+
+    def post(self, request):
+
+        post_data = request.POST or None
+        file_data = request.FILES or None
+
+        user_form = UserForm(post_data, instance=request.user)
+        profile_form = ProfileForm(post_data, file_data, instance=request.user.profile)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.error(request, 'Your profile is updated successfully!')
+            return HttpResponseRedirect(reverse_lazy('profile'))
+
+        context = self.get_context_data(
+                                        user_form=user_form,
+                                        profile_form=profile_form
+                                    )
+
+        return self.render_to_response(context)
