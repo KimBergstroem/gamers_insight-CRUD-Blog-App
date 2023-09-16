@@ -28,3 +28,6 @@ class ProfileForm(forms.ModelForm):
             'profile_picture',
             'country',
         ]
+        widgets = {
+            'profile_picture': forms.FileInput(),  # forms.FileInput for custom rendering, removing current url link displayed
+        }
