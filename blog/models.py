@@ -15,7 +15,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, unique=True)
     title = models.CharField(max_length=200, unique=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     featured_image = CloudinaryField('image', default='placeholder')
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")

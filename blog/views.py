@@ -12,6 +12,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 from .models import Post, UserProfile
 from .forms import (
@@ -93,6 +94,19 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+class PostCreateView(CreateView):
+    # Create a blog post view
+    model = Post
+    template_name = 'post_create.html'
+    fields = ['title', 'featured_image', 'excerpt', 'content']
+    success_url = '/'
+    
+    def form_valid(self, form):
+        form.instance.author_id = self.request.user.pk
+        form.instance.slug = slugify(form.instance.title)
+        return super().form_valid(form)
+
+
 def landing_page(request):
     return render(request, 'landing_page.html')
 
@@ -110,8 +124,6 @@ class ProfileView(LoginRequiredMixin, TemplateView):
     model = UserProfile
     template_name = 'profile.html'
 
-
-from django.shortcuts import get_object_or_404
 
 class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     model = UserProfile
