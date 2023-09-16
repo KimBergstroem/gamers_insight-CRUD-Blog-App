@@ -1,0 +1,35 @@
+<div class="col">
+    <div class="card h-100 bg-clr-dom-light">
+        <!-- Image -->
+            {% if "placeholder" in post.featured_image.url %}
+            <img class="card-img-top"
+                src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+            {% else %}
+            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+            {% endif %}
+        <div class="card-body text-white">
+
+            <!-- Title with link to detail page-->
+            <h5 class="card-title post-link"><a href="{% url 'post_detail' post.slug %}" class="card-link"> {{ post.title }} </a></h5>
+            
+            <!-- Author and date information -->
+            <small class="author">by <a href="#">{{ post.author }}</a> on
+                    {{ post.created_on }}</small><br><br>
+            
+            <!-- Likes and Comments -->
+            <small>Likes: <strong>{{ post.number_of_likes }}</strong> | Comments: {% with comments.count as total_comments %}{{ total_comments }}{% endwith %}</small>
+            <hr>
+
+            <!-- Excerpt -->
+            <p class="card-text">
+                {{ post.excerpt }}
+            </p>
+        </div>
+
+        <!-- Card footer with date for last updated -->
+        <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
+            <small class="text-white">Last updated: {{ post.date_updated }}</small>
+            <a href="{% url 'post_detail' post.id %}" class="btn btn-primary info-btn btn-sm text-white">Info</a>
+        </div>
+    </div>
+</div>
