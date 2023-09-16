@@ -51,9 +51,9 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
     profile_picture = CloudinaryField('image', default='https://res.cloudinary.com/dpwnz6ieo/image/upload/v1694794787/illustration-user-avatar-icon_53876-5907_uvdvsz.avif', blank=True)
-    country = models.CharField(max_length=200, default='Citizen of the Cyber world')
+    country = models.CharField(max_length=200, default='Citizen of the Cyber world', blank=True)
 
-    # If a user are created from the built in user model, then this profile will be linked to that user.
+    # If a user are created from the built in django user model, then this profile will be linked to that user.
     @receiver(post_save, sender=User) 
     def create_user_profile(sender, instance, created, **kwargs):
         if created:

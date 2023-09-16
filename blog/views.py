@@ -111,6 +111,8 @@ class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = 'profile.html'
 
 
+from django.shortcuts import get_object_or_404
+
 class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     model = UserProfile
     user_form = UserForm
@@ -118,22 +120,24 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     template_name = 'profile_update.html'
 
     def post(self, request):
-
         post_data = request.POST or None
         file_data = request.FILES or None
 
         user_form = UserForm(post_data, instance=request.user)
-        profile_form = ProfileForm(post_data, file_data, instance=request.user.profile)
+
+        # Get the user's profile, or create a new one if it doesn't exist
+        profile, created = UserProfile.objects.get_or_create(user=request.user)
+        profile_form = ProfileForm(post_data, file_data, instance=profile)
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.error(request, 'Your profile is updated successfully!')
+            messages.success(request, 'Your profile is updated successfully!')
             return HttpResponseRedirect(reverse_lazy('profile'))
 
         context = self.get_context_data(
-                                        user_form=user_form,
-                                        profile_form=profile_form
-                                    )
+            user_form=user_form,
+            profile_form=profile_form
+        )
 
         return self.render_to_response(context)
