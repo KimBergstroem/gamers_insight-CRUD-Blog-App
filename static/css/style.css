@@ -226,6 +226,7 @@ body {
 
 .media {
   margin-bottom: 15px;
+  display: flex;
 }
 
 .avatar {
