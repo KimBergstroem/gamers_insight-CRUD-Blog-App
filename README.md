@@ -326,7 +326,24 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 
 
 ### Supporting Libraries and Packages
-
+- asgiref==3.7.2
+- cloudinary==1.34.0
+- dj-database-url==0.5.0
+- dj3-cloudinary-storage==0.0.6
+- Django==3.2.21
+- django-allauth==0.56.1
+- django-crispy-forms==1.14.0
+- django-summernote==0.8.20.0
+- gunicorn==21.2.0
+- oauthlib==3.2.2
+- Pillow==10.0.1
+- psycopg2==2.9.7
+- PyJWT==2.8.0
+- python3-openid==3.2.0
+- pytz==2023.3.post1
+- requests-oauthlib==1.3.1
+- sqlparse==0.4.4
+- urllib3==1.26.16
 
 ## Methodology
 
@@ -408,13 +425,39 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 |[Couldnt run django.allauth, and couldnt seems to have it to work.]()|I as added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY, as this is a new requirement from allauth.|
 |[COULDNT RUN "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory"]()|By using shell, typing "python" -> "import site"->"print(site.getsitepackages())"->Copy the path and then redo the command in shell for installing the templates of auth.|
 |[Cant style my crispy form as i want to. Couldnt add bootstrap classes]()|added every input seperately inside a div and used "as_crispy_field". For example put margin space on every input box and form-row.|
+|[Server Error (500), when trying to access LOGIN or SIGNUP page, in my deployed version at heroku.]()| Add development variable to settings.py|
+|[MY STYLE SHEET IS NOT LOADING OR CANT BE FOUND IN HEROKU,"its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled." ]()| To set the DEBUG to False if development not found. With an if statement|
 
 
 ## Deployment
+To deploy the website using Heroku, follow these steps:
 
+1. Set `DEBUG` to `False` in the `settings.py` file.
+2. Commit and push your code to the GitHub repository.
+3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is important to avoid any potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during the deployment process, preventing any eTag errors or inconsistencies.
+4. Navigate to the project's deploy page in Heroku.
+5. Choose the manual deployment option to deploy the latest code changes.
+
+To fork the repository, follow these steps:
+
+1. Go to the GitHub repository.
+2. Click on the Fork button in the upper right-hand corner.
+3. Wait for the forking process to complete. Once done, you will have a copy of the repository in your GitHub account.
+
+To clone the repository, follow these steps:
+
+1. Go to the GitHub repository.
+2. Locate the Code button above the list of files and click it.
+3. Select your preferred method for cloning: HTTPS, SSH, or GitHub CLI, and click the copy button to copy the repository URL to your clipboard.
+4. Open Git Bash (or your preferred terminal).
+5. Change the current working directory to the location where you want the cloned directory to be created.
+6. Type the command `git clone` followed by the URL you copied in step 3. The command should look like this: `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`.
+7. Press Enter to create your local clone.
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
 ## Credits
-
+I would like to express my gratitude to the following resources, which have been a huge help for me in the development of the Gamer Insight - Blog.
 
 ### Media
 
@@ -423,19 +466,19 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 The official Django documentation has been an invaluable resource throughout the project, providing comprehensive guidance on models, forms, templates, and various aspects of Django development.
 
 - [Models](https://docs.djangoproject.com/en/4.2/topics/db/models/)
+- [Form Validation](https://docs.djangoproject.com/en/4.1/ref/forms/validation/)
 - [Model Field Types](https://docs.djangoproject.com/en/4.2/ref/models/fields/#model-field-types)
 - [CSRF Trusted Origins](https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins)
-- [Form Validation](https://docs.djangoproject.com/en/4.1/ref/forms/validation/)
 - [Built-in template tags and filters](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/)
 - [Creating forms from models](https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/)
 - [Model instance reference](https://docs.djangoproject.com/en/4.2/ref/models/instances/)
 - [Signals](https://docs.djangoproject.com/en/4.2/topics/signals/)
 - [Using mixins with class-based views](https://docs.djangoproject.com/en/4.2/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object)
+- [Using widgets in form](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
 
 
 ### W3 Schools:
 - [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
-
 
 ### Geeksforgeeks: 
 - [Using crisp form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
@@ -445,6 +488,9 @@ I would like to extend my appreciation to the authors of the tutorials and YouTu
 - [Python Django Tutorial: Full-Featured Web App Part 1 - Getting Started](https://www.youtube.com/watch?v=UmljXZIypDchttps://www.youtube.com/watch?v=UmljXZIypDc)
 - [Python and Django - Django Blog ](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
 - [Django Tutorial - Setup](https://www.youtube.com/watch?v=Z4D3M-NSN58&list=PLzMcBGfZo4-kQkZp-j9PNyKq7Yw5VYjq9)
+- [Style The Login Page With Bootstrap](https://www.youtube.com/watch?v=0Z_3APyKwQ4)
+- [User Profile Update Display View with Image](https://www.youtube.com/watch?v=7DU-uhhYI6Y&list=PLSPMgrv4IuJ5wS0xSQzKUB038MYIx9ufI&index=12)
+- [Style The Post detials view](https://www.bootdey.com/snippets/tagged/blog)
 
 ### Other open-source projects and packages:
 
@@ -456,3 +502,5 @@ I'd like to give recognition to the individuals who supported me in completing t
 * Testers [Debbie B](https://github.com/DebbieBergstrom) and [Sandra B](https://github.com/SandraBergstrom) for their significant contributions in providing feedback, identifying errors, and offering valuable insights.
 * [Brian](https://github.com/Brain), my Code Institute Mentor, for his exceptional guidance and expertise, which greatly contributed to my growth as a developer.
 * [Alan Bushell](https://github.com/Alan-Bushell), our cohort facilitator, for his dedication and weekly meetings where he has provided guidance, support, and encouragement to our cohort.
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
