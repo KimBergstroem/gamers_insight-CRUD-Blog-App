@@ -10,12 +10,22 @@
 
             <!-- Title with link to detail page-->
             <h5 class="card-title post-link"><a href="{% url 'post_detail' post.slug %}" class="card-link">
-                    {{ post.title }}</a></h5>
+                    {% if post.category == 'fps' %}
+                    <i class="fas fa-utensil-spoon"></i>
+                    {% elif post.category == 'rpg' %}
+                    <i class="fas fa-shield-alt"></i>
+                    {% elif post.category == 'mmo' %}
+                    <i class="fas fa-trophy"></i>
+                    {% else %}
+                    <!-- Handle other categories or no category here -->
+                    {% endif %}
+                    {{ post.title }} </a></h5>
 
             <!-- Author and date information -->
             <small class="author">
                 by <a href="#">{{ post.author }}</a><br>
-                <p class="text-secondary"> {{ post.created_on }}</p></small><br>
+                <p class="text-secondary"> {{ post.created_on }}</p>
+            </small><br>
 
             <!-- Likes and Comments -->
             <small><i class="fa fa-thumbs-up fa-lg"></i> <strong>{{ post.number_of_likes }}</strong> |
