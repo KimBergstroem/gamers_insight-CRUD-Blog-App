@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title -->
-    <title>Gamers Insight - Blog</title>
+    <title>{% block title %} Gamers Insight {% endblock %}</title>
 
     <!-- Preconnect to Google Fonts for custom fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -49,7 +49,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item mx-2">
-                        <a class="nav-link text-white active" aria-current="page" href="{% url 'index' %}">Home</a>
+                        <a class="nav-link text-white active" aria-current="page" href="{% url 'index' %}">Articles</a>
                     </li>
                     {% else %}
                     <a class="navbar-brand text-white mx-5 fw-bolder" href="{% url 'landing_page' %}">GAMERS INSIGHT</a>
