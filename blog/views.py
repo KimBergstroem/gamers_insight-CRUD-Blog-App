@@ -18,7 +18,8 @@ from .models import Post, UserProfile
 from .forms import (
     CommentForm, 
     UserForm, 
-    ProfileForm
+    ProfileForm,
+    PostForm
 )
 
 
@@ -98,7 +99,7 @@ class PostCreateView(CreateView):
     # Create a blog post view
     model = Post
     template_name = 'post_create.html'
-    fields = ['title', 'featured_image', 'excerpt', 'content']
+    form_class = PostForm
     success_url = reverse_lazy('index')
     
     def form_valid(self, form):
