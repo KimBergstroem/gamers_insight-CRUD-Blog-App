@@ -116,7 +116,6 @@ def about(request):
 
 
 def contactus(request):
-    messages.success(request, 'Profile details updated.')
     return render(request, 'contactus.html')
 
 
