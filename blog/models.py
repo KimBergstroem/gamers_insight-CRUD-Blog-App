@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.urls import reverse
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -28,6 +29,10 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+    
+    # For be able to update the blogpost and redirect user back to home page
+    def get_absolute_url(self):
+        return reverse('index')
 
 
 # The Comment model

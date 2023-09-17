@@ -99,7 +99,7 @@ class PostCreateView(CreateView):
     model = Post
     template_name = 'post_create.html'
     fields = ['title', 'featured_image', 'excerpt', 'content']
-    success_url = '/'
+    success_url = reverse_lazy('index')
     
     def form_valid(self, form):
         form.instance.author_id = self.request.user.pk
@@ -153,3 +153,14 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
         )
 
         return self.render_to_response(context)
+
+
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = 'post_update.html'
+    fields = ['title', 'featured_image', 'excerpt', 'content']
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('index')
