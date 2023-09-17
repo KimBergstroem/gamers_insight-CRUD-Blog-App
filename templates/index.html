@@ -3,6 +3,8 @@
 {% block content %}
 <div class="main-scroll-page">
     <div class="container container-centered">
+
+        <!-- Category links -->
         <div class="list-header">
             <div class="text-center text-white">
                 <h3>Blog Library</h3>
@@ -12,7 +14,7 @@
         </div>
         <br>
 
-        <!-- Blog post List -->
+        <!-- Blog post list -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             {% for post in post_list %}
             {% include 'blogview_template/list_card.html' %}
@@ -25,6 +27,7 @@
             {% include 'blogview_template/pagination.html' %}
             {% endif %}
         </div>
+
     </div>
 </div>
 {%endblock%}
