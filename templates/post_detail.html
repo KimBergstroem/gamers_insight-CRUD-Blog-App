@@ -48,9 +48,16 @@
                                 <img src="{{ post.author.userprofile.profile_picture.url }}" title="" alt="">
                             </div>
                             <div class="media-body">
-                                <label>{{ post.author }}</label> <small><a class="text-white"
-                                        href="{% url 'post_update' post.slug %}"> (Edit)</a>
-                                    <a class="text-white" href="{% url 'post_delete' post.slug %}"> (Delete)</a></small>
+                                <label>{{ post.author }}</label> 
+                                    <small>
+                                        <!-- Check for user authentication and compares user id with post author id -->
+                                        {% if user.is_authenticated %}
+                                        {% if user.id == post.author.id %}
+                                        <a class="text-secondary fw-bolder" href="{% url 'post_update' post.slug %}"> (Edit)</a>
+                                        <a class="text-secondary fw-bolder" href="{% url 'post_delete' post.slug %}"> (Delete)</a>
+                                        {% endif %}
+                                        {% endif %}
+                                    </small>
                                 <span>{{ post.created_on }}</span>
                             </div>
                         </div>
