@@ -21,6 +21,7 @@
                         <div class="article-likes d-flex">
 
                             <h6 class="text-primary"><a href="#">Category</a></h6>
+                            <!-- Like Post if statement -->
                             <strong>
                                 {% if user.is_authenticated %}
                                 <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
@@ -36,7 +37,7 @@
                                 {% else %}
                                 <span class="text-white"><i class="far fa-heart"></i></span>
                                 {% endif %}
-                                <!-- The number of likes goes before the closing strong tag -->
+                                <!-- The number of likes -->
                                 <span class="text-white">{{ post.number_of_likes }} </span>
                             </strong>
                         </div>
@@ -47,12 +48,15 @@
                                 <img src="{{ post.author.userprofile.profile_picture.url }}" title="" alt="">
                             </div>
                             <div class="media-body">
-                                <label>{{ post.author }}</label>
+                                <label>{{ post.author }}</label> <small><a class="text-white"
+                                        href="{% url 'post_update' post.slug %}"> (Edit)</a>
+                                    <a class="text-white" href="{% url 'post_delete' post.slug %}"> (Delete)</a></small>
                                 <span>{{ post.created_on }}</span>
                             </div>
                         </div>
                     </div>
                     <div class="article-content">
+                        <!-- Safe is used to show HTML throught the post content -->
                         {{ post.content | safe }}
                     </div>
                 </article>
