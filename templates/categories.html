@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %} Gamers Insight - {{ genre }} {% endblock %}
+
+{% block content %}
+<div class="main-scroll-page">
+    <div class="container container-centered">
+
+        <!-- Category links -->
+        <div class="list-header">
+            <div class="text-center text-white">
+                <h3>Blog Library</h3>
+                <p>{{ genre.title }}</p>
+            </div>
+            {% include 'blogview_template/category_links.html' %}
+        </div>
+        <br>
+
+        {% if category_posts %} 
+        <!-- Blog post list -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for post in category_posts %}
+            {% include 'blogview_template/list_card.html' %}
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <div class="row pagination-container">
+            {% if is_paginated %}
+            {% include 'blogview_template/pagination.html' %}
+            {% endif %}
+        </div>
+
+        {% else %}
+        <!-- If category not found -->
+        <div class="list-header">
+            <div class="text-center text-white">
+                <h3 class="text-white text-center mb-4 d-md-block">This page was not found or no blog posts!</h3>
+                <p><a class="nav-link text-white px-3 py-1 rounded-3 bg-primary mx-5" href="{% url 'index' %}">Back</a>
+                </p>
+            </div>
+        </div>
+        <br>
+        {% endif %}
+
+    </div>
+</div>
+{%endblock%}

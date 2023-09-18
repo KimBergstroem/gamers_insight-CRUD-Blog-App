@@ -22,8 +22,95 @@ from .forms import (
     PostForm
 )
 
+# ==============================
+# Main
+# ==============================
+def landing_page(request):
+    """
+    Render the landing_page.html template
+    """
+    return render(request, 'landing_page.html')
 
+
+def about(request):
+    """
+    Render the about.html template
+    """
+    return render(request, 'about.html')
+
+
+def contactus(request):
+    """
+    Render the contactus.html template
+    """
+    return render(request, 'contactus.html')
+
+
+class PostLike(View):
+    """
+    View for handling liking and unliking a post.
+    """
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=self.request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+									        
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+# ==============================
+# Profile
+# ==============================
+class ProfileView(LoginRequiredMixin, TemplateView):
+    """
+    View for displaying the user's profile.
+    """
+    model = UserProfile
+    template_name = 'profile.html'
+
+
+class ProfileUpdateView(LoginRequiredMixin, TemplateView):
+    """
+    View for updating user profile information.
+    """
+    model = UserProfile
+    user_form = UserForm
+    profile_form = ProfileForm
+    template_name = 'profile_update.html'
+
+    def post(self, request):
+        post_data = request.POST or None
+        file_data = request.FILES or None
+
+        user_form = UserForm(post_data, instance=request.user)
+
+        # Get the user's profile, or create a new one if it doesn't exist
+        profile, created = UserProfile.objects.get_or_create(user=request.user)
+        profile_form = ProfileForm(post_data, file_data, instance=profile)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, 'Your profile is updated successfully!')
+            return HttpResponseRedirect(reverse_lazy('profile'))
+
+        context = self.get_context_data(
+            user_form=user_form,
+            profile_form=profile_form
+        )
+
+        return self.render_to_response(context)
+
+
+# ==============================
+# Post
+# ==============================
 class PostList(generic.ListView):
+    """
+    View for displaying a list of blog posts on the homepage.
+    """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
@@ -31,7 +118,9 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+    """
+    View for displaying a single blog post and handling comments and likes.
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -84,19 +173,10 @@ class PostDetail(View):
         )
 
 
-class PostLike(View):
-    def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
-        if post.likes.filter(id=self.request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-									        
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
 class PostCreateView(CreateView):
-    # Create a blog post view
+    """
+    View for creating a new blog post.
+    """
     model = Post
     template_name = 'post_create.html'
     form_class = PostForm
@@ -108,59 +188,37 @@ class PostCreateView(CreateView):
         return super().form_valid(form)
 
 
-def landing_page(request):
-    return render(request, 'landing_page.html')
-
-
-def about(request):
-    return render(request, 'about.html')
-
-
-def contactus(request):
-    return render(request, 'contactus.html')
-
-
-class ProfileView(LoginRequiredMixin, TemplateView):
-    model = UserProfile
-    template_name = 'profile.html'
-
-
-class ProfileUpdateView(LoginRequiredMixin, TemplateView):
-    model = UserProfile
-    user_form = UserForm
-    profile_form = ProfileForm
-    template_name = 'profile_update.html'
-
-    def post(self, request):
-        post_data = request.POST or None
-        file_data = request.FILES or None
-
-        user_form = UserForm(post_data, instance=request.user)
-
-        # Get the user's profile, or create a new one if it doesn't exist
-        profile, created = UserProfile.objects.get_or_create(user=request.user)
-        profile_form = ProfileForm(post_data, file_data, instance=profile)
-
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            messages.success(request, 'Your profile is updated successfully!')
-            return HttpResponseRedirect(reverse_lazy('profile'))
-
-        context = self.get_context_data(
-            user_form=user_form,
-            profile_form=profile_form
-        )
-
-        return self.render_to_response(context)
-
-
 class PostUpdateView(UpdateView):
+    """
+    View for updating an existing blog post.
+    """
     model = Post
     template_name = 'post_update.html'
     fields = ['title', 'featured_image', 'excerpt', 'content']
 
+
 class PostDeleteView(DeleteView):
+    """
+    View for deleting an existing blog post.
+    """
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('index')
+
+
+# ==============================
+# Category
+# ==============================
+def CategoryView(request, genre):
+    """
+    View for displaying a list of blog posts belonging to a specific category.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        genre (str): The category genre to filter posts by.
+
+    Returns:
+        HttpResponse: A rendered HTML page displaying category-specific blog posts.
+    """
+    category_posts = Post.objects.filter(category=genre)
+    return render(request, 'categories.html', {'genre': genre, 'category_posts': category_posts})
