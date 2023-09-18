@@ -137,12 +137,12 @@ Gamers Insight strives to create an immersive and interactive environment for us
 - [Easily Navigate and Find Content (should-have)](https://github.com/KimBergstroem/PP4/issues/1) #1 SPRINT 2
 - [Visually Appealing Homepage (should-have)](https://github.com/KimBergstroem/PP4/issues/2) #2 SPRINT 2
 - [Search for Specific Games or Topics (could-have)](https://github.com/KimBergstroem/PP4/issues/3) #3 SPRINT 2
-- [Read Detailed Game Reviews (should-have)](https://github.com/KimBergstroem/PP4/issues/4) #4 SPRINT 3
 - [Create a Personalized Profile (should-have)](https://github.com/KimBergstroem/PP4/issues/5) #5 SPRINT 3
-- [Save Favorite Articles and Create Reading Lists (should-have)](https://github.com/KimBergstroem/PP4/issues/6) #6 SPRINT 3
 
 #### Epic 2: User Engagement and Interaction (Registered User)
 
+- [Read Detailed Game Reviews (should-have)](https://github.com/KimBergstroem/PP4/issues/4) #4 SPRINT 3
+- [Save Favorite Articles and Create Reading Lists (should-have)](https://github.com/KimBergstroem/PP4/issues/6) #6 SPRINT 3
 - [Receive Notifications (could-have)](https://github.com/KimBergstroem/PP4/issues/7) #7 SPRINT 4
 - [Leave Comments and Engage in Discussions (must-have)](https://github.com/KimBergstroem/PP4/issues/8) #8 SPRINT 4
 - [Submit Own Articles and Reviews (must-have)](https://github.com/KimBergstroem/PP4/issues/9) #9 SPRINT 4
