@@ -22,7 +22,7 @@
                     <div class="article-title">
                         <div class="article-likes d-flex">
 
-                            <h6 class="text-primary"><a href="#">{{ post.category }}</a></h6>
+                            <h6 class="text-primary"><a href="{% url 'category' post.category %}">{{ post.category }}</a></h6>
                             <!-- Like Post if statement -->
                             <strong>
                                 {% if user.is_authenticated %}
@@ -50,16 +50,18 @@
                                 <img src="{{ post.author.userprofile.profile_picture.url }}" title="" alt="">
                             </div>
                             <div class="media-body">
-                                <label>{{ post.author }}</label> 
-                                    <small>
-                                        <!-- Check for user authentication and compares user id with post author id -->
-                                        {% if user.is_authenticated %}
-                                        {% if user.id == post.author.id %}
-                                        <a class="text-secondary fw-bolder" href="{% url 'post_update' post.slug %}"> (Edit)</a>
-                                        <a class="text-secondary fw-bolder" href="{% url 'post_delete' post.slug %}"> (Delete)</a>
-                                        {% endif %}
-                                        {% endif %}
-                                    </small>
+                                <label>{{ post.author }}</label>
+                                <small>
+                                    <!-- Check for user authentication and compares user id with post author id -->
+                                    {% if user.is_authenticated %}
+                                    {% if user.id == post.author.id %}
+                                    <a class="text-secondary fw-bolder" href="{% url 'post_update' post.slug %}">
+                                        (Edit)</a>
+                                    <a class="text-secondary fw-bolder" href="{% url 'post_delete' post.slug %}">
+                                        (Delete)</a>
+                                    {% endif %}
+                                    {% endif %}
+                                </small>
                                 <span>{{ post.created_on }}</span>
                             </div>
                         </div>
@@ -106,24 +108,29 @@
                 </div>
 
                 <!-- View Comment Section -->
-                <div class="contact-form article-comment mt-4">
+                <div class="contact-form article-comment mt-4 text-white">
                     {% with comments.count as total_comments %}
                     <h4>
                         {{ total_comments }} Comments
                     </h4>
                     {% endwith %}
                     {% for comment in comments %}
-                    <div class="comments" style="padding: 10px;">
-                        <p class="font-weight-bold">
-                            {{ comment.name}}
-                            <span class=" text-primary font-weight-normal">
-                                {{ comment.created_on }}
-                            </span> wrote:
-                        </p>
-                        {{ comment.body | linebreaks }}
+                    <div class="media">
+                        <div class="col-sm-3 col-lg-2 d-none d-sm-block me-4">
+                            <a href="#"><img class="img-responsive rounded"
+                                    src="{{ post.author.userprofile.profile_picture.url }}" alt="img"></a>
+                        </div>
+                        <div class="media-body">
+                            <h5 class="text-primary">{{ comment.name }}</h5>
+                            <p>{{ comment.body | linebreaks }}</p>
+                            <ul class="list-unstyled list-inline">
+                                <li><span><i class="fa fa-calendar"></i> {{ comment.created_on }}</li></span>
+                            </ul>
+                        </div>
                     </div>
+                    <hr>
                     {% endfor %}
                 </div>
             </div>
 
-            {% endblock content %}
+{% endblock content %}

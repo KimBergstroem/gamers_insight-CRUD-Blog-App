@@ -11,13 +11,12 @@
             <!-- Title with link to detail page-->
             <h5 class="card-title post-link"><a href="{% url 'post_detail' post.slug %}" class="card-link">
                     {% if post.category == 'fps' %}
-                    <i class="fas fa-utensil-spoon"></i>
+                    <i class="fa fa-windows text-white"></i>
                     {% elif post.category == 'rpg' %}
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-tablet-alt text-white bg-clr-dom-light"></i>
                     {% elif post.category == 'mmo' %}
-                    <i class="fas fa-trophy"></i>
+                    <i class="fab fa-playstation text-white"></i>
                     {% else %}
-                    <!-- Handle other categories or no category here -->
                     {% endif %}
                     {{ post.title }} </a></h5>
 
@@ -28,8 +27,8 @@
             </small><br>
 
             <!-- Likes and Comments -->
-            <small><i class="fa fa-thumbs-up fa-lg"></i> <strong>{{ post.number_of_likes }}</strong> |
-                Comments: {% with comments.count as total_comments %} {{ total_comments }} {% endwith %}</small>
+            <small><i class="fa fa-thumbs-up fa-lg"></i> <strong>{{ post.number_of_likes }} |
+                Comments: {{ post.comments.count }}</strong></small>
             <hr>
 
             <!-- Excerpt -->
@@ -40,7 +39,7 @@
 
         <!-- Card footer with date for last updated -->
         <div class="card-footer d-flex justify-content-between align-items-center pt-3 pb-3">
-            <small class="text-white">Last updated: {{ post.date_updated }}</small>
+            <small class="text-white">Last updated: {{ post.updated_on }}</small>
             <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary info-btn btn-sm text-white">Info</a>
         </div>
     </div>

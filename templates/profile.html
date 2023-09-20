@@ -19,7 +19,8 @@
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-3 my-5">
-            <img src="{{ request.user.userprofile.profile_picture.url }}" class="rounded-circle float-right" height="200px" width="200px">
+            <img src="{{ request.user.userprofile.profile_picture.url }}" class="rounded-circle float-right"
+                height="200px" width="200px">
         </div>
         <div class="card-body text-white o-hidden my-5 col-lg-5">
             <p><strong>Name: </strong>{{request.user.first_name}} {{request.user.last_name}}</p>
