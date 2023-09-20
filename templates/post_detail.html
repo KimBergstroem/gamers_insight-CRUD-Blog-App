@@ -121,10 +121,19 @@
                                     src="{{ post.author.userprofile.profile_picture.url }}" alt="img"></a>
                         </div>
                         <div class="media-body">
-                            <h5 class="text-primary">{{ comment.name }}</h5>
+                            <h5 class="text-primary d-inline">{{ comment.user.username }}</h5>
+                            <small>
+                                <!-- Check for user authentication and compares user id with comment user id -->
+                                {% if user.is_authenticated %}
+                                {% if user.id == comment.user.id %}
+                                <a class="text-secondary fw-bolder" href="#">
+                                    (Delete)</a>
+                                {% endif %}
+                                {% endif %}
+                            </small>
                             <p>{{ comment.body | linebreaks }}</p>
                             <ul class="list-unstyled list-inline">
-                                <li><span><i class="fa fa-calendar"></i> {{ comment.created_on }}</li></span>
+                                <li><span><i class="fa fa-calendar"></i> {{ comment.created_on|date:"r" }}</li></span>
                             </ul>
                         </div>
                     </div>
