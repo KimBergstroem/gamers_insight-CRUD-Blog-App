@@ -116,6 +116,41 @@ body {
     display: none;
 }
 
+/* index - Landing_page Section
+---------------------*/
+@keyframes slideInRight {
+  from {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hero-img-animation {
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+}
+
+.header-bg-img{
+  background-image: linear-gradient( #12112C,#12112C, #2f3254,#12112C);
+}
+
+.shadow-box{
+  box-shadow: 5px 46px 80px 87px rgba(150, 150, 150, 0.24);
+}
+
+.img22 {
+  -webkit-mask-image: linear-gradient(to top, transparent 13%, black 45%);
+  mask-image: linear-gradient(to bottom, transparent 25%, black 75%);
+}
+
 /* Blogview_template Section
 ---------------------*/
 .container-centered {
