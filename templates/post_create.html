@@ -7,37 +7,36 @@
 {% block content %}
 {% if user.is_authenticated %}
 <section>
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-8 col-md-8 col-lg-8 mx-auto" style="max-width: 500px;">
-                <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
-                    <div class="card-body p-5 text-center">
-                        <div class="mb-md-2 mt-md-4 pb-5">
-                            <h3 class="fw-bold mb-2 text-uppercase">Create Post</h3>
-                                <form method="post" enctype="multipart/form-data">
-                                    {% csrf_token %} <!-- Security token from django against attackers -->
-                                    <div class="form-row mb-4">
-                                        {{ form.title|as_crispy_field }}
-                                    </div>
-                                    <div class="form-row mb-4">
-                                        {{ form.category|as_crispy_field }}
-                                    </div>
-                                    <div class="form-row mb-4">
-                                        {{ form.featured_image|as_crispy_field }}
-                                    </div>
-                                    <div class="form-row mb-4">
-                                        {{ form.excerpt|as_crispy_field }}
-                                    </div>
-                                    <div class="form-row mb-4">
-                                        {{ form.content|as_crispy_field }}
-                                    </div>
-                                    <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-5">Submit</button>
-                                </form>
-                        </div>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card bg-clr-dom-light text-white shadow-sm rounded-lg" style="border-radius: 1rem;">
+                    <div class="card-body p-4 text-center">
+                        <h3 class="fw-bold mb-4 text-uppercase text-center">Create Post</h3>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                {{ form.title|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.category|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.featured_image|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.excerpt|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.content|as_crispy_field }}
+                            </div>
+                            <button class="btn btn-primary btn-block mb-4">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
 {% endif %}
 {% endblock %}
