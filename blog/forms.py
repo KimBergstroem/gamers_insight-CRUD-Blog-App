@@ -1,6 +1,7 @@
 from .models import Comment, UserProfile, Post, GameCategory
 from django import forms
 from django.contrib.auth.models import User
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 class CommentForm(forms.ModelForm):
     # Comment form in blog posts

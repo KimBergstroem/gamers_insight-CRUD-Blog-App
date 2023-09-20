@@ -11,7 +11,9 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 from .models import Post, UserProfile
@@ -116,6 +118,22 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
         )
 
         return self.render_to_response(context)
+
+class ProfileDeleteView(SuccessMessageMixin, LoginRequiredMixin, generic.DeleteView):
+    """
+    View for deleting an user profile.
+    """
+    model = User
+    template_name = 'profile_delete.html'
+    success_message = "User has been deleted"
+    success_url = reverse_lazy('landing_page')
+
+    def delete(self, request, *args, **kwargs):
+        # Log out the user
+        logout(request)
+        
+        # Delete the user profile and related objects
+        return super().delete(request, *args, **kwargs)
 
 
 # ==============================

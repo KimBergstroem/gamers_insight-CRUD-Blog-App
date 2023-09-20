@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
 from .views import (
-    ProfileUpdateView, ProfileView,  PostCreateView, PostUpdateView, PostDeleteView, CategoryView
+    ProfileUpdateView, ProfileView, ProfileDeleteView,  PostCreateView, PostUpdateView, PostDeleteView, CategoryView
 )
 
 urlpatterns = [
@@ -18,6 +18,7 @@ urlpatterns = [
     # ==============================
     path('profile/', views.ProfileView.as_view(), name='profile'),
     path('profile_update/', views.ProfileUpdateView.as_view(), name='profile_update'),
+    path('profile_delete/<int:pk>/', views.ProfileDeleteView.as_view(), name='profile_delete'),
 
     # ==============================
     # Post paths
