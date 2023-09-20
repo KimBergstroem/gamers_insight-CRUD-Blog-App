@@ -80,12 +80,26 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     profile_form = ProfileForm
     template_name = 'profile_update.html'
 
+    def get(self, request, *args, **kwargs):
+        # Initialize the user form with the current user's data
+        user_form = UserForm(instance=request.user)
+        # Get the user's profile, or create a new one if it doesn't exist
+        profile, created = UserProfile.objects.get_or_create(user=request.user)
+        # Initialize the profile form with the current user's profile data
+        profile_form = ProfileForm(instance=profile)
+        
+        context = self.get_context_data(
+            user_form=user_form,
+            profile_form=profile_form
+        )
+
+        return self.render_to_response(context)
+
     def post(self, request):
         post_data = request.POST or None
         file_data = request.FILES or None
 
         user_form = UserForm(post_data, instance=request.user)
-
         # Get the user's profile, or create a new one if it doesn't exist
         profile, created = UserProfile.objects.get_or_create(user=request.user)
         profile_form = ProfileForm(post_data, file_data, instance=profile)

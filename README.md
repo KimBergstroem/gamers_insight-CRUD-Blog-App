@@ -599,6 +599,8 @@ The official Django documentation has been an invaluable resource throughout the
 - [Signals](https://docs.djangoproject.com/en/4.2/topics/signals/)
 - [Using mixins with class-based views](https://docs.djangoproject.com/en/4.2/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object)
 - [Using widgets in form](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
+- [Date string form](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date)
+
 
 
 ### W3 Schools:
