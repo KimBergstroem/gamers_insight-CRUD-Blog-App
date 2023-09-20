@@ -430,13 +430,136 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 
 ## Deployment
-To deploy the website using Heroku, follow these steps:
 
-1. Set `DEBUG` to `False` in the `settings.py` file.
-2. Commit and push your code to the GitHub repository.
-3. Clear the 'static' folder in Cloudinary to ensure the latest static files are used during deployment. This step is important to avoid any potential conflicts between cached versions of static files and the updated versions being deployed. Clearing the 'static' folder ensures that the latest versions of static files are used during the deployment process, preventing any eTag errors or inconsistencies.
-4. Navigate to the project's deploy page in Heroku.
-5. Choose the manual deployment option to deploy the latest code changes.
+### App Deployment
+For deploying your app, Heroku is used. Follow these steps:
+
+ **Create a New App:**
+   - Create a new app on your Heroku dashboard.
+
+ **Configure Settings:**
+   - Navigate to "Settings" in your new app.
+
+ **Config Vars Setup:**
+   - In "Config Vars," add `PORT` as the key and `8000` as its value.
+
+ **Add PostgreSQL Database:**
+   - Choose PostgreSQL as your database.
+
+        Example "ElephantSQL" was used in this project
+
+ **Configure DATABASE_URL:**
+   - In "Config Vars," add `DATABASE_URL` and copy the URL from your PostgreSQL dashboard.
+
+     Note: If you are using ElephantSQL as your PostgreSQL provider, you can use the URL provided by ElephantSQL.
+
+ **Environment Variable Setup:**
+   - Create a new file in your workspace called `env.py`.
+   - Import the `os` library and set the environment variable for `DATABASE_URL` to the Heroku address (or ElephantSQL URL)
+   - Add a secret key using `os.environ["SECRET_KEY"] = "your secret key here"`.
+
+ **Heroku Config Vars:**
+   - Add the secret key to the Heroku app's config vars in the settings.
+
+ **Django Settings:**
+   - In `settings.py` of your Django app, import `Path` from `pathlib`, `os`, and `dj_database_url`.
+   - Add `if os.path.isfile("env.py"): import env` to the file.
+   - Replace the SECRET_KEY with `SECRET_KEY = os.environ.get('SECRET_KEY')`.
+   - Replace the database section with `DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}`.
+
+ **Migrate Models:**
+   - In your workspace terminal, migrate the models to the new database connection.
+
+### Cloudinary
+To integrate Cloudinary into your project, follow these steps:
+
+ **Cloudinary Account:**
+   - Log in to your Cloudinary account or create one.
+
+ **Copy CLOUDINARY_URL:**
+   - Copy your `CLOUDINARY_URL`.
+
+ **Environment Variable Setup:**
+   - In `env.py`, add `os.environ["CLOUDINARY_URL"] = "add cloudinary_url here"`.
+
+ **Heroku Config Vars:**
+   - In Heroku settings, add `CLOUDINARY_URL` to config vars.
+
+ **Django Settings:**
+   - In `INSTALLED_APPS`, add `cloudinary_storage`, `django.contrib.staticfiles`, and `cloudinary` in this order.
+   - Configure static files settings in `settings.py`: URL, storage path, directory path, root path, media URL, and default file storage.
+
+ **Templates Directory Link:**
+   - Link the file to the templates directory in Heroku with `TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')`.
+
+ **Change Templates Directory:**
+   - Change the templates directory to `TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR]`.
+
+ **Additional Folders:**
+   - Create three new folders: `media`, `static`, and `templates`.
+
+ **Procfile Creation:**
+   - Create a `Procfile`.
+   - Add the following line inside the Procfile: `web: gunicorn project_name_here.wsgi`.
+
+ **Push Changes:**
+    - Push all changes to GitHub.
+
+ **Manual Deployment:**
+    - In the Heroku deployment tab, deploy to Heroku manually the first time, and closely monitor the process.
+    - Once successful, you can set up automatic deployments.
+
+### Version Control
+To manage version control and push code to the main repository on GitHub using GitPod, follow these steps:
+
+ **Add Changes:**
+   - In the GitPod terminal, use the command `git add .` to stage your changes.
+
+ **Commit Changes:**
+   - Commit your changes with a descriptive comment using the command:
+     ```
+     git commit -m "Your push comment here"
+     ```
+
+ **Push to GitHub:**
+   - Push the updates to the repository on GitHub with the command:
+     ```
+     git push
+     ```
+
+
+ **Migrate Models:**
+    - In the terminal, migrate the models to the new database connection.
+
+### Forking the Repository:
+
+By forking the GitHub Repository, you can create a copy of the original repository without affecting the original. Follow these steps:
+
+ **GitHub Account Setup:**
+   - Log into your GitHub account or create one if you don't have one.
+
+ **Locate the Repository:**
+   - Find the repository at [https://github.com/KimBergstroem/PP4](https://github.com/KimBergstroem/PP4).
+
+ **Fork the Repository:**
+   - At the top right of the repository page, click "Fork" to create a copy in your own GitHub repository.
+
+### Clone of the Repository:
+
+Creating a clone allows you to have a local copy of the project. Follow these steps:
+
+ **Repository URL:**
+   - Navigate to [https://github.com/KimBergstroem/PP4](https://github.com/KimBergstroem/PP4).
+   - Click the green "Code" button at the top right.
+
+ **Clone the Repository:**
+   - Select the "Clone by HTTPS" option and copy the provided URL to the clipboard.
+
+ **Terminal and Git:**
+   - Open your code editor or terminal and navigate to the directory where you want to clone the repository.
+   - Run `git clone` followed by the copied URL.
+   - Press enter, and Git will clone the repository to your local machine.
+
 
 To fork the repository, follow these steps:
 
@@ -460,7 +583,8 @@ To clone the repository, follow these steps:
 I would like to express my gratitude to the following resources, which have been a huge help for me in the development of the Gamer Insight - Blog.
 
 ### Media
-
+Images are taken from the following pages:
+- [Leonardo.ai](https://leonardo.ai/) **Used as landing page hero image**
 
 ### Django Documentation:
 The official Django documentation has been an invaluable resource throughout the project, providing comprehensive guidance on models, forms, templates, and various aspects of Django development.
