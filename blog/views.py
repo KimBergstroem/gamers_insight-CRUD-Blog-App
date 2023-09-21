@@ -16,7 +16,7 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
-from .models import Post, UserProfile
+from .models import Post, UserProfile, Comment
 from .forms import (
     CommentForm, 
     UserForm, 
@@ -234,6 +234,22 @@ class PostDeleteView(DeleteView):
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('index')
+
+
+# ==============================
+# Comment
+# ==============================
+class CommentDeleteView(DeleteView):
+    """
+    View for deleting an existing comment.
+    """
+    model = Comment
+    template_name = 'comment_delete.html'
+
+    #Override the success_url redirect, to redirect to the blog post itself as the comment was removed
+    def get_success_url(self):
+        post_slug = self.object.post.slug
+        return reverse('post_detail', kwargs={'slug': post_slug})  
 
 
 # ==============================

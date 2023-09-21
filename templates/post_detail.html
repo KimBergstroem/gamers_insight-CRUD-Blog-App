@@ -126,7 +126,7 @@
                                 <!-- Check for user authentication and compares user id with comment user id -->
                                 {% if user.is_authenticated %}
                                 {% if user.id == comment.user.id %}
-                                <a class="text-secondary fw-bolder" href="#">
+                                <a class="text-secondary fw-bolder" href="{% url 'comment_delete' comment.id %}">
                                     (Delete)</a>
                                 {% endif %}
                                 {% endif %}
