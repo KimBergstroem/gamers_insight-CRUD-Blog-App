@@ -269,7 +269,7 @@ class CommentDeleteView(DeleteView):
 # ==============================
 # Category
 # ==============================
-def CategoryView(request, genre):
+def CategoryView(request, category_id):
     """
     View for displaying a list of blog posts belonging to a specific category.
 
@@ -280,5 +280,5 @@ def CategoryView(request, genre):
     Returns:
         HttpResponse: A rendered HTML page displaying category-specific blog posts.
     """
-    category_posts = Post.objects.filter(category=genre)
-    return render(request, 'categories.html', {'genre': genre, 'category_posts': category_posts})
+    category_posts = Post.objects.filter(category=category_id)
+    return render(request, 'categories.html', {'category_id': category_id, 'category_posts': category_posts})

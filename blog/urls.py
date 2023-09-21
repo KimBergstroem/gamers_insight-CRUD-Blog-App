@@ -38,5 +38,5 @@ urlpatterns = [
     # ==============================
     # Category paths
     # ==============================
-    path('category/<str:genre>/', CategoryView, name='category'),
+    path('category/<int:category_id>/', CategoryView, name='category'),
 ]

@@ -22,7 +22,7 @@
                     <div class="article-title">
                         <div class="article-likes d-flex">
 
-                            <h6 class="text-primary"><a href="{% url 'category' post.category %}">{{ post.category }}</a></h6>
+                            <h6 class="text-primary"><a href="{% url 'category' post.category.id %}">{{ post.category }}</a></h6>
                             <!-- Like Post if statement -->
                             <strong>
                                 {% if user.is_authenticated %}

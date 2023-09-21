@@ -33,6 +33,20 @@ class UserProfile(models.Model):
 
 
 # ==============================
+# Category Model
+# ==============================
+class GameCategory(models.Model):
+    name = models.CharField(max_length=200)
+    device = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse('index')
+
+
+# ==============================
 # Post Model
 # ==============================
 class Post(models.Model):
@@ -46,7 +60,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
-    category = models.CharField(max_length=200, default='Unspecified')
+    category = models.ForeignKey(GameCategory, on_delete=models.CASCADE, default=None)
 
     class Meta:
         ordering = ['-created_on']
@@ -79,17 +93,3 @@ class Comment(models.Model):
     
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
-
-
-# ==============================
-# Category Model
-# ==============================
-class GameCategory(models.Model):
-    name = models.CharField(max_length=200)
-    device = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.name
-    
-    def get_absolute_url(self):
-        return reverse('index')

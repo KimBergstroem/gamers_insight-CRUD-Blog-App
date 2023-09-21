@@ -9,6 +9,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
+
 class UserForm(forms.ModelForm):
     # User form
     class Meta:
@@ -20,11 +21,6 @@ class UserForm(forms.ModelForm):
             'email',
         ]
 
-# Making it to an python list
-choices = GameCategory.objects.all().values_list('name','name')
-choice_list = []
-for item in choices:
-    choice_list.append(item)
 
 class PostForm(forms.ModelForm):
     # PostForm for blog posting
@@ -38,8 +34,9 @@ class PostForm(forms.ModelForm):
             'content',
         ]
         widgets = {
-            'category': forms.Select(choices=choice_list, attrs={ 'class': 'form-control'}),
+            'category': forms.Select(attrs={ 'class': 'form-control'}),
         }
+
 
 class ProfileForm(forms.ModelForm):
     # User profile page form
