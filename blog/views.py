@@ -33,13 +33,17 @@ def landing_page(request):
     """
     return render(request, 'landing_page.html')
 
-
 def about(request):
     """
     Render the about.html template
     """
     return render(request, 'about.html')
 
+def my_articles(request):
+    """
+    Render the about.html template
+    """
+    return render(request, 'my_articles.html')
 
 def contactus(request):
     """
@@ -119,6 +123,7 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
 
         return self.render_to_response(context)
 
+
 class ProfileDeleteView(SuccessMessageMixin, LoginRequiredMixin, generic.DeleteView):
     """
     View for deleting an user profile.
@@ -147,6 +152,14 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
+
+class UsersPosts(PostList):
+    """
+    View for displaying a list of blog posts on the homepage.
+    """
+    def get_queryset(self):
+        return self.request.user.blog_posts.all().order_by('-created_on')
 
 
 class PostDetail(View):
@@ -202,6 +215,7 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
 
 class PostCreateView(CreateView):
     """

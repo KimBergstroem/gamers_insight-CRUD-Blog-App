@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Gamers Insight - My Articles {% endblock %}
+
+{% block content %}
+<div class="container my-4 py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7">
+            <div class="card bg-clr-dom-light text-white o-hidden" style="border-radius: 1rem;">
+                <div class="card-body">
+                    <h3 class="text-gray-900 mb-4 text-white text-center">My Articles</h3>
+                </div>
+                <!-- Blog post list -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    {% for post in request.user.blog_posts.all %}
+                    {% include 'blogview_template/list_card.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
