@@ -17,6 +17,7 @@
                             <p class="text-white-50 mb-5">{% trans 'Are you sure you want to DELETE the' %} <strong>{{ post.title }}</strong> ?</p>
                             <form method="post">
                                 {% csrf_token %} <!-- Security token from django against attackers -->
+                                {{ message }}
                                 <button class="btn btn-danger right px-3 py-1 rounded-3" type="submit"> <i class="fas fa-trash-alt"></i> Delete</button>
                             </form>
                             <a class="btn btn-primary px-3 py-1 rounded-3 mt-4" href="{% url 'index' %}">Back</a>

@@ -70,13 +70,15 @@ class ProfileView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
         return self.request.user == self.request.user
 
 
-class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
+class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, 
+                        UserPassesTestMixin, TemplateView):
     """
     View for updating user profile information
     """
     model = UserProfile
     user_form = UserForm
     profile_form = ProfileForm
+    success_message = "Profile have been updated"
     template_name = 'profile_update.html'
 
     def test_func(self):
@@ -129,14 +131,13 @@ class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
         return self.render_to_response(context)
 
 
-class ProfileDeleteView(LoginRequiredMixin, SuccessMessageMixin, 
+class ProfileDeleteView(LoginRequiredMixin, 
                         UserPassesTestMixin, DeleteView):
     """
     View for deleting an user profile
     """
     model = User
     template_name = 'profile_delete.html'
-    success_message = "User has been deleted"
     success_url = reverse_lazy('landing_page')
 
     def test_func(self):
@@ -246,13 +247,14 @@ class PostDetail(LoginRequiredMixin, View):
         )
 
 
-class PostCreateView(LoginRequiredMixin, CreateView):
+class PostCreateView(LoginRequiredMixin,SuccessMessageMixin, CreateView):
     """
     View for creating a new blog post
     """
     model = Post
     template_name = 'post_create.html'
     form_class = PostForm
+    success_message = "Post have been created"
     success_url = reverse_lazy('index')
     
     def form_valid(self, form):
@@ -272,7 +274,7 @@ class PostUpdateView(LoginRequiredMixin, SuccessMessageMixin,
     model = Post
     template_name = 'post_update.html'
     fields = ['title', 'featured_image', 'excerpt', 'content']
-    success_message = "Post updated successfully."
+    success_message = "Post updated successfully"
 
     def test_func(self):
         """
@@ -282,7 +284,7 @@ class PostUpdateView(LoginRequiredMixin, SuccessMessageMixin,
         return self.request.user == post.author
 
 
-class PostDeleteView(LoginRequiredMixin, SuccessMessageMixin,
+class PostDeleteView(LoginRequiredMixin,
                     UserPassesTestMixin, DeleteView):
     """
     View for deleting an existing blog post
@@ -319,7 +321,7 @@ class PostLike(LoginRequiredMixin, View):
 # ==============================
 # Comment
 # ==============================
-class CommentDeleteView(LoginRequiredMixin, SuccessMessageMixin, UserPassesTestMixin, DeleteView):
+class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     View for deleting an existing comment
     """

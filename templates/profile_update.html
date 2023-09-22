@@ -16,6 +16,7 @@
               {% csrf_token %}
               {{ user_form | crispy }}
               {{ profile_form | crispy }}
+              {{ message }}
               <button type="submit" class="btn btn-success btn-block mt-4">Update</button>
             </form>
             <div class="mt-3">
