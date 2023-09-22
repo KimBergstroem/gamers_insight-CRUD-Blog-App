@@ -6,11 +6,12 @@ from django.views.generic import (
 )
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 from .models import Post, UserProfile, Comment
@@ -19,8 +20,9 @@ from .forms import (
     PostForm
 )
 
+
 # ==============================
-# Main
+# View functions
 # ==============================
 def landing_page(request):
     """
@@ -36,6 +38,7 @@ def about(request):
     return render(request, 'about.html')
 
 
+@login_required
 def my_articles(request):
     """
     Render the about.html template
@@ -43,6 +46,7 @@ def my_articles(request):
     return render(request, 'my_articles.html')
 
 
+@login_required
 def contactus(request):
     """
     Render the contactus.html template
@@ -50,35 +54,23 @@ def contactus(request):
     return render(request, 'contactus.html')
 
 
-class PostLike(View):
-    """
-    View for handling liking and unliking a post.
-    """
-    def post(self, request, slug, *args, **kwargs):
-        """
-        Toggle user's like for a post and redirect to post detail
-        """
-        post = get_object_or_404(Post, slug=slug)
-        if post.likes.filter(id=self.request.user.id).exists():
-            post.likes.remove(request.user)
-        else:
-            post.likes.add(request.user)
-									        
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
 # ==============================
 # Profile
 # ==============================
-class ProfileView(LoginRequiredMixin, TemplateView):
+class ProfileView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     """
     View for displaying the user's profile
     """
-    model = UserProfile
     template_name = 'profile.html'
 
+    def test_func(self):
+        """
+        Check if the current user is the owner of the profile being viewed
+        """
+        return self.request.user == self.request.user
 
-class ProfileUpdateView(LoginRequiredMixin, TemplateView):
+
+class ProfileUpdateView(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     """
     View for updating user profile information
     """
@@ -86,6 +78,12 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     user_form = UserForm
     profile_form = ProfileForm
     template_name = 'profile_update.html'
+
+    def test_func(self):
+        """
+        Check if the current user is the owner of the profile being updated
+        """
+        return self.request.user == self.request.user
 
     def get(self, request, *args, **kwargs):
         """
@@ -131,7 +129,8 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
         return self.render_to_response(context)
 
 
-class ProfileDeleteView(SuccessMessageMixin, LoginRequiredMixin, generic.DeleteView):
+class ProfileDeleteView(LoginRequiredMixin, SuccessMessageMixin, 
+                        UserPassesTestMixin, DeleteView):
     """
     View for deleting an user profile
     """
@@ -139,6 +138,12 @@ class ProfileDeleteView(SuccessMessageMixin, LoginRequiredMixin, generic.DeleteV
     template_name = 'profile_delete.html'
     success_message = "User has been deleted"
     success_url = reverse_lazy('landing_page')
+
+    def test_func(self):
+        """
+        Check if the current user is the owner of the profile being deleted
+        """
+        return self.request.user == self.request.user
 
     def delete(self, request, *args, **kwargs):
         """
@@ -154,7 +159,7 @@ class ProfileDeleteView(SuccessMessageMixin, LoginRequiredMixin, generic.DeleteV
 # ==============================
 # Post
 # ==============================
-class PostList(generic.ListView):
+class PostList(LoginRequiredMixin, ListView):
     """
     View for displaying a list of blog posts on the homepage
     """
@@ -175,7 +180,7 @@ class UsersPosts(PostList):
         return self.request.user.blog_posts.all().order_by('-created_on')
 
 
-class PostDetail(View):
+class PostDetail(LoginRequiredMixin, View):
     """
     View for displaying a single blog post and handling comments and likes
     """
@@ -241,7 +246,7 @@ class PostDetail(View):
         )
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     """
     View for creating a new blog post
     """
@@ -252,23 +257,33 @@ class PostCreateView(CreateView):
     
     def form_valid(self, form):
         """
-        Custom logic to handle form validation when creating a new blog post.
+        Custom logic to handle form validation when creating a new blog post
         """
         form.instance.author_id = self.request.user.pk
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, SuccessMessageMixin, 
+                    UserPassesTestMixin, UpdateView):
     """
     View for updating an existing blog post
     """
     model = Post
     template_name = 'post_update.html'
     fields = ['title', 'featured_image', 'excerpt', 'content']
+    success_message = "Post updated successfully."
+
+    def test_func(self):
+        """
+        Check if the current user is the author of the post being updated
+        """
+        post = self.get_object()
+        return self.request.user == post.author
 
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, SuccessMessageMixin,
+                    UserPassesTestMixin, DeleteView):
     """
     View for deleting an existing blog post
     """
@@ -276,11 +291,35 @@ class PostDeleteView(DeleteView):
     template_name = 'post_delete.html'
     success_url = reverse_lazy('index')
 
+    def test_func(self):
+        """
+        Check if the current user is the author of the post being deleted
+        """
+        post = self.get_object()
+        return self.request.user == post.author
+
+
+class PostLike(LoginRequiredMixin, View):
+    """
+    View for handling liking and unliking a post
+    """
+    def post(self, request, slug, *args, **kwargs):
+        """
+        Toggle user's like for a post and redirect to post detail
+        """
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=self.request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+									        
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
 # ==============================
 # Comment
 # ==============================
-class CommentDeleteView(DeleteView):
+class CommentDeleteView(LoginRequiredMixin, SuccessMessageMixin, UserPassesTestMixin, DeleteView):
     """
     View for deleting an existing comment
     """
@@ -293,12 +332,20 @@ class CommentDeleteView(DeleteView):
         the blog post itself as the comment was removed
         """
         post_slug = self.object.post.slug
-        return reverse('post_detail', kwargs={'slug': post_slug})  
+        return reverse('post_detail', kwargs={'slug': post_slug})
+    
+    def test_func(self):
+        """
+        Check if the current user is the owner of the comment being deleted
+        """
+        comment = self.get_object()
+        return self.request.user == comment.user  
 
 
 # ==============================
 # Category
 # ==============================
+@login_required
 def CategoryView(request, category_id):
     """
     Display a list of blog posts belonging to a specific category
