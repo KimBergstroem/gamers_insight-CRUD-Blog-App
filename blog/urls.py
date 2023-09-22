@@ -1,7 +1,9 @@
 from . import views
 from django.urls import path
 from .views import (
-    ProfileUpdateView, ProfileView, ProfileDeleteView,  PostCreateView, PostUpdateView, PostDeleteView, CommentDeleteView, CategoryView
+    ProfileUpdateView, ProfileView, ProfileDeleteView,  
+    PostCreateView, PostUpdateView, PostDeleteView, 
+    CommentDeleteView, CategoryView
 )
 
 urlpatterns = [

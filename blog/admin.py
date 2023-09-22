@@ -5,17 +5,27 @@ from django_summernote.admin import SummernoteModelAdmin
 admin.site.register(UserProfile)
 admin.site.register(GameCategory)
 
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
+    """
+    Post model in admin panel
+    """
     summernote_fields = ('content')
+
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    """
+    Comment model in admin panel
+    """
     list_display = ('name', 'body', 'post', 'created_on', 'approved')
     list_filter = ('approved', 'created_on')
     search_fields = ('name', 'email', 'body')
     actions = ['approve_comments']
 
-    # Custom action to approve selected comments
     def approve_comments(self, request, queryset):
+        """
+        Approve user comments
+        """
         queryset.update(approved=True)

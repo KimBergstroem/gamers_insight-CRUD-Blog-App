@@ -3,16 +3,27 @@ from django import forms
 from django.contrib.auth.models import User
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
+
 class CommentForm(forms.ModelForm):
-    # Comment form in blog posts
+    """
+    Comment form in blog posts
+    """
     class Meta:
+        """
+        Form fields
+        """
         model = Comment
         fields = ('body',)
 
 
 class UserForm(forms.ModelForm):
-    # User form
+    """
+    Form for user registration and profile information
+    """
     class Meta:
+        """
+        Form fields
+        """
         model = User
         fields = [
             'username',
@@ -23,8 +34,13 @@ class UserForm(forms.ModelForm):
 
 
 class PostForm(forms.ModelForm):
-    # PostForm for blog posting
+    """
+    PostForm for blog posting
+    """
     class Meta:
+        """
+        Form fields
+        """
         model = Post
         fields = [
             'title', 
@@ -39,8 +55,13 @@ class PostForm(forms.ModelForm):
 
 
 class ProfileForm(forms.ModelForm):
-    # User profile page form
+    """
+    User profile page form
+    """
     class Meta:
+        """
+        Form fields
+        """
         model = UserProfile
         fields = [
             'bio',

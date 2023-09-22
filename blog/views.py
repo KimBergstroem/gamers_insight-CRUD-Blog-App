@@ -1,12 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic import TemplateView, ListView, DetailView
-from django.views.generic.edit import (
-    FormView, 
-    CreateView, 
-    UpdateView, 
-    DeleteView
-    )
+from django.views.generic import (
+    TemplateView, ListView, DetailView, FormView,
+    CreateView, UpdateView, DeleteView
+)
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -18,9 +15,7 @@ from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 from .models import Post, UserProfile, Comment
 from .forms import (
-    CommentForm, 
-    UserForm, 
-    ProfileForm,
+    CommentForm, UserForm, ProfileForm,
     PostForm
 )
 
@@ -33,17 +28,20 @@ def landing_page(request):
     """
     return render(request, 'landing_page.html')
 
+
 def about(request):
     """
     Render the about.html template
     """
     return render(request, 'about.html')
 
+
 def my_articles(request):
     """
     Render the about.html template
     """
     return render(request, 'my_articles.html')
+
 
 def contactus(request):
     """
@@ -57,6 +55,9 @@ class PostLike(View):
     View for handling liking and unliking a post.
     """
     def post(self, request, slug, *args, **kwargs):
+        """
+        Toggle user's like for a post and redirect to post detail
+        """
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=self.request.user.id).exists():
             post.likes.remove(request.user)
@@ -71,7 +72,7 @@ class PostLike(View):
 # ==============================
 class ProfileView(LoginRequiredMixin, TemplateView):
     """
-    View for displaying the user's profile.
+    View for displaying the user's profile
     """
     model = UserProfile
     template_name = 'profile.html'
@@ -79,7 +80,7 @@ class ProfileView(LoginRequiredMixin, TemplateView):
 
 class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     """
-    View for updating user profile information.
+    View for updating user profile information
     """
     model = UserProfile
     user_form = UserForm
@@ -87,6 +88,9 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
     template_name = 'profile_update.html'
 
     def get(self, request, *args, **kwargs):
+        """
+        Handles GET requests for updating user profile information
+        """
         # Initialize the user form with the current user's data
         user_form = UserForm(instance=request.user)
         # Get the user's profile, or create a new one if it doesn't exist
@@ -102,6 +106,9 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
         return self.render_to_response(context)
 
     def post(self, request):
+        """
+        Handles the submission of user profile update forms
+        """
         post_data = request.POST or None
         file_data = request.FILES or None
 
@@ -126,7 +133,7 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
 
 class ProfileDeleteView(SuccessMessageMixin, LoginRequiredMixin, generic.DeleteView):
     """
-    View for deleting an user profile.
+    View for deleting an user profile
     """
     model = User
     template_name = 'profile_delete.html'
@@ -134,6 +141,9 @@ class ProfileDeleteView(SuccessMessageMixin, LoginRequiredMixin, generic.DeleteV
     success_url = reverse_lazy('landing_page')
 
     def delete(self, request, *args, **kwargs):
+        """
+        Handles the deletion of an user profile and related objects
+        """
         # Log out the user
         logout(request)
         
@@ -146,7 +156,7 @@ class ProfileDeleteView(SuccessMessageMixin, LoginRequiredMixin, generic.DeleteV
 # ==============================
 class PostList(generic.ListView):
     """
-    View for displaying a list of blog posts on the homepage.
+    View for displaying a list of blog posts on the homepage
     """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -156,17 +166,23 @@ class PostList(generic.ListView):
 
 class UsersPosts(PostList):
     """
-    View for displaying a list of blog posts on the homepage.
+    View for displaying a list of blog posts made by user
     """
     def get_queryset(self):
+        """
+        Returns a queryset of blog posts created by the current user, ordered by creation date
+        """
         return self.request.user.blog_posts.all().order_by('-created_on')
 
 
 class PostDetail(View):
     """
-    View for displaying a single blog post and handling comments and likes.
+    View for displaying a single blog post and handling comments and likes
     """
     def get(self, request, slug, *args, **kwargs):
+        """
+        Retrieve and display a blog post with comments and likes
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -187,13 +203,20 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        Handle user comments on a blog post and render the post detail view
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
+
+        # Check if the current user has liked the post
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        # Create a CommentForm instance and populate 
+        # it with data from the request
         comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
@@ -202,6 +225,7 @@ class PostDetail(View):
             comment.post = post
             comment.save()
         else:
+            # If the form is not valid, create a new empty CommentForm
             comment_form = CommentForm()
 
         return render(
@@ -219,7 +243,7 @@ class PostDetail(View):
 
 class PostCreateView(CreateView):
     """
-    View for creating a new blog post.
+    View for creating a new blog post
     """
     model = Post
     template_name = 'post_create.html'
@@ -227,6 +251,9 @@ class PostCreateView(CreateView):
     success_url = reverse_lazy('index')
     
     def form_valid(self, form):
+        """
+        Custom logic to handle form validation when creating a new blog post.
+        """
         form.instance.author_id = self.request.user.pk
         form.instance.slug = slugify(form.instance.title)
         return super().form_valid(form)
@@ -234,7 +261,7 @@ class PostCreateView(CreateView):
 
 class PostUpdateView(UpdateView):
     """
-    View for updating an existing blog post.
+    View for updating an existing blog post
     """
     model = Post
     template_name = 'post_update.html'
@@ -243,7 +270,7 @@ class PostUpdateView(UpdateView):
 
 class PostDeleteView(DeleteView):
     """
-    View for deleting an existing blog post.
+    View for deleting an existing blog post
     """
     model = Post
     template_name = 'post_delete.html'
@@ -255,13 +282,16 @@ class PostDeleteView(DeleteView):
 # ==============================
 class CommentDeleteView(DeleteView):
     """
-    View for deleting an existing comment.
+    View for deleting an existing comment
     """
     model = Comment
     template_name = 'comment_delete.html'
 
-    #Override the success_url redirect, to redirect to the blog post itself as the comment was removed
     def get_success_url(self):
+        """
+        Override the success_url redirect, to redirect to 
+        the blog post itself as the comment was removed
+        """
         post_slug = self.object.post.slug
         return reverse('post_detail', kwargs={'slug': post_slug})  
 
@@ -271,14 +301,7 @@ class CommentDeleteView(DeleteView):
 # ==============================
 def CategoryView(request, category_id):
     """
-    View for displaying a list of blog posts belonging to a specific category.
-
-    Args:
-        request (HttpRequest): The HTTP request object.
-        genre (str): The category genre to filter posts by.
-
-    Returns:
-        HttpResponse: A rendered HTML page displaying category-specific blog posts.
+    Display a list of blog posts belonging to a specific category
     """
     category_posts = Post.objects.filter(category=category_id)
     return render(request, 'categories.html', {'category_id': category_id, 'category_posts': category_posts})
