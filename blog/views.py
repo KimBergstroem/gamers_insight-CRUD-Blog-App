@@ -354,3 +354,34 @@ def CategoryView(request, category_id):
     """
     category_posts = Post.objects.filter(category=category_id)
     return render(request, 'categories.html', {'category_id': category_id, 'category_posts': category_posts})
+
+
+# ==============================
+# Error handling
+# ==============================
+def handler403(request, exception):
+    """
+    Custom 403 page
+    """
+    return render(request, '403.html', status=403)
+
+
+def handler404(request, exception):
+    """
+    Custom 404 page
+    """
+    return render(request, '404.html', status=404)
+
+
+def handler405(request, exception):
+    """
+    Custom 405 page
+    """
+    return render(request, '405.html', status=405)
+
+
+def handler500(request):
+    """
+    Custom 500 page
+    """
+    return render(request, '500.html', status=500)

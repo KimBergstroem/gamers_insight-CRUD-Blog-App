@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-8 col-md-8 col-lg-8 mx-auto">
+                <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-md-2 mt-md-4 pb-5">
+                            <h1>Error 403: Forbidden</h1>
+                            <div>
+                                <a class="btn btn-primary px-3 py-1 rounded-3 mt-4" href="{% url 'index' %}">Go home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}

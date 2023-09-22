@@ -18,7 +18,7 @@ development = os.environ.get('DEVELOPMENT', False)
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['game-insight-1cff11f2b2d5.herokuapp.com', 'localhost', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io']
 
