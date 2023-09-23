@@ -3,56 +3,63 @@
 {% block title %} Gamers Insight - Contact Us {% endblock %}
 
 {% block content %}
-
-<div id="contact" class="contact-area section-padding">
-	<div class="container">										
-		<div class="section-title text-center text-white list-header">
-			<h3>Submit a ticket</h3>
-			<p>Do you wanna rapport a member? Do you having any technical issue? Or do you have any busniess inquires?</p>
-		</div>					
-		<div class="row">
-			<div class="col-lg-7">	
-				<div class="contact">
-					<form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
-						<div class="row">
-							<div class="form-group col-md-6 mb-4">
-								<input type="text" name="name" class="form-control" placeholder="Name" required="required">
-							</div>
-							<div class="form-group col-md-6 mb-4">
-								<input type="email" name="email" class="form-control" placeholder="Email" required="required">
-							</div>
-							<div class="form-group col-md-12 mb-4">
-								<input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
-							</div>
-							<div class="form-group col-md-12 mb-4">
-								<textarea rows="6" name="message" class="form-control" placeholder="Your Message" required="required"></textarea>
-							</div>
-							<div class="col-md-12 text-center mb-4">
-								<button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-contact-bg" title="Submit Your Message!">Send Message</button>
-							</div>
-						</div>
-					</form>
-				</div>
+<section>
+	<div id="contact" class="contact-area section-padding">
+		<div class="container">
+			<div class="section-title text-center text-white list-header">
+				<h3>Submit a ticket</h3>
+				<p>Do you wanna rapport a member? Do you having any technical issue? Or do you have any busniess
+					inquires?</p>
 			</div>
-			<div class="col-lg-5 text-white">
-				<div class="single_address">
-					<i class="fa fa-server"></i>
-					<h5>Our Server</h5>
-					<p>https://discord.gg/q6ruUxvg</p>
+			<div class="row">
+				<div class="col-lg-7">
+					<div class="contact">
+						<form class="form" name="enq" method="post" action="contact.php"
+							onsubmit="return validation();">
+							<div class="row">
+								<div class="form-group col-md-6 mb-4">
+									<input type="text" name="name" class="form-control" placeholder="Name"
+										required="required">
+								</div>
+								<div class="form-group col-md-6 mb-4">
+									<input type="email" name="email" class="form-control" placeholder="Email"
+										required="required">
+								</div>
+								<div class="form-group col-md-12 mb-4">
+									<input type="text" name="subject" class="form-control" placeholder="Subject"
+										required="required">
+								</div>
+								<div class="form-group col-md-12 mb-4">
+									<textarea rows="6" name="message" class="form-control" placeholder="Your Message"
+										required="required"></textarea>
+								</div>
+								<div class="col-md-12 text-center mb-4">
+									<button type="submit" value="Send message" name="submit" id="submitButton"
+										class="btn btn-contact-bg" title="Submit Your Message!">Send Message</button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
-				<div class="single_address">
-					<i class="fa fa-envelope"></i>
-					<h5>Send your message</h5>
-					<p>Info@game-insight.com</p>
+				<div class="col-lg-5 text-white">
+					<div class="single_address">
+						<i class="fa fa-server"></i>
+						<h5>Our Server</h5>
+						<p>https://discord.gg/q6ruUxvg</p>
+					</div>
+					<div class="single_address">
+						<i class="fa fa-envelope"></i>
+						<h5>Send your message</h5>
+						<p>Info@game-insight.com</p>
+					</div>
+					<div class="single_address">
+						<i class="fa fa-phone"></i>
+						<h5>Call us on</h5>
+						<p>(+34) 632 68 3900</p>
+					</div>
 				</div>
-				<div class="single_address">
-					<i class="fa fa-phone"></i>
-					<h5>Call us on</h5>
-					<p>(+34) 632 68 3900</p>
-				</div>				
 			</div>
 		</div>
 	</div>
-</div>
-
+</section>
 {%endblock%}
