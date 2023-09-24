@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-{% load account socialaccount %}
+{% load socialaccount %}
 
 {% block head_title %}{% trans "Log In" %}{% endblock %}
 
@@ -31,9 +31,11 @@
                                         {{ form.password.label_tag }}
                                         <input type="password" class="form-control mb-4" name="password">
                                     </div>
-
-                                    <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-5"
+                                    <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-4"
                                         type="submit">{% trans "Log In" %} &raquo;</button>
+                                        <small class="text-muted d-block">
+                                            <a href="{% url 'password_reset' %}">Forgot Password?</a>
+                                        </small>
                                 </form>
 
                             </div>

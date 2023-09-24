@@ -20,8 +20,9 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['game-insight-1cff11f2b2d5.herokuapp.com', 'localhost', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = ['game-insight-1cff11f2b2d5.herokuapp.com', 'localhost', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io', '127.0.0.1']
 
+SITE_ID = 1
 
 # Application definition
 INSTALLED_APPS = [
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -42,10 +44,15 @@ INSTALLED_APPS = [
     'blog',
 ]
 
-SITE_ID = 1
-
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
@@ -59,6 +66,7 @@ MESSAGE_TAGS = {
 }
 
 AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
@@ -94,6 +102,16 @@ TEMPLATES = [
         },
     },
 ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'APP': {
+            'client_id': '87d1f02079f34bb9d70d',
+            'secret': 'fcb610e3cec01789835942c4c6c9bb25ec832de2',
+            'key': ''
+        }
+    }
+}
 
 WSGI_APPLICATION = 'game_insight.wsgi.application'
 

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load socialaccount %}
+
 {% load i18n %}
 
 {% load crispy_forms_tags %}
@@ -34,10 +36,10 @@
                                     <div class="form-row mb-4">
                                         {{ form.password2|as_crispy_field }}
                                     </div>
-
                                     <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-5"
                                         type="submit">{% trans "Sign Up" %} &raquo;</button>
                                 </form>
+                                <a href="{% provider_login_url 'github' %}" class="btn btn-primary">Signup with GitHub</a>
                             </div>
                             <!-- Log In Redirect -->
                             <div>
