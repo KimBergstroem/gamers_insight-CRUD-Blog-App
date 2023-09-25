@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-{% load socialaccount %}
+{% load account socialaccount %}
 
 {% block head_title %}{% trans "Log In" %}{% endblock %}
 
@@ -33,9 +33,9 @@
                                     </div>
                                     <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-4"
                                         type="submit">{% trans "Log In" %} &raquo;</button>
-                                        <small class="text-muted d-block">
-                                            <a href="{% url 'password_reset' %}">Forgot Password?</a>
-                                        </small>
+                                    <small class="text-muted d-block">
+                                        <a href="{% url 'account_reset_password' %}">Forgot Password?</a>
+                                    </small>
                                 </form>
 
                             </div>
@@ -45,8 +45,22 @@
                                 <p class="mb-0">Don't have an account? <a href="{{ signup_url }}"
                                         class="text-primary fw-bold">Sign Up Now!</a>
                                 </p>
+                                <hr class="my-4">
                             </div>
-
+                            <!-- Social Account Links -->
+                            <div class="text-white-50">
+                                {% get_providers as socialaccount_providers %}
+                                {% if socialaccount_providers %}
+                                <p>{% blocktrans with site.name as site_name %}Choose to sign in with one
+                                    of your existing third party accounts.{% endblocktrans %}</p>
+                                {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+                                {% include "socialaccount/snippets/login_extra.html" %}
+                                {% else %}
+                                <p>{% blocktrans %}If you have not created an account yet, then please
+                                    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+                                </p>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
