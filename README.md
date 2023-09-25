@@ -30,7 +30,7 @@ Developer: Kim Bergström <br>
 
 ## Table of Content
 
-1. [Project Goals](#project-goals)
+1. [Project Goals](#project-goals📔)
     1. [User Goals](#user-goals)
     2. [Site Owner Goals](#site-owner-goals)
 2. [User Experience](#user-experience)
@@ -73,8 +73,11 @@ Developer: Kim Bergström <br>
 10. [Deployment](#deployment)
 11. [Credits](#credits)
 12. [Acknowledgements](#acknowledgements)
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
-## Project Goals
+## Project Goals 
 
 Gamers Insight is a Django web application aimed at creating a vibrant platform for gamers to share their insights, opinions, and experiences about various games. The key objectives of the project include:
 
@@ -104,6 +107,9 @@ Gamers Insight is a Django web application aimed at creating a vibrant platform 
 Your project "Gamers Insight" aims to create a dynamic hub for gamers to connect, share, and explore the world of gaming through insightful articles, discussions, and reviews.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## User Experience
 
@@ -164,8 +170,10 @@ We have organized the user stories and epics into four distinct sprints (milesto
 
 ![Sprints](/docs/Milstones.png) 
 
-
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Database
 When creating the database structure schema for this project, I utilized the [dbdiagram.io](https://dbdiagram.io/) website. This online tool allowed me to visually design and document the database schema, making it easier to plan and implement the database for the blog application.
@@ -204,9 +212,10 @@ When creating the database structure schema for this project, I utilized the [db
 
 <br>
 This database schema defines the structure and relationships for a blog application, including users, posts, comments, user profiles, game categories, and follower relationships.
-
-
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Design
 In the realm of the Gamers Insight Blog, our design philosophy is centered around crafting a sleek and contemporary user interface that spotlights gaming insights. Our inspiration springs from the immersive realms of video games, aiming to deliver a visually captivating experience to users. Our primary goal is to facilitate easy navigation, discovery, and engagement within a vast collection of gaming articles.
@@ -232,7 +241,6 @@ The secondary color, also #13112E, is an intentional choice to maintain visual h
 While it might seem unconventional, our selection of #13112E as the accent color carries a unique significance. We've deliberately chosen to keep a consistent blue theme throughout our UI, aligning with the essence of the gaming world. The accent color's role is to draw attention to interactive elements, such as buttons and links, creating a sense of cohesion and enhancing usability within our gaming community.
 
 In short, our choice of colors isn't just about how things look; it's about creating a cool and welcoming place for gamers. We used a dark background as the main color (60%) to make the gaming experience more exciting. The blue colors we picked show that we get what gamers like, and we're focused on making a design that gamers will really like.
-
 
 
 ### Fonts
@@ -302,9 +310,11 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 <details><summary>Log Out</summary>
 <img src="docs/wireframes/Log-out.png">
 </details>
-<br>
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Technologies Used
 
@@ -328,22 +338,40 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 ### Supporting Libraries and Packages
 - asgiref==3.7.2
 - cloudinary==1.34.0
+- coverage==7.3.1
+- Deprecated==1.2.14
 - dj-database-url==0.5.0
 - dj3-cloudinary-storage==0.0.6
 - Django==3.2.21
 - django-allauth==0.56.1
+- django-braces==1.15.0
 - django-crispy-forms==1.14.0
+- django-oauth-toolkit==2.3.0
 - django-summernote==0.8.20.0
+- djangorestframework==3.14.0
 - gunicorn==21.2.0
+- iniconfig==2.0.0
+- jwcrypto==1.5.0
 - oauthlib==3.2.2
 - Pillow==10.0.1
+- pluggy==1.3.0
 - psycopg2==2.9.7
 - PyJWT==2.8.0
+- pytest==7.4.2
+- pytest-cov==4.1.0
+- pytest-django==4.5.2
 - python3-openid==3.2.0
 - pytz==2023.3.post1
 - requests-oauthlib==1.3.1
+- social-auth-app-django==5.3.0
+- social-auth-core==4.4.2
 - sqlparse==0.4.4
 - urllib3==1.26.16
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Methodology
 
@@ -375,11 +403,10 @@ Emphasizing that the project timeline is expedited, the iterative approach maint
 - **Task:** 2/19
 
 For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/KimBergstroem/projects/9).
-
-
-
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
- 
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Features
 ### Landing Page:
@@ -406,17 +433,27 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 
 ### Future Features
+Here will be more future features that going to be implemented.
+1. Password Reset
+2. Email confirmation?
+3. Do social media accounts registration. Facebook, twitch, instagram, youtube. Implement 
 
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Testing
-
+&nbsp;
+All testing was carried out in [Testing.md](TESTING.md). 
 
 ## Bugs
 
 ### Known bugs
 | **Bug** | **Fix** |
 | ----------- | ----------- |
-|||
+|[If server is restarting, and a user have been logged in as before, we still see the landing page in the beginning.]()|Still a bug|
+|[Cant send emails by forgott password, as gitpod working environment have decided to block the ports https://github.com/gitpod-io/gitpod/issues/965.In heroku deployment, the steps are working but the email is not received anyway. I think is becouse i have problem error to find and install all the oauth templates and copy them into the template folder so i can use them.]()|Still a bug|
 
 
 ### Fixed bugs 
@@ -427,7 +464,12 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 |[Cant style my crispy form as i want to. Couldnt add bootstrap classes]()|added every input seperately inside a div and used "as_crispy_field". For example put margin space on every input box and form-row.|
 |[Server Error (500), when trying to access LOGIN or SIGNUP page, in my deployed version at heroku.]()| Add development variable to settings.py|
 |[MY STYLE SHEET IS NOT LOADING OR CANT BE FOUND IN HEROKU,"its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled." ]()| To set the DEBUG to False if development not found. With an if statement|
+|[If you click submit on create post, twice fast you have URL 404 error response, that the post is already created. ]()| Created error handling pages, as 403, 404, 405, 500|
 
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Deployment
 
@@ -576,8 +618,10 @@ To clone the repository, follow these steps:
 5. Change the current working directory to the location where you want the cloned directory to be created.
 6. Type the command `git clone` followed by the URL you copied in step 3. The command should look like this: `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`.
 7. Press Enter to create your local clone.
-
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Credits
 I would like to express my gratitude to the following resources, which have been a huge help for me in the development of the Gamer Insight - Blog.
@@ -585,6 +629,7 @@ I would like to express my gratitude to the following resources, which have been
 ### Media
 Images are taken from the following pages:
 - [Leonardo.ai](https://leonardo.ai/) **Used as landing page hero image**
+
 
 ### Django Documentation:
 The official Django documentation has been an invaluable resource throughout the project, providing comprehensive guidance on models, forms, templates, and various aspects of Django development.
@@ -602,7 +647,6 @@ The official Django documentation has been an invaluable resource throughout the
 - [Date string form](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date)
 
 
-
 ### W3 Schools:
 - [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
 
@@ -618,8 +662,19 @@ I would like to extend my appreciation to the authors of the tutorials and YouTu
 - [User Profile Update Display View with Image](https://www.youtube.com/watch?v=7DU-uhhYI6Y&list=PLSPMgrv4IuJ5wS0xSQzKUB038MYIx9ufI&index=12)
 - [Style The Post detials view](https://www.bootdey.com/snippets/tagged/blog)
 
-### Other open-source projects and packages:
+### Content
 
+- Paragraphs / text for the webpage/readme was written together with [ChatGPT](https://chat.openai.com/)
+
+- Tips and inspiration on how to create a better readme.md file [kera-cudmore powerpoint](https://docs.google.com/presentation/d/19_7r_To5bu7UjnZD87hrzWQi63Ij0YpaRH1XFnPZZe8/edit#slide=id.g35f391192_00)
+
+- English spellchecker as Google chrome extension [Grammarly](https://www.grammarly.com/)
+
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
 
 ## Acknowledgements
 I'd like to give recognition to the individuals who supported me in completing this project:
@@ -630,3 +685,6 @@ I'd like to give recognition to the individuals who supported me in completing t
 * [Alan Bushell](https://github.com/Alan-Bushell), our cohort facilitator, for his dedication and weekly meetings where he has provided guidance, support, and encouragement to our cohort.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/divider3.png" />
+</p>
