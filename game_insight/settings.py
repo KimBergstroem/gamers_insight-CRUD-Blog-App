@@ -18,9 +18,9 @@ development = os.environ.get('DEVELOPMENT', False)
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-DEBUG = False
+DEBUG = development
 
-ALLOWED_HOSTS = ['game-insight-1cff11f2b2d5.herokuapp.com', 'localhost', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io', '127.0.0.1']
+ALLOWED_HOSTS = ['game-insight-1cff11f2b2d5.herokuapp.com','game-insight-1cff11f2b2d5.herokuapp.com/users/', 'localhost', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io', '127.0.0.1']
 
 SITE_ID = 1
 
@@ -32,12 +32,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    'django.contrib.staticfiles',
+    # third party apps
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
     'crispy_forms',
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = '/'
 
+# Email Settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -103,16 +104,6 @@ TEMPLATES = [
     },
 ]
 
-SOCIALACCOUNT_PROVIDERS = {
-    'github': {
-        'APP': {
-            'client_id': '87d1f02079f34bb9d70d',
-            'secret': 'fcb610e3cec01789835942c4c6c9bb25ec832de2',
-            'key': ''
-        }
-    }
-}
-
 WSGI_APPLICATION = 'game_insight.wsgi.application'
 
 
@@ -123,15 +114,12 @@ if development:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
 else:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 
-""" DATABASES = {
-    'default':
-    dj_database_url.parse(os.environ.get("DATABASE_URL"))
-} """
 
 # Password validation
 

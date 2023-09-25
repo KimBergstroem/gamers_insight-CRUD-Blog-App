@@ -13,6 +13,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib import messages
 from django.utils.text import slugify
+from django.core.mail import send_mail
+from django.conf import settings
 from cloudinary.models import CloudinaryField
 from .models import Post, UserProfile, Comment
 from .forms import (
@@ -53,6 +55,30 @@ def contactus(request):
     """
     return render(request, 'contactus.html')
 
+@login_required
+def contact(request):
+    """
+    Render the contactus.html template
+    """
+    if request.method == "POST":
+        message_name = request.POST['message-name']
+        message_email = request.POST['message-email']
+        message_subject = request.POST['message-subject']
+        message_message = request.POST['message-message']
+
+        # send an email
+        send_mail(
+            message_subject, # subject
+            message_message, # message
+            message_email, #from email
+            EMAIL_USER, #to email
+            fail_silently=True 
+        )
+
+        success_message = "Ticket have been submitted successfully"
+        return render(request, 'contactus.html', {'message_name': message_name})
+    else:
+        return render(request, 'contactus.html')
 
 # ==============================
 # Profile
@@ -354,7 +380,6 @@ def CategoryView(request, category_id):
     """
     category_posts = Post.objects.filter(category=category_id)
     return render(request, 'categories.html', {'category_id': category_id, 'category_posts': category_posts})
-
 
 # ==============================
 # Error handling
