@@ -230,6 +230,14 @@ body {
   overflow: hidden;
 }
 
+.avatar2 {
+  width: 165px;
+  height: 165px;
+  border-radius: 50%;
+  border: 10px solid #12112c;
+  overflow: hidden;
+}
+
 .blog-single {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -368,6 +376,10 @@ img {
 
 .contact-form .send {
     margin-top: 20px;
+}
+
+#comment-form ::placeholder {
+  color: #fff; /* Change this color to your desired placeholder color */
 }
 
 @media (max-width: 767px) {
