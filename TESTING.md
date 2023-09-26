@@ -1,6 +1,6 @@
 # Gamers Insight Testing 
 
-![Gamers Insight viewed in different screens]()
+![Gamers Insight viewed in different screens](/docs/test.md/test.md-hero-image.png)
 
 [View Live site here](https://kimbergstroem.github.io/PP4/)
 
