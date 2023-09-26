@@ -4,13 +4,15 @@ Gamers Insight is a dynamic web application tailored for gaming enthusiasts, pro
 
 <center> 
 
-![Mockup image](/docs/readme-header.png) 
+![Mockup image](/docs/readme.md/readme-header.png) 
 
 </center>
 
-![]()
-Developer: Kim Bergström <br>
-[Live webpage]()
+
+Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
+[Live webpage](https://game-insight-1cff11f2b2d5.herokuapp.com/)<br>
+[Project Repository](https://github.com/KimBergstroem/PP4)<br>
+
 
 ![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=for-the-badge)
 ![Gitpod Badge](https://img.shields.io/badge/Gitpod-FFAE33?logo=gitpod&logoColor=fff&style=for-the-badge)
@@ -30,7 +32,7 @@ Developer: Kim Bergström <br>
 
 ## Table of Content
 
-1. [Project Goals](#project-goals📔)
+1. [Project Goals](#project-goals)
     1. [User Goals](#user-goals)
     2. [Site Owner Goals](#site-owner-goals)
 2. [User Experience](#user-experience)
@@ -74,10 +76,10 @@ Developer: Kim Bergström <br>
 11. [Credits](#credits)
 12. [Acknowledgements](#acknowledgements)
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Project Goals 
+# Project Goals 
 
 Gamers Insight is a Django web application aimed at creating a vibrant platform for gamers to share their insights, opinions, and experiences about various games. The key objectives of the project include:
 
@@ -108,10 +110,10 @@ Your project "Gamers Insight" aims to create a dynamic hub for gamers to connect
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## User Experience
+# User Experience
 
 ### Target Audience
 Gamers Insight is designed for the following target audience:
@@ -168,19 +170,19 @@ Gamers Insight strives to create an immersive and interactive environment for us
 
 We have organized the user stories and epics into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP4/milestones), which will redirect you to the sprint information.
 
-![Sprints](/docs/Milstones.png) 
+![Sprints](/docs/readme.md/Milstones.png) 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Database
+# Database
 When creating the database structure schema for this project, I utilized the [dbdiagram.io](https://dbdiagram.io/) website. This online tool allowed me to visually design and document the database schema, making it easier to plan and implement the database for the blog application.
 
 <center> 
 
-![Mockup image](/docs/Database_schema.png) 
+![Database Schema image](/docs/readme.md/readme-database_schema.png) 
 
 </center>
 
@@ -214,10 +216,10 @@ When creating the database structure schema for this project, I utilized the [db
 This database schema defines the structure and relationships for a blog application, including users, posts, comments, user profiles, game categories, and follower relationships.
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Design
+# Design
 In the realm of the Gamers Insight Blog, our design philosophy is centered around crafting a sleek and contemporary user interface that spotlights gaming insights. Our inspiration springs from the immersive realms of video games, aiming to deliver a visually captivating experience to users. Our primary goal is to facilitate easy navigation, discovery, and engagement within a vast collection of gaming articles.
 
 We aspire to create an environment where users can delve into the intricate world of gaming, collecting insider information before embarking on their gaming adventures. Whether it's sharing tips, uncovering cheat codes, or simply being a part of our dynamic blog community, Gamers Insight welcomes everyone to join the gaming conversation. It's your portal to the gaming universe, where insights and camaraderie await!
@@ -227,7 +229,7 @@ Our design choices were carefully crafted with gamers in mind. We've created an 
 
 ### Colour
 Our decision to adopt the 60-30-10 rule in our UI design is driven by its ability to create a cohesive and engaging user experience. This approach guarantees consistency by allocating 60% of our color palette to the dominant color, fostering brand recognition and trust. The 30% dedicated to the secondary color enables us to strike a visual balance, allowing for variations in content, headers, and backgrounds without overwhelming users. The remaining 10% allocated to the accent color serves to highlight interactive elements and calls to action, though we recommend choosing a contrasting shade for improved visibility and user engagement. This strategy ensures that our web application not only looks appealing but also functions effectively, guiding users to key elements while maintaining a harmonious and dependable design.
-![Mockup image](/docs/color-palette.png)
+![Color Palette image](/docs/readme.md/readme-color-palette.png)
 **Dominant (60%):** 
 
 Our choice of a deep blue shade, represented by #13112E as the dominant color, reflects our commitment to creating a unique and immersive gaming experience. This rich hue serves as the foundation for our web application's design, providing a dark and mysterious backdrop that resonates with the gaming community. It symbolizes trust and stability, inviting users to explore a world where they can delve into gaming insights.
@@ -281,42 +283,42 @@ The structured design of the Gamers Insight Blog guarantees a seamless and enjoy
 The wireframes serve as a visual blueprint for our web application, outlining the structure and functionality of each page. They provide a detailed representation of the user interface and overall user experience. These wireframes were meticulously crafted using Figma, a design tool renowned for its ability to facilitate rapid and intuitive prototyping. Click on each page for view the wireframe.
 
 <details><summary>Landing page</summary>
-<img src="docs/wireframes/landing-page.png">
+<img src="docs/wireframes/wireframe-landing-page.png">
 </details>
 <details><summary>About us</summary>
-<img src="docs/wireframes/About-us.png">
+<img src="docs/wireframes/wireframe-About-us.png">
 </details>
 <details><summary>Sign Up</summary>
-<img src="docs/wireframes/Sign-up.png">
+<img src="docs/wireframes/wireframe-Sign-up.png">
 </details>
 <details><summary>Log In</summary>
-<img src="docs/wireframes/Log-in.png">
+<img src="docs/wireframes/wireframe-Log-in.png">
 </details>
 <details><summary>Home page (Blog articles)</summary>
-<img src="docs/wireframes/Home-page.png">
+<img src="docs/wireframes/wireframe-Home-page.png">
 </details>
 <details><summary>Contact us</summary>
-<img src="docs/wireframes/Contact-us.png">
+<img src="docs/wireframes/wireframe-Contact-us.png">
 </details>
 <details><summary>My Insights (Profile)</summary>
-<img src="docs/wireframes/My-insights.png">
+<img src="docs/wireframes/wireframe-My-insights.png">
 </details>
 <details><summary>Create Post</summary>
-<img src="docs/wireframes/Create-post.png">
+<img src="docs/wireframes/wireframe-Create-post.png">
 </details>
 <details><summary>Blog Post View</summary>
-<img src="docs/wireframes/Blog-post-view.png">
+<img src="docs/wireframes/wireframe-Blog-post-view.png">
 </details>
 <details><summary>Log Out</summary>
-<img src="docs/wireframes/Log-out.png">
+<img src="docs/wireframes/wireframe-Log-out.png">
 </details>
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Technologies Used
+# Technologies Used
 
 ### Languages
 - HTML
@@ -333,6 +335,16 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 - ElephantSQL: ElephantSQL is a PostgreSQL database as a service. It is used as the database for the Blog Collective project, providing a reliable and scalable storage solution for the application's data.
 
 ### Tools
+- **Git**: A distributed version control system used for tracking changes in the project's source code.
+- **GitHub**: A web-based hosting service for version control repositories, used for storing and managing the project's source code.
+- **Gitpod**: An online integrated development environment (IDE) used for developing and testing the Gamers Insight project.
+- **Heroku**: A cloud platform that enables deployment and hosting of web applications. Heroku was used for deploying the Gamers Insight project to a live server.
+- **Adobe Photoshop**: A professional image editing software used for advanced image manipulation.
+- **Figma**: An online collaborative design tool that offers a wide range of design and prototyping capabilities. Figma was used for creating mockups, prototypes, and design assets for the Gamers Insight website.
+- **DBdiagram**: An online database design and diagramming tool that simplifies the process of creating and visualizing database schemas. dbdiagram.io was used for designing and documenting the database schema of the Gamers Insight project.
+- **Google Fonts**: A collection of free and open-source fonts used for typography on the Gamers Insight's website.
+- **Font Awesome**: A library of icons used for adding scalable vector icons to the Gamers Insight's website.
+
 
 
 ### Supporting Libraries and Packages
@@ -370,10 +382,10 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Methodology
+# Methodology
 
 The Gamers Insight project follows a methodology inspired by agile principles, fostering collaboration, flexibility, and gradual development. The outlined approach has guided the project's evolution:
 
@@ -405,49 +417,99 @@ Emphasizing that the project timeline is expedited, the iterative approach maint
 For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/KimBergstroem/projects/9).
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Features
+# Features
 ### Landing Page:
+- On the landing page, a prominent blue call-to-action button invites users to register and join our exclusive VIP blogging community. Additionally, a captivating hero image featuring a magic book is strategically positioned to immediately capture the user's attention and evoke the essence of the blogging experience.<details><summary>See Screenshot **Landingpage**</summary><img src="docs/features/features-landingpage.png"></details>
 
-### Review Pages:
-
+- Visitors can easily navigate to different sections available for unauthorized users of the website through the navigation bar. Visitors can also access our social media through the footer section.<details><summary>See Screenshot **Navbar**</summary><img src="docs/features/features-navbar-unauth.png"></details><details><summary>See Screenshot **Footer**</summary><img src="docs/features/features-footer.png"></details>
 
 ### Blog Pages:
+- When the user has logged in they will be directed to the Blog main page where they can scroll blog article cards. <details><summary>See Screenshot **Main**</summary><img src="docs/features/features-blog-page.png"></details>
 
+### Blog Detail Page:
+- The blog details page displays comprehensive information about each article, including details about the writer and the article's creation date.<details><summary>See Screenshot **Post detail**</summary><img src="docs/features/features-blog-detail-page.png"></details>
+
+- Authors of posts have the privilege to edit or delete their content, ensuring they have control over their contributions.<details><summary>See Screenshot **Editing**</summary><img src="docs/features/features-blog-post-edit.png"></details><details><summary>See Screenshot **Delete**</summary><img src="docs/features/features-blog-post-delete.png"></details>
+
+- Users can express their appreciation for a well-written blog post by liking it, which not only supports the author but also recognizes the quality of the content.<details><summary>See Screenshot **Like**</summary><img src="docs/features/features-blog-editing.png"></details>
+
+- Users can actively participate in the community by leaving comments on recipes. This provides a platform for sharing thoughts, suggestions, and feedback, fostering a vibrant and engaging community. User also have option to delete comment.<details><summary>See Screenshot **Comment**</summary><img src="docs/features/features-comment.png"></details>
 
 ### User Account Management:
+- The account sign-up form allows new users to create an account and join the Gamers Insight community. The form has validation to make sure that the user enters the correct information needed. This is a django built in validation system. Such validation is:
+    - **Username**: Required and has a maximum of 150 characters or fewer. Only letters, digits, and @/./+/-/_ are allowed.
+    - **Email**: Required and must be in a valid email format.
+    - **Password**: Subject to the following constraints:
+        - Cannot be too similar to your other personal information.
+        - Must contain at least 8 characters.
+        - Cannot be a commonly used password.
+        - Cannot be entirely numeric.
+    - **Password Confirmation**<details><summary>See Screenshot **Form Validation**</summary><img src="docs/features/features-blog-form-valid.png"></details>
 
+- When an account is successfully created, the user will receive a confirmation message and gain access to the profile menu.<details><summary>See Screenshot **Success**</summary><img src="docs/features/features-loggedin-user.png"></details>
 
-### Management:
+- Users can create posts.<details><summary>See Screenshot **Create Post**</summary><img src="docs/features/features-create-post.png"></details>
+
+- Users can access their profile page, where they can edit, delete, or change their password.<details><summary>See Screenshot **My Profile**</summary><img src="docs/features/features-profile.png"></details><details><summary>See Screenshot **Update Profile**</summary><img src="docs/features/features-update-profile.png"></details><details><summary>See Screenshot **Change Password**</summary><img src="docs/features/features-change-password.png"></details><details><summary>See Screenshot **Delete Account**</summary><img src="docs/features/features-delete-account.png"></details>
+
+- Users can view all their articles on a single page.<details><summary>See Screenshot **My Articles**</summary><img src="docs/features/features-my-articles.png"></details>
+
+- Users can also use the "Logout" option to sign out of their account. Upon doing so, they will be directed to a confirmation page where they can confirm the logout.<details><summary>See Screenshot **Logout**</summary><img src="docs/features/features-logout.png"></details>
 
 
 ### Navigation:
+- The navigation bar provides convenient access to various sections and pages of Gamers Insight, dynamically adjusting its options based on the user's authorization status. Authorized users also have the ability to submit queries to Gamers Insight using the Contact Us form.<details><summary>See Screenshot **Contact Us**</summary><img src="docs/features/features-contactus.png"></details>
 
+- Both unauthorized and authorized users have access to the About Us page. However, depending on whether you are logged in or not, the call-to-action button displayed varies between "Log In" and "Create Post."<details><summary>See Screenshot **About Us Authorized**</summary><img src="docs/features/features-about-unauth.png"></details><details><summary>See Screenshot **About Us Unauthorized**</summary><img src="docs/features/features-about-auth.png"></details>
 
-#### Unauthorized users
-
-
-#### Unauthorized users
+- On smaller screens, the navigation bar collapses into a burger menu, allowing for a compact and mobile-friendly navigation experience. Users can access the menu by clicking on the burger icon, which reveals the navigation options in a dropdown fashion.
 
 
 ### Future Features
-Here will be more future features that going to be implemented.
-1. Password Reset
-2. Email confirmation?
-3. Do social media accounts registration. Facebook, twitch, instagram, youtube. Implement 
+Here are some exciting features that I would like to add to the Gamers Insight in the future:
+
+- **Favorite List and Save for Later:**  
+  Enable users to mark blog articles as favorites for later reading.
+
+- **User Profiles for Enhanced Interaction:**  
+  Create user profiles that are accessible to everyone, enabling users to engage with one another, like, comment, and share their interests, fostering a sense of community and connection.
+
+- **Seamless Social Media Sharing:**  
+  Enable users to effortlessly share their favorite blog articles on various social media platforms, expanding the reach and visibility of Gamers Insight.
+
+- **Multilingual Support:**  
+  Implement multi-language support to make the Gamers Insight accessible to users from diverse regions and cultural backgrounds, facilitating a more inclusive user experience.
+
+- **Email Confirmation for Account Creation:**  
+  Introduce email confirmation during the account creation process to enhance security and verify user identities effectively.
+
+- **Password Reset Functionality:**  
+  Implement a password reset function to provide users with a seamless and secure way to recover their account access.
+
+<br>
+These future enhancements aim to enrich the Gamers Insight's user experience, foster community engagement, and expand its reach to a global audience.
+
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Testing
-&nbsp;
+# Testing
+
+The Gamers Insight website underwent a comprehensive testing process to guarantee its functionality, accessibility, and performance. This rigorous evaluation encompassed tasks such as code validation, accessibility assessment, performance testing, cross-device testing, verification of browser compatibility, assessment of user stories, and the integration of user feedback to enhance the overall user experience.
+
 All testing was carried out in [Testing.md](TESTING.md). 
 
-## Bugs
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/readme.md/readme-divider3.png" />
+</p>
+
+# Bugs
 
 ### Known bugs
 | **Bug** | **Fix** |
@@ -468,10 +530,10 @@ All testing was carried out in [Testing.md](TESTING.md).
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Deployment
+# Deployment
 
 ### App Deployment
 For deploying your app, Heroku is used. Follow these steps:
@@ -620,14 +682,14 @@ To clone the repository, follow these steps:
 7. Press Enter to create your local clone.
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Credits
+# Credits
 I would like to express my gratitude to the following resources, which have been a huge help for me in the development of the Gamer Insight - Blog.
 
 ### Media
-Images are taken from the following pages:
+Images are taken from the following page:
 - [Leonardo.ai](https://leonardo.ai/) **Used as landing page hero image**
 
 
@@ -673,10 +735,10 @@ I would like to extend my appreciation to the authors of the tutorials and YouTu
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Acknowledgements
+# Acknowledgements
 I'd like to give recognition to the individuals who supported me in completing this project:
 
 * My family, for their patience and assistance in identifying spelling mistakes and testing issues. Their support has been invaluable in improving the quality of this project.
@@ -684,7 +746,12 @@ I'd like to give recognition to the individuals who supported me in completing t
 * [Brian](https://github.com/Brain), my Code Institute Mentor, for his exceptional guidance and expertise, which greatly contributed to my growth as a developer.
 * [Alan Bushell](https://github.com/Alan-Bushell), our cohort facilitator, for his dedication and weekly meetings where he has provided guidance, support, and encouragement to our cohort.
 
+[Code Institute Slack Channel:](#) I received feedback from numerous users in a channel with over 3,000 members where I shared my Gamers Insight project's readme. I am genuinely appreciative of the valuable feedback I received from the community.
+
+I am truly grateful for their contributions, which have greatly enriched my learning and development.
+
+
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/divider3.png" />
+  <img src="docs/readme.md/readme-divider3.png" />
 </p>
