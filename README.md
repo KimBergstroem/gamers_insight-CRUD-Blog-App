@@ -170,7 +170,7 @@ Gamers Insight strives to create an immersive and interactive environment for us
 
 We have organized the user stories and epics into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP4/milestones), which will redirect you to the sprint information.
 
-![Sprints](/docs/readme.md/Milstones.png) 
+![Sprints](/docs/readme.md/readme-Milstones.png) 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
