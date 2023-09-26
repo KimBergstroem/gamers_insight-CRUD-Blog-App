@@ -188,29 +188,25 @@ When creating the database structure schema for this project, I utilized the [db
 
 ### Blog Application Database Schema
 
-#### Follower Table
-- Represents relationships between users who follow other users.
-- Fields: following_user_id (following user's ID), followed_user_id (followed user's ID).
-
 #### GameCategory Table
 - Stores game categories used for categorizing posts.
-- Fields: gamecategory_id (primary key), name (category name), color (category color).
+- Fields: gamecategory_id (primary key), name (category name), device (category device).
 
-#### Profile Table
+#### UserProfile Table
 - Extends the User model to store additional user-specific information.
-- Fields: profile_id (primary key), user (one-to-one relationship with the User model), first_name, last_name, profile_pic (user profile picture), bio (user bio), country (user's country).
+- Fields: userprofile_id (primary key), user (one-to-one relationship with the User model), first_name, last_name, profile_picture (user profile picture), bio (user bio), country (user's country).
 
 #### User Table
-- Represents user information.
-- Fields: user_id (primary key), name (user's name), email (user's email address).
+- Represents user information. ( Django built In )
+- Fields: user_id (primary key), username (user's name), email (user's email address), password (user's password).
 
 #### Post Table
 - Represents blog posts created by users.
-- Fields: post_id (primary key), title (post title), slug (post slug), author (foreign key to User), update_on (post update date), content (post content), featured_image (featured image URL), excerpt (post excerpt), Created_on (post creation date), status (post status), likes (many-to-many relationship with User for post likes), game_category (many-to-many relationship with GameCategory for post categorization).
+- Fields: post_id (primary key), title (post title), slug (post slug), author_id (foreign key to User), update_on (post update date), content (post content), featured_image (featured image URL), excerpt (post excerpt), Created_on (post creation date), status (post status), likes (many-to-many relationship with User for post likes), category_id (many-to-many relationship with GameCategory for post categorization).
 
 #### Comment Table
 - Represents comments on blog posts.
-- Fields: comment_id (primary key), post (foreign key to Post), name (commenter's name), email (commenter's email address), body (comment content), created_on (comment creation date), approved (comment approval status).
+- Fields: comment_id (primary key), post_id (foreign key to Post), name (commenter's name), email (commenter's email address), body (comment content), created_on (comment creation date), approved (comment approval status), user_id (foreign key to user model).
 
 <br>
 This database schema defines the structure and relationships for a blog application, including users, posts, comments, user profiles, game categories, and follower relationships.
