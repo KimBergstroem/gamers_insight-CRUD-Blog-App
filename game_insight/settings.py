@@ -18,7 +18,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # SECURITY WARNING: don't run with debug turned on in production!
 # development = os.environ.get('DEVELOPMENT', False)
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["game-insight-1cff11f2b2d5.herokuapp.com", "localhost", "8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu105.gitpod.io"]
 
@@ -64,6 +64,16 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
+
+SUMMERNOTE_CONFIG = {
+    # You can put custom Summernote settings
+    'summernote': {
+        # Change editor size
+        'width': '100%',
+    },
+}
+
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',

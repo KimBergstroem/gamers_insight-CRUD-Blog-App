@@ -379,7 +379,7 @@ img {
 }
 
 #comment-form ::placeholder {
-  color: #fff; /* Change this color to your desired placeholder color */
+  color: #fff; 
 }
 
 @media (max-width: 767px) {

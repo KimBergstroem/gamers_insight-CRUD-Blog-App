@@ -28,7 +28,7 @@
                                 {{ form.excerpt|as_crispy_field }}
                             </div>
                             <div class="mb-3">
-                                {{ form.content|as_crispy_field }}
+                                {{ form.content|as_crispy_field|safe }}
                             </div>
                             {{ message }}
                             <button class="btn btn-primary btn-block mb-4">Submit</button>
