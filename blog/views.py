@@ -43,9 +43,13 @@ def about(request):
 @login_required
 def my_articles(request):
     """
-    Render the about.html template
+    Render the my_articles.html template with user's posts and liked posts
     """
-    return render(request, 'my_articles.html')
+    user = request.user
+    user_posts = Post.objects.filter(author=user)
+    liked_posts = Post.objects.filter(likes=user)
+
+    return render(request, 'my_articles.html', {'user_posts': user_posts, 'liked_posts': liked_posts})
 
 
 @login_required
@@ -79,6 +83,7 @@ def contact(request):
         return render(request, 'contactus.html', {'message_name': message_name})
     else:
         return render(request, 'contactus.html')
+
 
 # ==============================
 # Profile
