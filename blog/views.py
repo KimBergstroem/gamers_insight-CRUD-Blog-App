@@ -304,7 +304,7 @@ class PostUpdateView(LoginRequiredMixin, SuccessMessageMixin,
     """
     model = Post
     template_name = 'post_update.html'
-    fields = ['title', 'featured_image', 'excerpt', 'content']
+    form_class = PostForm
     success_message = "Post updated successfully"
 
     def test_func(self):
