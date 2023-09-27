@@ -10,25 +10,29 @@
 
             <!-- Title with link to detail page-->
             <h5 class="card-title post-link"><a href="{% url 'post_detail' post.slug %}" class="card-link">
-                    {% if post.category == 'fps' %}
-                    <i class="fa fa-windows text-white"></i>
-                    {% elif post.category == 'rpg' %}
-                    <i class="fas fa-tablet-alt text-white bg-clr-dom-light"></i>
-                    {% elif post.category == 'mmo' %}
-                    <i class="fab fa-playstation text-white"></i>
-                    {% else %}
-                    {% endif %}
                     {{ post.title }} </a></h5>
 
             <!-- Author and date information -->
-            <small class="author">
-                by <a href="#">{{ post.author }}</a><br>
-                <p class="text-secondary"> {{ post.created_on|date:"F j Y" }}</p>
-            </small><br>
+            <small class="author mb-4 d-block">
+                <span class="text-secondary">{{ post.created_on|date:"F j Y" }}</span><br>
+                <span class="text-white">by</span><a href="#"> {{ post.author }}</a>
+            </small>
 
             <!-- Likes and Comments -->
-            <small><i class="fa fa-thumbs-up fa-lg"></i> <strong>{{ post.number_of_likes }} |
-                Comments: {{ post.comments.count }}</strong></small>
+            
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col">
+                        <!-- Left object -->
+                        <div class="text-left"><i class="fa fa-thumbs-up fa-lg comment-custom-mr2"></i> {{ post.number_of_likes }}</div>
+                    </div>
+                    |
+                    <div class="col">
+                        <!-- Right object -->
+                        <div class="text-right"><span class="comment-custom-mr">{{ post.comments.count }}</span>  <i class="fas fa-comment-dots fa-lg"></i></div>
+                    </div>
+                </div>
+            </div>
             <hr>
 
             <!-- Excerpt -->

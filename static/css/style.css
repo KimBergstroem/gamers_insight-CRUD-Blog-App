@@ -64,7 +64,6 @@ body {
 .author {
     color: white;
     margin: 2px;
-    text-transform: uppercase;
 }
 
 .post-title {
@@ -380,6 +379,13 @@ img {
 
 #comment-form ::placeholder {
   color: #fff; 
+}
+
+.comment-custom-mr {
+  margin-right: 10px; /* Adjust as needed */
+}
+.comment-custom-mr2 {
+  margin-right: 5px; /* Adjust as needed */
 }
 
 @media (max-width: 767px) {
