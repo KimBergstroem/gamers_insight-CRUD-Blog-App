@@ -79,7 +79,7 @@
                     </div>
                     {% else %}
                     {% if user.is_authenticated %}
-                    <form method="post">
+                    <form method="post" id="comment-form">
                         {% csrf_token %}<!-- Security token from django against attackers -->
                         <div class="d-flex justify-content-between">
                             <h4 class="float-left">New Comment</h4>
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-9 col-lg-10">
                                     <textarea name="{{ comment_form.body.name }}" placeholder="Your message"
-                                        id="{{ comment_form.body.id_for_label }}" class="form-control" rows="4"
+                                        id="{{ comment_form.body.id_for_label }}" class="form-control text-white" rows="4"
                                         required></textarea>
                                     <!-- If there are validation errors, this tag will render the error messages next to the form field -->
                                     {{ comment_form.body.errors }}
