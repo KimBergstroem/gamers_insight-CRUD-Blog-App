@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.views.generic import (
     TemplateView, ListView, DetailView, FormView,
@@ -261,6 +261,9 @@ class PostDetail(LoginRequiredMixin, View):
             comment.user = request.user
             comment.post = post
             comment.save()
+            messages.success(request, 'Your comment have been added!')
+            # Redirect to the post detail page to avoid form resubmission
+            return redirect('post_detail', slug=slug)
         else:
             # If the form is not valid, create a new empty CommentForm
             comment_form = CommentForm()
