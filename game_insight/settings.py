@@ -13,14 +13,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-development = os.environ.get('DEVELOPMENT', False)
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-DEBUG = development
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 
-ALLOWED_HOSTS = ['game-insight-1cff11f2b2d5.herokuapp.com','game-insight-1cff11f2b2d5.herokuapp.com/users/', 'localhost', '8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu104.gitpod.io', '127.0.0.1']
+ALLOWED_HOSTS = ["game-insight-1cff11f2b2d5.herokuapp.com", "localhost", "*", "127.0.0.1"]
 
 SITE_ID = 1
 
@@ -107,7 +106,26 @@ TEMPLATES = [
 WSGI_APPLICATION = 'game_insight.wsgi.application'
 
 
-if development:
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(
+            os.environ.get('DATABASE_URL')
+        )
+    }
+
+
+""" if development:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -118,7 +136,7 @@ if development:
 else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+    } """
 
 
 # Password validation
