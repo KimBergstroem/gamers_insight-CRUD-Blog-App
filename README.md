@@ -436,6 +436,7 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 ### User Account Management:
 - The account sign-up form allows new users to create an account and join the Gamers Insight community. The form has validation to make sure that the user enters the correct information needed. This is a django built in validation system. Such validation is:
+
     - **Username**: Required and has a maximum of 150 characters or fewer. Only letters, digits, and @/./+/-/_ are allowed.
     - **Email**: Required and must be in a valid email format.
     - **Password**: Subject to the following constraints:
@@ -443,7 +444,11 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
         - Must contain at least 8 characters.
         - Cannot be a commonly used password.
         - Cannot be entirely numeric.
-    - **Password Confirmation**<details><summary>See Screenshot **Form Validation**</summary><img src="docs/features/features-blog-form-valid.png"></details>
+    - See Screenshot<details><summary>**SIGNUP VALIDATION**</summary><img src="docs/features/features-blog-form-valid.png"></details>
+
+- The login form ensures secure access to Gamers Insight by verifying your username and password. If you face login issues, use the 'Forgot Password?' link to reset your password. The form also displays validation error messages to guide you through any input errors.
+    - See Screenshot<details><summary>**LOGIN VALIDATION**</summary><img src="docs/features/features-login-validation.png"></details>
+
 
 - When an account is successfully created, the user will receive a confirmation message and gain access to the profile menu.<details><summary>See Screenshot **Success**</summary><img src="docs/features/features-loggedin-user.png"></details>
 
@@ -451,7 +456,7 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 - Users can access their profile page, where they can edit, delete, or change their password.<details><summary>See Screenshot **My Profile**</summary><img src="docs/features/features-profile.png"></details><details><summary>See Screenshot **Update Profile**</summary><img src="docs/features/features-update-profile.png"></details><details><summary>See Screenshot **Change Password**</summary><img src="docs/features/features-change-password.png"></details><details><summary>See Screenshot **Delete Account**</summary><img src="docs/features/features-delete-account.png"></details>
 
-- Users can view all their articles on a single page.<details><summary>See Screenshot **My Articles**</summary><img src="docs/features/features-my-articles.png"></details>
+- Users can view all their articles on a single page. This page will also display all users Liked articles. If there is no post created or liked, that will be displayed.<details><summary>See Screenshot **My Articles**</summary><img src="docs/features/features-my-articles.png"></details><details><summary>See Screenshot **None Articles/Likes**</summary><img src="docs/features/features-my-articles-none.png"></details>
 
 - Users can also use the "Logout" option to sign out of their account. Upon doing so, they will be directed to a confirmation page where they can confirm the logout.<details><summary>See Screenshot **Logout**</summary><img src="docs/features/features-logout.png"></details>
 
