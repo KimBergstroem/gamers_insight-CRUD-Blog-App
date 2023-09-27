@@ -18,7 +18,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # SECURITY WARNING: don't run with debug turned on in production!
 # development = os.environ.get('DEVELOPMENT', False)
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["game-insight-1cff11f2b2d5.herokuapp.com", "localhost", "8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu105.gitpod.io"]
 
