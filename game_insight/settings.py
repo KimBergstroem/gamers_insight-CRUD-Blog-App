@@ -13,15 +13,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# development = os.environ.get('DEVELOPMENT', False)
+
 DEBUG = False
 
-ALLOWED_HOSTS = ["game-insight-1cff11f2b2d5.herokuapp.com", "localhost", "*", "127.0.0.1"]
-
-SITE_ID = 1
+ALLOWED_HOSTS = ["game-insight-1cff11f2b2d5.herokuapp.com", "localhost", "8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu105.gitpod.io"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -31,17 +30,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
-    # third party apps
+    'cloudinary',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cloudinary_storage',
-    'cloudinary',
     'django_summernote',
-    'crispy_forms',
     'blog',
 ]
+
+SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = '/'
@@ -156,18 +156,16 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
-
 # Default primary key field type
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
