@@ -24,28 +24,29 @@
 
                                     <!-- Display non-field errors excluding '__all__' -->
                                     {% for error in form.non_field_errors %}
-                                        {% if error != "__all__" %}
-                                            <div class="alert alert-danger" role="alert">
-                                                {{ error }}
-                                            </div>
-                                        {% endif %}
+                                    {% if error != "__all__" %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ error }}
+                                    </div>
+                                    {% endif %}
                                     {% endfor %}
 
                                     <div class="form-group">
                                         {{ form.login.label_tag }}
-                                        <input type="text" class="form-control mb-4" name="{{ form.login.name }}">
+                                        <input type="text" id="id_login" class="form-control mb-4"
+                                            name="{{ form.login.name }}">
                                     </div>
 
                                     <div class="form-group">
                                         {{ form.password.label_tag }}
-                                        <input type="password" class="form-control mb-4"
+                                        <input type="password" id="id_password" class="form-control mb-4"
                                             name="{{ form.password.name }}">
                                     </div>
 
                                     <!-- Include a hidden input field for redirecting users after login if a custom redirect URL is provided -->
                                     {% if redirect_field_value %}
-                                        <input type="hidden" name="{{ redirect_field_name }}"
-                                            value="{{ redirect_field_value }}">
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                        value="{{ redirect_field_value }}">
                                     {% endif %}
 
                                     <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-4"
@@ -68,5 +69,7 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </section>
 {% endblock %}

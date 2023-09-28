@@ -14,11 +14,13 @@
                         <div class="mb-md-2 mt-md-4 pb-5">
 
                             <h3 class="fw-bold mb-4 text-uppercase">{% trans "Please Wait..." %}</h3>
-                            <p class="text-white-50 mb-5">{% trans 'Are you sure you want to DELETE the' %} <strong>{{ post.title }}</strong> ?</p>
+                            <p class="text-white-50 mb-5">{% trans 'Are you sure you want to DELETE the' %} <strong>
+                                    {{post.title }}</strong> ?</p>
                             <form method="post">
                                 {% csrf_token %} <!-- Security token from django against attackers -->
                                 {{ message }}
-                                <button class="btn btn-danger right px-3 py-1 rounded-3" type="submit"> <i class="fas fa-trash-alt"></i> Delete</button>
+                                <button class="btn btn-danger right px-3 py-1 rounded-3" type="submit"> <i
+                                        class="fas fa-trash-alt"></i> Delete</button>
                             </form>
                             <a class="btn btn-primary px-3 py-1 rounded-3 mt-4" href="{% url 'index' %}">Back</a>
                         </div>
@@ -26,5 +28,6 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 {% endblock %}

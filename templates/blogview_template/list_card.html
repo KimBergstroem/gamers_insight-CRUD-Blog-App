@@ -2,14 +2,25 @@
     <div class="card h-100 bg-clr-dom-light">
         <!-- Image -->
         {% if "placeholder" in post.featured_image.url %}
-        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="defualt">
         {% else %}
-        <img class="card-img-top" src=" {{ post.featured_image.url }}">
+        <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="article image">
         {% endif %}
         <div class="card-body text-white">
 
             <!-- Title with link to detail page-->
             <h5 class="card-title post-link"><a href="{% url 'post_detail' post.slug %}" class="card-link">
+                    {% if post.device == 'Nintendo' %}
+                    <i class="fas fa-gamepad" style="color: #ffffff;"></i>
+                    {% elif post.device == 'Xbox' %}
+                    <i class="fab fa-xbox" style="color: #ffffff;"></i>
+                    {% elif post.device == 'PlayStation' %}
+                    <i class="fab fa-playstation" style="color: #ffffff;"></i>
+                    {% elif post.device == 'PC' %}
+                    <i class="fas fa-desktop" style="color: #ffffff;"></i>
+                    {% else %}
+                    {{ post.device }}
+                    {% endif %}
                     {{ post.title }} </a></h5>
 
             <!-- Author and date information -->
@@ -19,17 +30,19 @@
             </small>
 
             <!-- Likes and Comments -->
-            
+
             <div class="container">
                 <div class="row text-center">
                     <div class="col">
                         <!-- Left object -->
-                        <div class="text-left"><i class="fa fa-thumbs-up fa-lg comment-custom-mr2"></i> {{ post.number_of_likes }}</div>
+                        <div class="text-left"><i class="fa fa-thumbs-up fa-lg comment-custom-mr2"></i>
+                            {{post.number_of_likes }}</div>
                     </div>
                     |
                     <div class="col">
                         <!-- Right object -->
-                        <div class="text-right"><span class="comment-custom-mr">{{ post.comments.count }}</span>  <i class="fas fa-comment-dots fa-lg"></i></div>
+                        <div class="text-right"><span class="comment-custom-mr">{{ post.comments.count }}</span> <i
+                                class="fas fa-comment-dots fa-lg"></i></div>
                     </div>
                 </div>
             </div>

@@ -13,31 +13,33 @@
                 <article class="article text-white">
                     <div class="article-img">
                         {% if "placeholder" in post.featured_image.url %}
-                        <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                        <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                            style="width: 100%;" alt="article image">
                         {% else %}
                         <img src=" {{ post.featured_image.url }}" width="100%">
                         {% endif %}
                     </div>
                     <div class="article-title">
                         <div class="article-likes d-flex">
-
-                            <h6 class="text-primary"><a href="{% url 'category' post.category.id %}">{{ post.category }}</a></h6>
+                            <h6 class="text-primary"><a href="{% url 'category' post.category.id %}">
+                                    {{ post.category}}</a></h6>
                             <!-- Like Post if statement -->
-                            <strong>
-                                {% if user.is_authenticated %}
-                                <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                                    {% csrf_token %}
-                                    {% if liked %}
-                                    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                            class="fas fa-heart"></i></button>
-                                    {% else %}
-                                    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                            class="far fa-heart"></i></button>
-                                    {% endif %}
-                                </form>
+
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
                                 {% else %}
-                                <span class="text-white"><i class="far fa-heart"></i></span>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
                                 {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-white"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <strong>
                                 <!-- The number of likes -->
                                 <span class="text-white">{{ post.number_of_likes }} </span>
                             </strong>
@@ -94,8 +96,8 @@
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-9 col-lg-10">
                                     <textarea name="{{ comment_form.body.name }}" placeholder="Your message"
-                                        id="{{ comment_form.body.id_for_label }}" class="form-control text-white" rows="4"
-                                        required></textarea>
+                                        id="{{ comment_form.body.id_for_label }}" class="form-control text-white"
+                                        rows="4" required></textarea>
                                     <!-- If there are validation errors, this tag will render the error messages next to the form field -->
                                     {{ comment_form.body.errors }}
                                 </div>
@@ -141,4 +143,4 @@
                     {% endfor %}
                 </div>
             </div>
-{% endblock content %}
+            {% endblock content %}

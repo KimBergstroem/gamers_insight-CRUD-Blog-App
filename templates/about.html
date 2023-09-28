@@ -17,11 +17,13 @@
                                 haven for gaming enthusiasts, a place where players and creators come together to
                                 celebrate the art and science of video games. Dive into a realm of meticulously crafted
                                 reviews that dissect game mechanics, explore mesmerizing graphics, unravel captivating
-                                storylines, and deliver an all-encompassing gaming experience.<br><br>
-                                <div>
-                                    <img class="img-fluid mb-4 rounded-2" src="https://res.cloudinary.com/dpwnz6ieo/image/upload/v1695820060/secretman_iazl4z.jpg" alt="Responsive image" width="380px" height="580px"  />
-                                </div>
-                                At Gamers Insight, we're more than just a website; we're a thriving community of
+                                storylines, and deliver an all-encompassing gaming experience.</p><br><br>
+                            <div>
+                                <img class="img-fluid mb-4 rounded-2"
+                                    src="https://res.cloudinary.com/dpwnz6ieo/image/upload/v1695820060/secretman_iazl4z.jpg"
+                                    alt="Responsive image" width="380" height="580">
+                            </div>
+                            <p>At Gamers Insight, we're more than just a website; we're a thriving community of
                                 passionate gamers who share their profound insights, thoughts, and critiques. Our
                                 mission is to empower gamers of all levels, from casual players to dedicated
                                 enthusiasts, with a platform to voice their opinions, engage in thoughtful discussions,
@@ -32,13 +34,17 @@
                                 next game to conquer or seeking to express your unique gaming genius, Gamers Insight is
                                 your ultimate destination.
                             </p>
-                            {% if user.is_authenticated %} 
-                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a class="btn btn-primary rounded-pill btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'post_create' %}">Create Post</a>
+                            {% if user.is_authenticated %}
+                            <div
+                                class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                <a class="btn btn-primary rounded-pill btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
+                                    href="{% url 'post_create' %}">Create Post</a>
                             </div>
                             {% else %}
-                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a class="btn btn-primary rounded-pill btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'account_signup' %}">Join Now</a>
+                            <div
+                                class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                <a class="btn btn-primary rounded-pill btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
+                                    href="{% url 'account_signup' %}">Join Now</a>
                             </div>
                             {% endif %}
                         </div>
@@ -46,5 +52,6 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 {%endblock%}

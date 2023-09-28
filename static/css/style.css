@@ -128,6 +128,10 @@ body {
   }
 }
 
+.text-primary {
+  color: #448EFD !important;
+}
+
 .hero-img-animation {
   animation-name: slideInRight;
   animation-duration: 1s;
@@ -252,11 +256,13 @@ body {
 
 .article .article-title {
   padding: 15px 0 20px;
+  color: #448EFD;
 }
 
 .article .article-title h6 {
   font-size: 14px;
   font-weight: 700;
+  color: #448EFD;
   margin-bottom: 20px;
   margin-right: 20px;
 }
