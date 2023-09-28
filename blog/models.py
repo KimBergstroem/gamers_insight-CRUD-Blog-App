@@ -16,16 +16,25 @@ class UserProfile(models.Model):
     """
     Database model for user's profile
     """
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
-    profile_picture = CloudinaryField('image', default='https://res.cloudinary.com/dpwnz6ieo/image/upload/v1694794787/illustration-user-avatar-icon_53876-5907_uvdvsz.avif', blank=True)
-    country = models.CharField(max_length=200, default='Citizen of the Cyber world', blank=True)
+    profile_picture = CloudinaryField(
+        "image",
+        default=("https://res.cloudinary.com/dpwnz6ieo/image/upload/"
+                 "v1694794787/"
+                 "illustration-user-avatar-icon_53876-5907_uvdvsz.avif"),
+        blank=True,
+    )
+    country = models.CharField(
+        max_length=200, default="Citizen of the Cyber world", blank=True
+    )
 
-    @receiver(post_save, sender=User) 
+    @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
         """
-        If a user are created from the built in 
-        django user model, then this profile will be linked 
+        If a user are created from the built in
+        django user model, then this profile will be linked
         to that user
         """
         if created:
@@ -53,20 +62,20 @@ class GameCategory(models.Model):
     """
     Database model for game categories
     """
+
     name = models.CharField(max_length=200)
-    device = models.CharField(max_length=200)
 
     def __str__(self):
         """
         Returns a string representation of a category name
         """
         return self.name
-    
+
     def get_absolute_url(self):
         """
         Returns the absolute URL for the GameCategory instance
         """
-        return reverse('index')
+        return reverse("index")
 
 
 # ==============================
@@ -76,6 +85,7 @@ class Post(models.Model):
     """
     Database model for posts
     """
+
     content = models.TextField()
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -83,16 +93,31 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     title = models.CharField(max_length=200, unique=True)
     status = models.IntegerField(choices=STATUS, default=1)
-    featured_image = CloudinaryField('image', default='placeholder')
-    likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
-    category = models.ForeignKey(GameCategory, on_delete=models.CASCADE, default=None)
+    featured_image = CloudinaryField("image", default="placeholder")
+    likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="blog_posts"
+    )
+    category = models.ForeignKey(
+        GameCategory, on_delete=models.CASCADE, default=None
+    )
+    DEVICE_CHOICES = (
+        ("PC", "PC"),
+        ("Nintendo", "Nintendo"),
+        ("Xbox", "Xbox"),
+        ("PlayStation", "PlayStation"),
+    )
+
+    device = models.CharField(
+        max_length=20, choices=DEVICE_CHOICES, default=None
+    )
 
     class Meta:
         """
         Set the order of posts by date descending
         """
-        ordering = ['-created_on']
+
+        ordering = ["-created_on"]
 
     def __str__(self):
         """
@@ -105,12 +130,12 @@ class Post(models.Model):
         Returns number of blog post likes
         """
         return self.likes.count()
-    
+
     def get_absolute_url(self):
         """
         For be able to update the blogpost and redirect user back to home page
         """
-        return reverse('index')
+        return reverse("index")
 
 
 # ==============================
@@ -119,21 +144,25 @@ class Post(models.Model):
 class Comment(models.Model):
     """
     Database model for comments
-    """  
+    """
+
     body = models.TextField()
     email = models.EmailField()
     name = models.CharField(max_length=80)
     approved = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments"
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=12)
 
     class Meta:
         """
         Sets the order of comments by date ascending
         """
-        ordering = ['created_on']
-    
+
+        ordering = ["created_on"]
+
     def __str__(self):
         """
         Returns comment with body and name

@@ -43,14 +43,16 @@ class PostForm(forms.ModelForm):
         """
         model = Post
         fields = [
-            'title', 
-            'category', 
-            'featured_image', 
-            'excerpt', 
+            'title',
+            'category',
+            'device',
+            'featured_image',
+            'excerpt',
             'content',
         ]
         widgets = {
-            'category': forms.Select(attrs={ 'class': 'form-control'}),
+            'category': forms.Select(attrs={'class': 'form-control'}),
+            'device': forms.Select(attrs={'class': 'form-control'}),
             'content': SummernoteWidget(attrs={'class': 'form-control'}),
         }
 
@@ -70,5 +72,6 @@ class ProfileForm(forms.ModelForm):
             'country',
         ]
         widgets = {
-            'profile_picture': forms.FileInput(),  # forms.FileInput for custom rendering, removing current url link displayed
+            'profile_picture': forms.FileInput(),  # forms.FileInput for
+            # custom rendering, removing current url link displayed
         }
