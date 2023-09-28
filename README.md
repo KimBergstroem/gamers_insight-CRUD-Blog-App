@@ -168,7 +168,7 @@ Gamers Insight strives to create an immersive and interactive environment for us
 
 <br>
 
-We have organized the user stories and epics into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP4/milestones), which will redirect you to the sprint information.
+Organized the user stories and epics into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP4/milestones), which will redirect you to the sprint information.
 
 ![Sprints](/docs/readme.md/readme-Milstones.png) 
 
@@ -513,21 +513,25 @@ All testing was carried out in [Testing.md](TESTING.md).
 # Bugs
 
 ### Known bugs
-| **Bug** | **Fix** |
-| ----------- | ----------- |
-|[If server is restarting, and a user have been logged in as before, we still see the landing page in the beginning.]()|Still a bug|
-|[Cant send emails by forgott password, as gitpod working environment have decided to block the ports https://github.com/gitpod-io/gitpod/issues/965.In heroku deployment, the steps are working but the email is not received anyway. I think is becouse i have problem error to find and install all the oauth templates and copy them into the template folder so i can use them.]()|Still a bug|
+
+| **Bug** | **Description** |
+| ------- | --------------- |
+| [If the server restarts, and a user has previously logged in, the landing page is still shown initially, when user visit the site again.]() | This issue persists. |
+| [Unable to send emails for password reset due to Gitpod blocking ports (See [Gitpod issue #965](https://github.com/gitpod-io/gitpod/issues/965)). In Heroku deployment, the steps work, but the email is not received. This could be because of an error in finding and installing OAuth templates and copying them into the template folder.](#) | This issue is still unresolved. |
+| [Encountered a Server Error (500) when trying to access the LOGIN or SIGNUP page in the deployed version on Heroku.](#) | This issue is ongoing. Removed my "development" variable setup and if statement and just went with DEBUG = False. |
 
 
-### Fixed bugs 
+
+### Fixed bugs
+
 | **Bug** | **Fix** |
-| ----------- | ----------- |
-|[Couldnt run django.allauth, and couldnt seems to have it to work.]()|I as added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY, as this is a new requirement from allauth.|
-|[COULDNT RUN "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory"]()|By using shell, typing "python" -> "import site"->"print(site.getsitepackages())"->Copy the path and then redo the command in shell for installing the templates of auth.|
-|[Cant style my crispy form as i want to. Couldnt add bootstrap classes]()|added every input seperately inside a div and used "as_crispy_field". For example put margin space on every input box and form-row.|
-|[Server Error (500), when trying to access LOGIN or SIGNUP page, in my deployed version at heroku.]()| Add development variable to settings.py|
-|[MY STYLE SHEET IS NOT LOADING OR CANT BE FOUND IN HEROKU,"its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled." ]()| To set the DEBUG to False if development not found. With an if statement|
-|[If you click submit on create post, twice fast you have URL 404 error response, that the post is already created. ]()| Created error handling pages, as 403, 404, 405, 500|
+| ------- | ------- |
+| [Couldn't run django.allauth, and couldn't get it to work.](#) | Added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY, as this is a new requirement from allauth. |
+| [Couldn't run "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory"](#) | Resolved by using the shell, typing "python" -> "import site" -> "print(site.getsitepackages())" -> Copying the path and then redoing the command in the shell for installing the templates of auth. |
+| [Couldn't style my crispy form as desired and couldn't add Bootstrap classes.](#) | Added every input separately inside a div and used "as_crispy_field". For example, added margin space to every input box and form-row. |
+| [My stylesheet is not loading or cannot be found on Heroku. The error message is "its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."](#) | Resolved by setting DEBUG to False if development is not found with an if statement. |
+| [Clicking submit on the create post button twice quickly results in a URL 404 error response, indicating that the post is already created.](#) | Created error handling pages for 403, 404, 405, and 500. |
+
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
