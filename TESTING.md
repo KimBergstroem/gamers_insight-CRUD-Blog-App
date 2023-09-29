@@ -26,11 +26,9 @@
 
 ---
 
-## **Code Validation**
+## Code Validation
 
 ### HTML Validation
-
-### **W3C Validator** 
 
 W3C Markup Validation is a service offered by the W3C, which enables you to assess the compliance of your HTML code with the official standards. This service identifies syntax errors, improper tag usage, and other issues that might impact the structure and meaning of your web pages. By utilizing W3C Markup Validation, you can ensure that your HTML code is well-structured and conforms to established web standards.
 
@@ -84,7 +82,7 @@ Within the settings file, one URL was identified as being excessively long. The 
 |blog/urls.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-urls.png)| ✅
 |blog/admin.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-admin.png)| ✅
 
-## **Accessibility**
+## Accessibility
 
 ### **Wave**
 
@@ -92,7 +90,7 @@ Within the settings file, one URL was identified as being excessively long. The 
 
 During the evaluation, the following issues were identified:
 
-- **Errors**: The website generated 4 errors, which was related to the footer `<a>` (anchor) tags. There was no `aria-label` or text describing them.
+- **Errors**: The website generated 4 errors, which was related to the footer `<a>` (anchor) tags. There was no `aria-label` or text describing them. This was, of course, added to fix the errors.
 
 - **Contrast Warning**: Received a contrast warning for primary button, which was blue used by Bootstrap's class "btn-primary". This color was not good against my dark purple background. Solution was to increase the primary button's blue color to a lighter shade.
 
@@ -105,50 +103,70 @@ During the evaluation, the following issues were identified:
 By using the WAVE tool, I gained valuable insights into the accessibility of my website. While I have chosen not to address certain errors at this time, I remain committed to creating an inclusive user experience and will continue to explore ways to improve accessibility in the future.
 
 
-## **Performance**
+## Performance
+We conducted a comprehensive evaluation of [The Gamers Insight website](https://game-insight-1cff11f2b2d5.herokuapp.com/) using [Google Lighthouse in Google Chrome Developer Tools](https://developer.chrome.com/docs/lighthouse/). This evaluation was performed in Google Chrome browser's incognito mode to eliminate all potential impacts from other addons and cached files.
 
-### **Lighthouse** 
+Known Errors Impacting `index.html` and `post_detail.html` Pages the most, but even edit/delete post pages. We are using Cloudinary as an image and storage server for users to upload their images. The following errors were identified during Lighthouse validation, and they currently cannot be changed. These errors have had an impact on the overall performance of these pages:
 
-Desktop
+- Serving images in next-gen formats
+- Properly sizing images
+- Efficiently encoding images
+- Eliminating render-blocking resources
 
-Mobile
+The performance scores were assessed for both desktop and mobile devices. Below are the summarized results:
 
----
+### Desktop Performance
+- Average performance score: 98/100
+- The majority of pages received scores above 90/100, indicating excellent performance.
 
-## **Manual Testing**
+| **Tested** | **Performance Score** | **View Result** | **Pass** |
+--- | --- | --- | :---:
+|landing_page.html| 93 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-landing_page.png)</details> | ✅
+|about.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-about.png)</details> | ✅
+|login.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-login.png)</details> | ✅
+|signup.html | 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-signup.png)</details> | ✅
+|index.html| 93 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-index.png)</details> | ✅
+|post_detail.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-post_details.png)</details> | ✅
+|contactus.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-contactus.png)</details> | ✅
+|profile.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-profile.png)</details> | ✅
+|my_articles.html| 99 / 100| <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-myarticles.png)</details> | ✅
+|post_create.html| 99 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-create_post.png)</details> | ✅
+|logout.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-logout.png)</details> | ✅
+|post_delete.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-post_delete.png)</details> | ✅
+|post_update.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-post_update.png)</details> | ✅
+|profile_delete.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-profile_delete.png)</details> | ✅
+|profile_update.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-profile_update.png)</details> | ✅
+|password_change.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-password_change.png)</details> | ✅
 
-### **Testing User Stories**
+### Mobile Performance
+- Average performance score: 92/100
+- The pages showed slightly lower performance compared to desktop, but still maintained a satisfactory score.
+
+| **Tested** | **Performance** | **View Result** | **Pass** |
+--- | --- | --- | :---:
+|landing_page.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-landing_page.png)</details> | ✅
+|about.html| 94 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-about.png)</details> | ✅
+|login.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-login.png)</details> | ✅
+|signup.html | 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-signup.png)</details> | ✅
+|index.html| 80 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-index.png)</details> | ✅
+|post_detail.html| 83 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-post_details.png)</details> | ✅
+|contactus.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-contactus.png)</details> | ✅
+|profile.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-profile.png)</details> | ✅
+|my_articles.html| 86 / 100| <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-myacrticles.png)</details> | ✅
+|post_create.html| 86 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-post_create.png)</details> | ✅
+|logout.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-logout.png)</details> | ✅
+|post_delete.html| 95 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-post_delete.png)</details> | ✅
+|post_update.html| 93 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-post_update.png)</details> | ✅
+|profile_delete.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-profile_delete.png)</details> | ✅
+|profile_update.html| 95 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-profile_update.png)</details> | ✅
+|password_change.html| 95 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-password_change.png)</details> | ✅
 
 
-**`First Time Visitors`**
-
-| First Time User Goals | How this was achieved | Screenshot |
-| --- | --- | --- |
-| Coming | Coming | <details><summary>Screenshot of result</summary>![Result]()</details> |
-| Coming | Coming | <details><summary>Screenshot of result</summary>![Result]()</details> |
-| Coming | Coming | <details><summary>Screenshot of result</summary>![Result]()</details> |
-| Coming | Coming | <details><summary>Screenshot of result</summary>![Result]()</details> |
+In terms of performance, the Gamers Insight website delivered strong results, ensuring a seamless user experience on both desktop and mobile platforms.
 
 
-
-**`Returning Visitors`**
-
-| Returning User Goals | How this was achieved | Screenshot |
-| --- | --- | --- |
-| Coming | Coming | <details><summary>Screenshot of result</summary>![Result]()</details> |
-| Coming | Coming | <details><summary>Screenshot of result</summary>![Result]()</details> |
-| Coming | Coming | <details><summary>Screenshot of result</summary>![Result]()</details> |
-| Coming | Coming | <details><summary>Screenshot of result</summary>![Result]()</details> |
-
-&nbsp;
-
----
-### **Full Testing**
-
-Full Testing was performed on these devices and browsers for each section of game. 
-I have utilized the Google Chrome Developer Tools and the Inspector tool to meticulously examine every page, ensuring their responsiveness across various screen sizes and devices.
-
-**Devices**
+## Performing tests on various devices
+The website was tested on the following devices:
 
 <ins>Mobile</ins>
 1. Samsung s22 ultra 
@@ -166,6 +184,11 @@ I have utilized the Google Chrome Developer Tools and the Inspector tool to meti
 2. 27 inch Benq zowie XL2746S
 3. 27 inch Dell ultrasharp U2723QE
 
+In addition, the website was tested using Google Chrome Developer Tools Device Toggeling option for all available device options.
+
+
+## Browser compability
+The website was tested on the following:
 
 <ins>Browsers</ins>
 1. Microsoft Edge
@@ -174,18 +197,74 @@ I have utilized the Google Chrome Developer Tools and the Inspector tool to meti
 4. Safari
 
 
+## Manual Testing
+
+### Testing user stories
+
 &nbsp;
 
-I also asked family and friends to test my game on their devices no issues were reported.
+**First Time Visitors**
 
-The scores below are the average results obtained from three users who attempted the following.
- 
-|Test|Result  |
-|--|--|
-|Coming |**100%**|
-|Coming |**100%**|
-|Coming |**100%**|
-|Coming |**100%**|
+| First Time User Goals | How this was achieved | Screenshot |
+| --- | --- | --- |
+| [Easily Navigate and Find Content ](https://github.com/KimBergstroem/PP4/issues/1)  | Describe how first-time visitors can easily navigate and find content on your website. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Visually Appealing Homepage ](https://github.com/KimBergstroem/PP4/issues/2)  | Explain how you have designed the homepage to be visually appealing for first-time visitors. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Search for Specific Games or Topics ](https://github.com/KimBergstroem/PP4/issues/3)  | Describe the search functionality that allows first-time visitors to find specific games or topics. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Create a Personalized Profile ](https://github.com/KimBergstroem/PP4/issues/5)  | Explain how first-time visitors can create a personalized profile if they choose to do so. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+
+**Returning Visitors**
+
+| Returning User Goals | How this was achieved | Screenshot |
+| --- | --- | --- |
+| [Read Detailed Game Reviews ](https://github.com/KimBergstroem/PP4/issues/4)  | Describe how returning visitors can access and read detailed game reviews. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Save Favorite Articles and Create Reading Lists ](https://github.com/KimBergstroem/PP4/issues/6)  | Explain how returning visitors can save favorite articles and create reading lists. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Receive Notifications ](https://github.com/KimBergstroem/PP4/issues/7)  | Describe any notification features for returning visitors and how they work. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Leave Comments and Engage in Discussions ](https://github.com/KimBergstroem/PP4/issues/8)  | Explain how returning visitors can leave comments and engage in discussions. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Submit Own Articles and Reviews ](https://github.com/KimBergstroem/PP4/issues/9)  | Describe how returning visitors can submit their own articles and reviews. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Edit or Delete Own Articles and Comments ](https://github.com/KimBergstroem/PP4/issues/10)  | Explain how returning visitors can edit or delete their own articles and comments. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Earn Badges or Rewards ](https://github.com/KimBergstroem/PP4/issues/11)  | If applicable, describe any badge or reward systems for returning visitors. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Create Personalized Gaming Profile ](https://github.com/KimBergstroem/PP4/issues/16) | Explain how returning visitors can create personalized gaming profiles. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Save Favorite Articles and Create Reading List ](https://github.com/KimBergstroem/PP4/issues/17)  | Describe any additional features related to saving articles and creating reading lists. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+
+**Site Owner**
+
+| Site Owner Goals | How this was achieved | Screenshot |
+| --- | --- | --- |
+| [Full Control Over User Accounts ](https://github.com/KimBergstroem/PP4/issues/12)  | Explain how site owners have full control over user accounts and what actions they can take. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Review and Edit User-Submitted Articles ](https://github.com/KimBergstroem/PP4/issues/13)  | Describe the process by which site owners can review and edit user-submitted articles. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Manage and Categorize Articles ](https://github.com/KimBergstroem/PP4/issues/14)  | Explain how site owners can manage and categorize articles, if applicable. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+| [Track User Engagement and Analytics ](https://github.com/KimBergstroem/PP4/issues/15)  | Describe any tools or features site owners have for tracking user engagement and analytics. | <details><summary>Screenshot of result</summary>![Result]()</details> |
+
+
+&nbsp;
+
+### User Experience and improvements
+I engaged in user testing involving individuals from the Slack group called "#peer-code-review" from Code Institute to collect feedback regarding their website experience. I requested them to complete the following tasks and share their feedback on their overall experience:
+
+I also asked family members and friends. 
+
+Total users attended to the testing: 10
+
+| Test                   | Result  |
+|------------------------|---------|
+| Create an account      | **100%**|
+| Update the profile     | **100%**|
+| Add a blog post        | **100%**|
+| Edit a post            | **100%**|
+| Like a post            | **100%**|
+| Unlike a post          | **100%**|
+| Comment on a post      | **100%**|
+| Delete comment         | **100%**|
+| Delete a post          | **100%**|
+| Test links             | **100%**|
+| Delete account         | **100%**|
+
+
+**Feedback from testers**
+
+&nbsp;&nbsp;
+
+### Full Testing
 
 &nbsp;
 
