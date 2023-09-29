@@ -2,9 +2,9 @@
     <div class="card h-100 bg-clr-dom-light">
         <!-- Image -->
         {% if "placeholder" in post.featured_image.url %}
-        <img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="defualt">
+        <img class="card-img-top img-fluid" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="defualt">
         {% else %}
-        <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="article image">
+        <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}" alt="article image" loading="lazy">
         {% endif %}
         <div class="card-body text-white">
 

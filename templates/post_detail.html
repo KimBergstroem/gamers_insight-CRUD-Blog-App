@@ -11,12 +11,12 @@
             <div class="col-lg-8 m-15px-tb">
                 <!-- Article Section -->
                 <article class="article text-white">
-                    <div class="article-img">
+                    <div class="article-img img-responsive">
                         {% if "placeholder" in post.featured_image.url %}
                         <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-                            style="width: 100%;" alt="article image">
+                            style="width: 100%; height: auto;" alt="article image">
                         {% else %}
-                        <img src=" {{ post.featured_image.url }}" width="100%">
+                        <img src="{{ post.featured_image.url }}" style="width: 100%; height: auto;" alt="article image">
                         {% endif %}
                     </div>
                     <div class="article-title">
@@ -29,11 +29,11 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
+                                    aria-label="Liked"><i class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                        class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
+                                    aria-label="Not Liked"><i class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
@@ -48,10 +48,11 @@
                         <h2>{{ post.title }}</h2>
                         <div class="media">
                             <div class="avatar">
-                                <img src="{{ post.author.userprofile.profile_picture.url }}" title="" alt="">
+                                <img src="{{ post.author.userprofile.profile_picture.url }}" title="Profile"
+                                    alt="Profile img" style="width: 100%; height: auto;">
                             </div>
                             <div class="media-body">
-                                <label>{{ post.author }}</label>
+                                <label class="text-primary">{{ post.author }}</label>
                                 <small>
                                     <!-- Check for user authentication and compares user id with post author id -->
                                     {% if user.is_authenticated %}
@@ -63,7 +64,7 @@
                                     {% endif %}
                                     {% endif %}
                                 </small>
-                                <span>{{ post.created_on }}</span>
+                                <span class="text-white">{{ post.created_on }}</span>
                             </div>
                         </div>
                     </div>
@@ -84,7 +85,7 @@
                     <form method="post" id="comment-form">
                         {% csrf_token %}<!-- Security token from django against attackers -->
                         <div class="d-flex justify-content-between">
-                            <h4 class="float-left">New Comment</h4>
+                            <h3 class="float-left text-primary">New Comment</h3>
                             <button type="submit"
                                 class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mt-3">Submit</button>
                         </div>
@@ -92,7 +93,7 @@
                             <div class="row">
                                 <div class="col-sm-3 col-lg-2 d-none d-sm-block">
                                     <img class="img-responsive" src="{{ user.userprofile.profile_picture.url }}"
-                                        alt="image">
+                                        alt="Profile img" style="width: 100%; height: auto;">
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-9 col-lg-10">
                                     <textarea name="{{ comment_form.body.name }}" placeholder="Your message"
@@ -120,7 +121,7 @@
                     <div class="media">
                         <div class="col-sm-3 col-lg-2 d-none d-sm-block me-4">
                             <a href="#"><img class="img-responsive rounded"
-                                    src="{{ comment.user.userprofile.profile_picture.url }}" alt="img"></a>
+                                    src="{{ comment.user.userprofile.profile_picture.url }}" alt="Profile img"></a>
                         </div>
                         <div class="media-body">
                             <h5 class="text-primary d-inline">{{ comment.user.username }}</h5>
