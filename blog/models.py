@@ -1,13 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User 
 from cloudinary.models import CloudinaryField
 from django.db.models.signals import post_save
+from django.core.exceptions import ValidationError
 from django.dispatch import receiver
 from django.urls import reverse
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
-
 
 # ==============================
 # Profile Model
@@ -16,18 +16,21 @@ class UserProfile(models.Model):
     """
     Database model for user's profile
     """
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=500, blank=True)
+    bio = models.TextField(max_length=150, blank=True)
+    username = models.CharField(max_length=15, default="User")
+    first_name = models.CharField(max_length=15, default="Usef")
+    last_name = models.CharField(max_length=15, default="Usefsson")
+    email = models.EmailField(max_length=40, default="User@game-insight.com")
     profile_picture = CloudinaryField(
-        "image",
+        'image',
         default=("https://res.cloudinary.com/dpwnz6ieo/image/upload/"
                  "v1694794787/"
                  "illustration-user-avatar-icon_53876-5907_uvdvsz.avif"),
         blank=True,
     )
     country = models.CharField(
-        max_length=200, default="Citizen of the Cyber world", blank=True
+        max_length=30, default="Citizen of the Cyber world", blank=True
     )
 
     @receiver(post_save, sender=User)
@@ -62,8 +65,7 @@ class GameCategory(models.Model):
     """
     Database model for game categories
     """
-
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=25)
 
     def __str__(self):
         """
@@ -85,13 +87,12 @@ class Post(models.Model):
     """
     Database model for posts
     """
-
-    content = models.TextField()
-    excerpt = models.TextField(blank=True)
+    content = models.TextField(max_length=2000, blank=True)
+    excerpt = models.TextField(max_length=75, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=200, unique=True)
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(max_length=50, unique=True)
     status = models.IntegerField(choices=STATUS, default=1)
     featured_image = CloudinaryField("image", default="placeholder")
     likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
@@ -145,10 +146,7 @@ class Comment(models.Model):
     """
     Database model for comments
     """
-
-    body = models.TextField()
-    email = models.EmailField()
-    name = models.CharField(max_length=80)
+    body = models.TextField(max_length=300)
     approved = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     post = models.ForeignKey(
@@ -160,7 +158,6 @@ class Comment(models.Model):
         """
         Sets the order of comments by date ascending
         """
-
         ordering = ["created_on"]
 
     def __str__(self):

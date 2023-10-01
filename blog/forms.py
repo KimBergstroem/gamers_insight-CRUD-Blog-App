@@ -15,6 +15,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
+    body = forms.CharField(max_length=300)
 
 class UserForm(forms.ModelForm):
     """
@@ -32,6 +33,10 @@ class UserForm(forms.ModelForm):
             'email',
         ]
 
+    username = forms.CharField(max_length=15)
+    first_name = forms.CharField(max_length=15)
+    last_name = forms.CharField(max_length=15)
+    email = forms.EmailField(max_length=40)
 
 class PostForm(forms.ModelForm):
     """
@@ -55,7 +60,6 @@ class PostForm(forms.ModelForm):
             'device': forms.Select(attrs={'class': 'form-control'}),
             'content': SummernoteWidget(attrs={'class': 'form-control'}),
         }
-
 
 class ProfileForm(forms.ModelForm):
     """
