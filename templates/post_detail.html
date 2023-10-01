@@ -20,29 +20,27 @@
                         {% endif %}
                     </div>
                     <div class="article-title">
-                        <div class="article-likes d-flex">
+                        <div class="article-likes d-flex justify-content-between">
                             <h6 class="text-primary"><a href="{% url 'category' post.category.id %}">
                                     {{ post.category}}</a></h6>
                             <!-- Like Post if statement -->
-
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
-                                    aria-label="Liked"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}"
+                                    class="btn-like text-primary" aria-label="Liked"><i class="fas fa-thumbs-up fa-lg"
+                                        style="color: #598ee8;"></i> Liked</button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"
-                                    aria-label="Not Liked"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}"
+                                    class="btn-like text-white" aria-label="Not Liked"><i
+                                        class="far fa-thumbs-up fa-lg"></i> Like</button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-white"><i class="far fa-heart"></i></span>
                             {% endif %}
-                            <strong>
-                                <!-- The number of likes -->
-                                <span class="text-white">{{ post.number_of_likes }} </span>
-                            </strong>
+
                         </div>
 
                         <h2>{{ post.title }}</h2>
@@ -85,7 +83,7 @@
                     <form method="post" id="comment-form">
                         {% csrf_token %}<!-- Security token from django against attackers -->
                         <div class="d-flex justify-content-between">
-                            <h3 class="float-left text-primary">New Comment</h3>
+                            <h4 class="float-left text-primary">New Comment</h4>
                             <button type="submit"
                                 class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mt-3">Submit</button>
                         </div>
@@ -112,11 +110,9 @@
 
                 <!-- View Comment Section -->
                 <div class="contact-form article-comment mt-4 text-white">
-                    {% with comments.count as total_comments %}
                     <h4>
-                        {{ total_comments }} Comments
+                        {{ comments.count }} Comments
                     </h4>
-                    {% endwith %}
                     {% for comment in comments %}
                     <div class="media">
                         <div class="col-sm-3 col-lg-2 d-none d-sm-block me-4">
@@ -134,7 +130,9 @@
                                 {% endif %}
                                 {% endif %}
                             </small>
-                            <p>{{ comment.body | linebreaks }}</p>
+                            <div class="card card-comment">
+                                <p>{{ comment.body | linebreaks }}</p>
+                            </div>
                             <ul class="list-unstyled list-inline">
                                 <li><span><i class="fa fa-calendar"></i> {{ comment.created_on|date:"r" }}</li></span>
                             </ul>
@@ -144,4 +142,7 @@
                     {% endfor %}
                 </div>
             </div>
-            {% endblock content %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

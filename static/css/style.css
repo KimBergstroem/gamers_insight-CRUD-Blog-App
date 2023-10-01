@@ -49,6 +49,12 @@ body {
     background-color: transparent;
 }
 
+.card-comment {
+  border: none;
+  background-color: transparent;
+  width: 20rem;
+}
+
 .image-container {
     position: relative;
 }
@@ -114,6 +120,37 @@ body {
 .dropdown-toggle::after {
     display: none;
 }
+
+/* Navbar */
+@media (min-width: 992px) {
+  .navbar .container-fluid {
+      max-width: 75%; /* Adjust the width as needed */
+  }
+}
+
+
+/* Adjust the width for comment section to be responsive in mobiles. */
+@media (min-width: 1200px) {
+  .card-comment {
+      width: 35rem; 
+  }
+}
+@media (max-width: 1199px) {
+  .card-comment  {
+      width: 27rem; 
+  }
+}
+@media (max-width: 767px) {
+  .card-comment  {
+      width: 20rem; 
+  }
+}
+@media (max-width: 365px) {
+  .card-comment  {
+      width: 16rem; 
+  }
+}
+
 
 /* index - Landing_page Section
 ---------------------*/
@@ -217,6 +254,33 @@ body {
         margin-top: 0px;
         padding: 20px;
     }
+}
+
+/* Category menu displays in different screens */
+@media (min-width: 900px) {
+  .container-centered {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+}
+@media (min-width: 768px) and (max-width: 899px) {
+  .container-centered {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container-centered a {
+    flex: 0 0 calc(25% - 20px);
+    margin: 10px;
+}
+}
+@media (max-width: 767px) {
+  .container-centered a {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+  }
 }
 
 /* Blog post details Section

@@ -2,9 +2,13 @@
     <div class="card h-100 bg-clr-dom-light">
         <!-- Image -->
         {% if "placeholder" in post.featured_image.url %}
-        <img class="card-img-top img-fluid" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="defualt">
+        <a href="{% url 'post_detail' post.slug %}" class="card-link">
+            <img class="card-img-top img-fluid" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                alt="defualt"></a>
         {% else %}
-        <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}" alt="article image" loading="lazy">
+        <a href="{% url 'post_detail' post.slug %}" class="card-link">
+            <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}" alt="article image"
+                loading="lazy"></a>
         {% endif %}
         <div class="card-body text-white">
 
@@ -24,9 +28,9 @@
                     {{ post.title }} </a></h5>
 
             <!-- Author and date information -->
-            <small class="author mb-4 d-block">
+            <small class="author mb-4 d-block text-primary fw-bold">
                 <span class="text-secondary">{{ post.created_on|date:"F j Y" }}</span><br>
-                <span class="text-white">by</span><a href="#"> {{ post.author }}</a>
+                <span class="text-white">by</span> {{ post.author }}
             </small>
 
             <!-- Likes and Comments -->

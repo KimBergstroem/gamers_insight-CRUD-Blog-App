@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "profile"
 LOGOUT_REDIRECT_URL = "/"
 
 # Email Settings
