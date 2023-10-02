@@ -59,14 +59,6 @@ def my_articles(request):
 
 
 @login_required
-def contactus(request):
-    """
-    Render the contactus.html template
-    """
-    return render(request, "contactus.html")
-
-
-@login_required
 def contact(request):
     """
     Render the contactus.html template
@@ -76,20 +68,18 @@ def contact(request):
         message_email = request.POST["message-email"]
         message_subject = request.POST["message-subject"]
         message_message = request.POST["message-message"]
+        messages.success(request, "Ticket has been submitted successfully")
 
-        # send an email
         send_mail(
-            message_subject,  # subject
-            message_message,  # message
-            message_email,  # from email
-            EMAIL_USER,  # to email
-            fail_silently=True,
+            message_subject, #subject
+            message_message, #message
+            message_email, #from email
+            ['kimmenbergstroem@gmail.com'], #to Email
         )
-
-        success_message = "Ticket have been submitted successfully"
         return render(
             request, "contactus.html", {"message_name": message_name}
         )
+
     else:
         return render(request, "contactus.html")
 
@@ -195,7 +185,6 @@ class UsersPosts(PostList):
     """
     View for displaying a list of blog posts made by user
     """
-
     def get_queryset(self):
         """
         Returns a queryset of blog posts created by
@@ -208,7 +197,6 @@ class PostDetail(LoginRequiredMixin, View):
     """
     View for displaying a single blog post and handling comments and likes
     """
-
     def get(self, request, slug, *args, **kwargs):
         """
         Retrieve and display a blog post with comments and likes
@@ -275,7 +263,6 @@ class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
     View for creating a new blog post
     """
-
     model = Post
     template_name = "post_create.html"
     form_class = PostForm
@@ -297,7 +284,6 @@ class PostUpdateView(
     """
     View for updating an existing blog post
     """
-
     model = Post
     template_name = "post_update.html"
     form_class = PostForm
@@ -315,7 +301,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     View for deleting an existing blog post
     """
-
     model = Post
     template_name = "post_delete.html"
     success_url = reverse_lazy("index")
@@ -332,7 +317,6 @@ class PostLike(LoginRequiredMixin, View):
     """
     View for handling liking and unliking a post
     """
-
     def post(self, request, slug, *args, **kwargs):
         """
         Toggle user's like for a post and redirect to post detail
@@ -352,7 +336,6 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """
     View for deleting an existing comment
     """
-
     model = Comment
     template_name = "comment_delete.html"
 

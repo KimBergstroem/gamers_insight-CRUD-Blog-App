@@ -17,9 +17,8 @@ urlpatterns = [
     # ==============================
     path("", views.landing_page, name="landing_page"),
     path("about/", views.about, name="about"),
-    path("contactus/", views.contactus, name="contactus"),
+    path("contactus/", views.contact, name="contact"),
     path("my_articles/", views.my_articles, name="my_articles"),
-    path("contactus.html", views.contact, name="contact"),
     path("like/<slug:slug>", views.PostLike.as_view(), name="post_like"),
     # ==============================
     # Profile paths
