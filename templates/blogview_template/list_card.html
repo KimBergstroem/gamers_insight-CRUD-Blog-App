@@ -39,14 +39,20 @@
                 <div class="row text-center">
                     <div class="col">
                         <!-- Left object -->
-                        <div class="text-left"><i class="fa fa-thumbs-up fa-lg comment-custom-mr2"></i>
-                            {{post.number_of_likes }}</div>
+                        <div class="text-left" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Go to Post page first">
+                            <i class="fa fa-thumbs-up fa-lg comment-custom-mr2"></i>
+                            {{ post.number_of_likes }}
+                        </div>
                     </div>
                     |
                     <div class="col">
                         <!-- Right object -->
-                        <div class="text-right"><span class="comment-custom-mr">{{ post.comments.count }}</span> <i
-                                class="fas fa-comment-dots fa-lg"></i></div>
+                        <div class="text-left" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Comment in Post page">
+                            <span class="comment-custom-mr">{{ post.comments.count }}</span>
+                            <i class="fas fa-comment-dots fa-lg"></i>
+                        </div>
                     </div>
                 </div>
             </div>

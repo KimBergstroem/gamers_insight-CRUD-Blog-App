@@ -460,6 +460,11 @@ img {
   color: #fff; 
 }
 
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bd-violet-bg);
+  --bs-tooltip-color: var(--bs-white);
+}
+
 .comment-custom-mr {
   margin-right: 10px; /* Adjust as needed */
 }
@@ -472,7 +477,6 @@ img {
       margin-bottom: 20px;
     }
   }
-
 
 /* Contactus Section
 ---------------------*/
