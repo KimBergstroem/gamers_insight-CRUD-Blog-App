@@ -33,14 +33,13 @@
                                         style="color: #598ee8;"></i> Liked</button>
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}"
-                                    class="btn-like text-white" aria-label="Not Liked"><i
-                                        class="far fa-thumbs-up fa-lg"></i> Like</button>
+                                    class="btn-like text-white" aria-label="Not Liked"><span class="like-icon"><i
+                                        class="far fa-thumbs-up fa-lg"></i> Like</span></button>
                                 {% endif %}
                             </form>
                             {% else %}
-                            <span class="text-white"><i class="far fa-heart"></i></span>
+                            <span class="text-white"><i class="far fa-thumbs-up fa-lg"></i></span>
                             {% endif %}
-
                         </div>
 
                         <h2>{{ post.title }}</h2>
@@ -55,14 +54,14 @@
                                     <!-- Check for user authentication and compares user id with post author id -->
                                     {% if user.is_authenticated %}
                                     {% if user.id == post.author.id %}
-                                    <a class="text-secondary fw-bolder" href="{% url 'post_update' post.slug %}">
-                                        (Edit)</a>
+                                    - <a class="text-secondary fw-bolder" href="{% url 'post_update' post.slug %}">
+                                        &#160;<i class="fas fa-edit"></i> Edit </a>&#160; - &#160;
                                     <a class="text-secondary fw-bolder" href="{% url 'post_delete' post.slug %}">
-                                        (Delete)</a>
+                                        <i class="fas fa-trash-alt"></i> Delete</a>
                                     {% endif %}
                                     {% endif %}
                                 </small>
-                                <span class="text-white">{{ post.created_on }}</span>
+                                <span class="text-white">Published {{ post.created_on }}</span>
                             </div>
                         </div>
                     </div>
@@ -94,7 +93,7 @@
                                         alt="Profile img" style="width: 100%; height: auto;">
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-9 col-lg-10">
-                                    <textarea name="{{ comment_form.body.name }}" placeholder="Your message"
+                                    <textarea name="{{ comment_form.body.name }}" placeholder="Write a comment..."
                                         id="{{ comment_form.body.id_for_label }}" class="form-control text-white"
                                         rows="4" required></textarea>
                                     <!-- If there are validation errors, this tag will render the error messages next to the form field -->
@@ -116,8 +115,8 @@
                     {% for comment in comments %}
                     <div class="media">
                         <div class="col-sm-3 col-lg-2 d-none d-sm-block me-4">
-                            <a href="#"><img class="img-responsive rounded"
-                                    src="{{ comment.user.userprofile.profile_picture.url }}" alt="Profile img"></a>
+                            <img class="img-responsive rounded" src="{{ comment.user.userprofile.profile_picture.url }}"
+                                alt="Profile img"></a>
                         </div>
                         <div class="media-body">
                             <h5 class="text-primary d-inline">{{ comment.user.username }}</h5>
@@ -126,7 +125,7 @@
                                 {% if user.is_authenticated %}
                                 {% if user.id == comment.user.id %}
                                 <a class="text-secondary fw-bolder" href="{% url 'comment_delete' comment.id %}">
-                                    (Delete)</a>
+                                    <i class="fas fa-trash-alt"></i> Delete comment </a>
                                 {% endif %}
                                 {% endif %}
                             </small>
@@ -134,7 +133,7 @@
                                 <p>{{ comment.body | linebreaks }}</p>
                             </div>
                             <ul class="list-unstyled list-inline">
-                                <li><span><i class="fa fa-calendar"></i> {{ comment.created_on|date:"r" }}</li></span>
+                                <li><span><i class="fa fa-calendar"></i> {{ comment.created_on|date:"F j Y"}}</li></span>
                             </ul>
                         </div>
                     </div>

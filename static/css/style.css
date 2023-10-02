@@ -248,6 +248,11 @@ body {
     justify-content: center;
 }
 
+.like-icon {
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+
 @media (max-width: 430px) {
     .list-header {
         width: 100%;
@@ -281,6 +286,9 @@ body {
       width: 100%;
       margin: 10px 0;
   }
+  .like-icon {
+    font-size: 15px; /* Adjust the font size as needed */
+  }  
 }
 
 /* Blog post details Section
@@ -303,6 +311,7 @@ body {
   border-radius: 50%;
   border: 10px solid #12112c;
   overflow: hidden;
+  object-fit: cover;
 }
 
 .blog-single {

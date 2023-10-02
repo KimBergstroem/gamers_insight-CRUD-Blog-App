@@ -59,6 +59,8 @@ class PostForm(forms.ModelForm):
             'category': forms.Select(attrs={'class': 'form-control'}),
             'device': forms.Select(attrs={'class': 'form-control'}),
             'content': SummernoteWidget(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Max 50 characters'}),
+            'excerpt': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Max 75 characters'}),
         }
 
 class ProfileForm(forms.ModelForm):
