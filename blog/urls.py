@@ -18,7 +18,11 @@ urlpatterns = [
     path("", views.landing_page, name="landing_page"),
     path("about/", views.about, name="about"),
     path("contactus/", views.contact, name="contact"),
-    path('contactus_success/', views.contactus_success, name='contactus_success'),
+    path(
+        'contactus_success/',
+        views.contactus_success,
+        name='contactus_success',
+    ),
     path("my_articles/", views.my_articles, name="my_articles"),
     path("like/<slug:slug>", views.PostLike.as_view(), name="post_like"),
     # ==============================

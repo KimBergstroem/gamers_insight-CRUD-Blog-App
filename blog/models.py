@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.db.models.signals import post_save
 from django.core.exceptions import ValidationError
@@ -8,6 +8,7 @@ from django.urls import reverse
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
+
 
 # ==============================
 # Profile Model
@@ -18,7 +19,7 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(
-        max_length=150, default="Currently no bio",blank=True
+        max_length=150, default="Currently no bio", blank=True
         )
     username = models.CharField(max_length=15, default="User")
     first_name = models.CharField(max_length=15, default="Usef")
