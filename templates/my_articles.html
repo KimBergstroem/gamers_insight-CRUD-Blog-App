@@ -19,13 +19,17 @@
                         <div class="col-12 col-md-6 col-lg-4">
                             {% include 'blogview_template/list_card.html' %}
                         </div>
-                        {% empty %}
-                        <div class="text-center">
-                            <p>You haven't created any posts yet.</p>
+                    {% empty %}
+                    <div class="container text-center mt-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>You haven't created any posts yet.</p>
+                            </div>
                         </div>
-                        {% endfor %}
                     </div>
-                    <h3 class="text-gray-900 mb-4 text-white text-center mt-4 mb-2">My Liked Posts</h3>
+                    {% endfor %}
+                </div>
+                    <h3 class="text-gray-900 mb-4 text-white text-center mt-4 mb-4">My Liked Posts</h3>
                     <!-- Post Likes ul list -->
                     {% if liked_posts %}
                     <ul>

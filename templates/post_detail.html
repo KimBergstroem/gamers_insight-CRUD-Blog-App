@@ -34,7 +34,7 @@
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}"
                                     class="btn-like text-white" aria-label="Not Liked"><span class="like-icon"><i
-                                        class="far fa-thumbs-up fa-lg"></i> Like</span></button>
+                                            class="far fa-thumbs-up fa-lg"></i> Like</span></button>
                                 {% endif %}
                             </form>
                             {% else %}
@@ -54,9 +54,11 @@
                                     <!-- Check for user authentication and compares user id with post author id -->
                                     {% if user.is_authenticated %}
                                     {% if user.id == post.author.id %}
-                                    - <a class="text-secondary fw-bolder" href="{% url 'post_update' post.slug %}">
-                                        &#160;<i class="fas fa-edit"></i> Edit </a>&#160; - &#160;
-                                    <a class="text-secondary fw-bolder" href="{% url 'post_delete' post.slug %}">
+                                    &#160; | <a class="text-secondary fw-bolder custom-word-spacing"
+                                        href="{% url 'post_update' post.slug %}">
+                                        &#160;<i class="fas fa-edit"></i> Edit </a>&#160; | &#160;
+                                    <a class="text-secondary fw-bolder custom-word-spacing"
+                                        href="{% url 'post_delete' post.slug %}">
                                         <i class="fas fa-trash-alt"></i> Delete</a>
                                     {% endif %}
                                     {% endif %}
@@ -133,7 +135,8 @@
                                 <p>{{ comment.body | linebreaks }}</p>
                             </div>
                             <ul class="list-unstyled list-inline">
-                                <li><span><i class="fa fa-calendar"></i> {{ comment.created_on|date:"F j Y"}}</li></span>
+                                <li><span><i class="fa fa-calendar"></i> {{ comment.created_on|date:"F j Y"}}</li>
+                                </span>
                             </ul>
                         </div>
                     </div>
