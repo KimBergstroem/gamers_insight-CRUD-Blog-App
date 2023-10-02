@@ -49,12 +49,11 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = "profile"
 LOGOUT_REDIRECT_URL = "/"
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = '1025'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = False
+# Setup for email configuration
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '1fcae4437bcd1d'
+EMAIL_HOST_PASSWORD = '06b789114d1886'
+EMAIL_PORT = '2525'
 
 # Make Messages declared by Bootstrap class
 MESSAGE_TAGS = {

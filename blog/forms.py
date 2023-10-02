@@ -81,3 +81,10 @@ class ProfileForm(forms.ModelForm):
             'profile_picture': forms.FileInput(),  # forms.FileInput for
             # custom rendering, removing current url link displayed
         }
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=20)
+    email = forms.EmailField(max_length=55)
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(widget=forms.Textarea)
+

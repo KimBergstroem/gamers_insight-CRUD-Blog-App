@@ -22,7 +22,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from cloudinary.models import CloudinaryField
 from .models import Post, UserProfile, Comment
-from .forms import CommentForm, UserForm, ProfileForm, PostForm
+from .forms import CommentForm, UserForm, ProfileForm, PostForm, ContactForm
 
 
 # ==============================
@@ -40,6 +40,10 @@ def about(request):
     Render the about.html template
     """
     return render(request, "about.html")
+
+
+def contactus_success(request):
+    return render(request, 'contactus_success.html')
 
 
 @login_required
@@ -64,24 +68,26 @@ def contact(request):
     Render the contactus.html template
     """
     if request.method == "POST":
-        message_name = request.POST["message-name"]
-        message_email = request.POST["message-email"]
-        message_subject = request.POST["message-subject"]
-        message_message = request.POST["message-message"]
-        messages.success(request, "Ticket has been submitted successfully")
+        form = ContactForm(request.POST)
 
-        send_mail(
-            message_subject, #subject
-            message_message, #message
-            message_email, #from email
-            ['kimmenbergstroem@gmail.com'], #to Email
-        )
-        return render(
-            request, "contactus.html", {"message_name": message_name}
-        )
+        if form.is_valid():
+            message_name = form.cleaned_data['name']
+            message_email = form.cleaned_data['email']
+            message_subject = form.cleaned_data['subject']
+            message_message = form.cleaned_data['message']
 
+            send_mail(
+                message_subject,  # subject
+                message_message,  # message
+                message_email,    # from email
+                ['kimmen_b@hotmail.com'],  # to Email
+            )
+
+            return redirect('contactus_success')
     else:
-        return render(request, "contactus.html")
+        form = ContactForm()
+
+    return render(request, "contactus.html", {'form': form})
 
 
 # ==============================

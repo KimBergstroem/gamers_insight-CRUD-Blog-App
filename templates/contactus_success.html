@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Gamers Insight - Contact Us Success {% endblock %}
+
+{% block content %}
+<section>
+    <div id="contact" class="contact-area section-padding">
+        <div class="container">
+            <div class="section-title text-center text-white list-header">
+                <h3 class="m-5">Thank You for Submitting Your Ticket!</h3>
+                <div class="w-100 w-md-75">
+                    <p class="mb-3">We truly appreciate your engagement with us. Our dedicated support team will review
+                        your ticket and respond within 48 hours.</p>
+                    <p class="mb-3">If you have any additional questions or need further assistance, please don't
+                        hesitate to contact us through our email instead.
+                        Thank you for being part of our community!</p>
+                    <p class="mb-3">You can also chat live with us in our discord server, do not forget to join Gamers
+                        Insight's Discord Server!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-white">
+                    <div class="single_address">
+                        <i class="fa fa-server icon"></i>
+                        <div class="address-details">
+                            <h5>Our Server</h5>
+                            <p>https://discord.gg/q6ruUxvg</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-white">
+                    <div class="single_address">
+                        <i class="fa fa-envelope icon"></i>
+                        <div class="address-details">
+                            <h5>Send Your Message</h5>
+                            <p>info@game-insight.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-12 text-white">
+                    <div class="single_address">
+                        <i class="fa fa-phone icon"></i>
+                        <div class="address-details">
+                            <h5>Call Us On</h5>
+                            <p>(+34) 632 68 3900</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

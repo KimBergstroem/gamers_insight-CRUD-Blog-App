@@ -17,7 +17,9 @@ class UserProfile(models.Model):
     Database model for user's profile
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=150, blank=True)
+    bio = models.TextField(
+        max_length=150, default="Currently no bio",blank=True
+        )
     username = models.CharField(max_length=15, default="User")
     first_name = models.CharField(max_length=15, default="Usef")
     last_name = models.CharField(max_length=15, default="Usefsson")
@@ -87,7 +89,7 @@ class Post(models.Model):
     """
     Database model for posts
     """
-    content = models.TextField(max_length=2000, blank=True)
+    content = models.TextField(max_length=3000, blank=True)
     excerpt = models.TextField(max_length=75, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -164,4 +166,4 @@ class Comment(models.Model):
         """
         Returns comment with body and name
         """
-        return f"Comment {self.body} by {self.name}"
+        return f"Comment {self.body} by {self.user.username}"
