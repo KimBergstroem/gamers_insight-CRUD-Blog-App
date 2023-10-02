@@ -565,17 +565,27 @@ img {
 }
 
 @media only screen and (max-width:768px) {
-  .contact {
-      margin-bottom: 60px;
-  }
-}
-
-@media only screen and (max-width:768px) {
   .single_address {
       padding-left: 0px;
   }
+  .contact {
+    margin-bottom: 60px;
+  }
 }
 
+@media (max-width: 767px) {
+  .w-100 {
+      width: 100%;
+      max-width: 100%;
+  }
+  .icon {
+    display: none; /* Hide the icons on smaller screens */
+  }
+  .single_address .address-details {
+      text-align: center; /* Center the text */
+      margin-top: 10px; /* Add some top margin for spacing */
+  }
+}
 
 /* Footer Section
 ---------------------*/
