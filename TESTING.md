@@ -298,158 +298,194 @@ Provided feedback and reported any issues or improvements they encountered durin
 
 
 
-**`Navbar unauthorized user`** 
+**`Navbar unauthorized user`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-
+| Logo | Redirects to landing_page.html page | Clicked on logo | Landing page loads | ✅ |
+| Home | Redirects to the landing page | Clicked on link "Home" | Landing page loads | ✅ |
+| About | Redirects to the about page with join now button | Clicked on link "About" | About page loads and shows the join now button | ✅ |
+| Login | Redirects to the login page | Clicked on link "Login" | Login page loads and form displays | ✅ |
+| Sign up | Redirects to the signup page and form | Clicked on the link "Sign up" | Sign-up page loads and form displays | ✅ |
 
 
 **`Navbar authorized user`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Logo | Redirects to index.html(articles) page | Clicked on logo | Index page loads | ✅ |
+| Articles | Redirects to the blog post page | Clicked on link "Articles" | Index.html page loads with a view of blog posts | ✅ |
+| About | Redirects to the about page with create post button | Clicked on link "About" | About page loads and shows the create post button | ✅ |
+| Profile image/icon | Triggers the dropdown menu | Clicked on image | The dropdown menu is displayed | ✅ |
 
-**`Profile drop down menu`**
+**`Landing page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Join now button | Redirects to the sign up page and editable form | Clicked on "Join now" button | Sign-up page loads, displaying the editable form | ✅ |
+
+**`Profile drop-down menu`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Profile | Redirects to the profile page with the user's information and editable form | Clicked on "Profile" link | Profile page loads, displaying user's information and an editable form | ✅ |
+| My Articles | Redirects to the page displaying the user's created posts and liked post history | Clicked on the "My Articles" link | "My Articles" page loads, showing user's created blog posts and liked post list | ✅ |
+| Create Post | Redirects to the page where the user can create a blog post with an editable form | Clicked on the "Create Post" link | "Create Post" page loads, displaying the create post form | ✅ |
+| Logout | Redirects the user to a logout confirmation page | Clicked on "Logout" | User is redirected to a page confirming the logout | ✅ |
 
 **`Index page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| All Category button | Redirects to the page displaying all blog posts | Clicked on "All Category" button | Successfully redirected to the page displaying all blog posts | ✅ |
+| My "FPS" button | Redirects to the page displaying all blog posts with the category "FPS" | Clicked on "FPS" button | Successfully redirected to the page displaying blog posts with FPS as the category | ✅ |
+| My "MMO" button | Redirects to the page displaying all blog posts with the category "MMO" | Clicked on "MMO" button | Successfully redirected to the page displaying blog posts with MMO as the category | ✅ |
+| My "RPG" button | Redirects to the page displaying all blog posts with the category "RPG" | Clicked on "RPG" button | Successfully redirected to the page displaying blog posts with RPG as the category | ✅ |
+| Article card image link | Redirects to the blog post detail page | Clicked on the image link of an article card | Successfully redirected to the blog post detail page | ✅ |
+| Article card title link | Redirects to the blog post detail page | Clicked on the title link of an article card | Successfully redirected to the blog post detail page | ✅ |
+| Article card info button | Redirects to the blog post detail page | Clicked on the info button of an article card | Successfully redirected to the blog post detail page | ✅ |
+| Pagination | Displays pagination if more than 9 blog posts | Added more than 9 blog posts to the list | Pagination is displayed showing the correct number of pages | ✅ |
+| Page buttons on pagination | Navigates to the correct page | Clicked on page number/next/previous buttons in pagination | Successfully navigated to the correct page based on the button clicked | ✅ |
 
 **`About page unauthorized user`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Join now button | Redirects to the sign-up page and editable form | Clicked on "Join now" button | The sign-up page loads, displaying the editable form | ✅ |
 
 **`About page authorized user`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Create Post button | Redirects to the Create Post page and editable form | Clicked on "Create Post" button | The Create Post page loads, displaying the editable form | ✅ |
+
+**`Contact us page authorized user`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Create Post button | Redirects to the Create Post page and editable form | Clicked on "Create Post" button | The Create Post page loads, displaying the editable form | ✅ |
 
 **`Sign up page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Username | Field is required and should be a valid username format | Tested with empty field, invalid format | Error message displayed prompting the user to provide a valid username | ✅ |
+| Email | Field is required and should be a valid email format | Tested with empty field, invalid format | Error message displayed prompting the user to provide a valid email address | ✅ |
+| Password | Field is required and should meet password criteria | Tested with empty field, invalid criteria | Error message displayed prompting the user to provide a valid password | ✅ |
+| Password confirmation | Field is required and should match the entered password | Tested with empty field, mismatched passwords | Error message displayed prompting the user to confirm the password correctly | ✅ |
+| Sign up button | If the form is valid, the user is redirected to the profile page with a flash message confirming successful registration. If the form is not valid, an error message is displayed. | Clicked the button with valid and non-valid formats | The button functions as expected, redirecting to the appropriate page and displaying the corresponding messages | ✅ |
+| Login text link | Redirects to the login page | Clicked on the "Login" link | The login page and form were successfully loaded | ✅ |
 
 **`Log in page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Username | The user enters a username | Tested with valid and invalid username input | The username field accepts and saves the valid input. If invalid, it displays an error message | ✅ |
+| Password | The user enters a password | Tested with valid and invalid password input | The password field functions correctly, allowing the user to input a valid password and displays an error message when not valid | ✅ |
+| Forgot password? text link | Clicking the text link redirects to password change page for requesting user's email | Clicked on the "Forgot Password?" text link | Successfully redirected to the password change page with the requested email input | ❌ |
+| Sign up text link | Clicking the text link redirects to the sign-up page | Clicked on the "Sign up" text link | Successfully redirected to the sign-up page with the registration form | ✅ |
+| Login | If the login form is valid, the user is logged in and redirected to the appropriate page. If the form is not valid, an error message is displayed. | Tested with valid and invalid login form input | The login button functions correctly, logging in the user with valid credentials and displaying error messages for invalid credentials | ✅ |
 
-**`Contact us page`**
+**`Profile page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Update | Redirect user to the update profile page with editable form | Clicked on the "Update" button | Redirected to the correct page with an editable "Update Profile" form | ✅ |
+| Change password | Redirect to the change password page with an editable form for a new password | Clicked on the "Change password" button | Redirected to the change password page and able to change the password | ✅ |
+| Delete | Redirect user to the Delete confirmation page | Clicked on the "Delete" button | Redirected to the correct page with a confirmation message and a back button | ✅ |
 
 **`Update profile page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-
-**`Delete profile page`**
-
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-
-**`Post Detail page`**
-
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-
-**`Update post page`**
-
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-
-**`Delete post page`**
-
-| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
-| --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the profile page, and a flash message should confirm the update | Made changes and clicked on the "Update" button | Changes were successfully saved, redirected to the profile page with the new information displayed, and a flash message confirmed the update | ✅ |
+| Back | Redirects to the profile page without any changes | Clicked on the "Back" button | The profile page loads, displaying the profile information without any changes | ✅ |
 
 **`Change password page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Password | Field is required and should meet password criteria | Tested with an empty field, invalid criteria, and a similar password as the current password | Error message displayed prompting the user to provide a valid password | ✅ |
+| Forgot password? text link | Clicking the text link redirects to the password change page for requesting the user's email | Clicked on the "Forgot Password?" text link | Successfully redirected to the password change page with the requested email input | ❌ |
+| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the profile page, and a flash message should confirm the change of the new password | Made changes and clicked on the "Update" button | Changes were successfully saved, redirected to the profile page, and a flash message confirmed the update | ✅ |
+| Back | Redirects to the profile page without any changes | Clicked on the "Back" button | The profile page loads, displaying the profile information without any changes | ✅ |
 
-**`403,404,405, 500 Page`**
+**`Delete profile page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
-| Coming | Coming | Coming | ✅ |
+| Delete | When "Delete" button is clicked, the user should be logged out and redirected to the landing_page.html with a successful confirmation message flashing | Clicked on "Delete" button | Redirected to the landing page with no access to the account or user and a flashing message confirming the deletion of the user account | ✅ |
+| Cancel | Redirects to the profile page | Clicked on "Back" button | The profile page loads, displaying the profile information | ✅ |
+
+**`Post Detail page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Category text link | Redirect user to the page where all blog posts with the same category are visible | Clicked on the text category link | Successfully clicked the text category link and was redirected to the expected page | ✅ |
+| Comment | The comment is displayed with the date, username, and user profile image | Added a comment | The comment is successfully displayed with the corresponding date, username, and image | ✅ |
+| Delete comment button | Only shown on the user's own comment. Deleting the comment and redirect the user to the same blog post where the comment was made | Clicked on the delete button on the comment field | Only shown on the user's comment field and successfully deleted comment was redirected to the same blog post page | ✅ |
+| Edit button | Only shown on the user's own blog post. Takes the user to the created post form with pre-filled fields | Clicked on the Edit button | Only shown on the user's blog post and successfully redirected to the blog post form with the fields pre-filled | ✅ |
+| Delete button | Only shown on the user's own blog post. Redirects to the delete confirmation page | Clicked on the delete button | Only shown on the user's blog post and successfully redirected to the delete confirmation page | ✅ |
+| Thumbs up icon | Toggles between liked or Unliked with blue text color different for confirmation IF liked | Clicked on the thumbs up icon | Successfully clicked the thumbs up icon and have the icon and Liked text in blue color as confirmation | ✅ |
+
+**`Update post page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the blog post detail page, and a flash message should confirm the update | Made changes and clicked on the "Update" button | Changes were successfully saved, redirected to the blog post detail page, and a flash message confirmed the update | ✅ |
+| Back | Redirects to the blog post detail page | Clicked on "Back" button | The blog post detail page loads, displaying the blog post | ✅ |
+
+**`Delete post page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Delete button | Deletes the blog post and redirects to the index.html page where all the articles are displayed | Clicked on the delete button | The blog post was successfully deleted, and I was redirected to the index.html page | ✅ |
+| Cancel button | Redirects to the blog post detail page | Clicked on "Cancel" button | The blog post detail page loads, displaying the blog post | ✅ |
+
+**`403, 404, 405, 500 Page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Go home button | Correct "error message" displays and redirects the user to index.html page where the articles are | Edited a non-URL path in the web browser and then clicked on the Go home button | Correct error handling message was displayed for the user, and when the Go home button was clicked, the user was redirected to the index page where articles are displayed | ✅ |
 
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
 ## Summary
-Overall, the Gamers Insight's website performed well in in all testings. The issues identified were acknowledged, and some were not addressed at the time due to design choices. 
+
+Testing The Gamers Insight web application, conducted a comprehensive evaluation of various aspects, including HTML validation, CSS validation, accessibility, performance, and user experience. The following summarizes our key findings and the status of our testing:
+
+### HTML Validation
+
+- Our HTML validation tests were mostly successful, with only a few minor issues detected. These issues were related to unconventional HTML structures introduced by the Summernote rich text editor, but they have been handled appropriately.
+
+### CSS Validation
+
+- Our CSS code was free from errors, ensuring compliance with web standards and promoting consistent design and layout.
+
+### Accessibility
+
+- The WAVE Web Accessibility Evaluation Tool helped identify potential accessibility issues, including errors and contrast warnings. We addressed these issues promptly to improve the overall accessibility of the website.
+
+### Performance
+
+- Our performance tests yielded strong results, indicating excellent performance on both desktop and mobile devices. Some known errors related to image optimization were identified but could not be resolved due to external dependencies.
+
+### User Experience
+
+- Engaged in user testing with various scenarios and received positive feedback from testers, addressing any issues they encountered.
+
+### User Stories
+
+- Tested a wide range of user stories and scenarios, ensuring that users can easily navigate, interact with, and enjoy the website's features.
+
+### Overall Status
+
+The Gamers Insight web application is in good shape, with most features functioning as expected. Have addressed identified issues and incorporated user feedback to enhance the user experience. Continuous monitoring and testing will help us maintain a stable and user-friendly platform.
+
+Remain committed to delivering an exceptional gaming community experience and will continue to work on improving accessibility, performance, and user satisfaction.
+
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
