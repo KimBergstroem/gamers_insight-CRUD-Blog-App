@@ -81,6 +81,7 @@
                     </div>
                     {% else %}
                     {% if user.is_authenticated %}
+                    <!-- Comment form -->
                     <form method="post" id="comment-form">
                         {% csrf_token %}<!-- Security token from django against attackers -->
                         <div class="d-flex justify-content-between">

@@ -15,6 +15,7 @@
                             <h3 class="fw-bold mb-4 text-uppercase">Please Wait...</h3>
                             <p class="text-white-50 mb-5">Are you sure you want to DELETE <strong>
                                     {{request.user.username }}</strong> ?</p>
+                            <!-- Profile delete form -->
                             <form method="post">
                                 {% csrf_token %} <!-- Security token from django against attackers -->
                                 <button class="btn btn-danger px-3 py-1 rounded-3" type="submit"> <i

@@ -16,6 +16,7 @@
                             <h3 class="fw-bold mb-4 text-uppercase">{% trans "Please Wait..." %}</h3>
                             <p class="text-white-50 mb-5">{% trans 'Are you sure you want to DELETE the' %} <strong>
                                     {{post.title }}</strong> ?</p>
+                                <!-- Post delete form -->
                             <form method="post">
                                 {% csrf_token %} <!-- Security token from django against attackers -->
                                 {{ message }}
