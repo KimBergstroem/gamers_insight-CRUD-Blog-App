@@ -340,6 +340,7 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 - **DBdiagram**: An online database design and diagramming tool that simplifies the process of creating and visualizing database schemas. dbdiagram.io was used for designing and documenting the database schema of the Gamers Insight project.
 - **Google Fonts**: A collection of free and open-source fonts used for typography on the Gamers Insight's website.
 - **Font Awesome**: A library of icons used for adding scalable vector icons to the Gamers Insight's website.
+- **Mailtrap**: In this project, Mailtrap was integrated to power the contact form, providing a secure environment for users to reach out to Gamers Insights via email.
 
 
 
@@ -462,7 +463,7 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 
 ### Navigation:
-- The navigation bar provides convenient access to various sections and pages of Gamers Insight, dynamically adjusting its options based on the user's authorization status. Authorized users also have the ability to submit queries to Gamers Insight using the Contact Us form.<details><summary>See Screenshot **Contact Us**</summary><img src="docs/features/features-contactus.png"></details>
+- The navigation bar provides convenient access to various sections and pages of Gamers Insight, dynamically adjusting its options based on the user's authorization status. Authorized users also have the ability to submit queries to Gamers Insight using the Contact Us form. Users will have confirmation message when successfully submited form.<details><summary>See Screenshot **Contact Us**</summary><img src="docs/features/features-contactus.png"></details><details><summary>See Screenshot **Contact Us Submitted**</summary><img src="docs/features/features-contact-success.png"></details>
 
 - Both unauthorized and authorized users have access to the About Us page. However, depending on whether you are logged in or not, the call-to-action button displayed varies between "Log In" and "Create Post."<details><summary>See Screenshot **About Us Authorized**</summary><img src="docs/features/features-about-unauth.png"></details><details><summary>See Screenshot **About Us Unauthorized**</summary><img src="docs/features/features-about-auth.png"></details>
 
@@ -517,8 +518,10 @@ All testing was carried out in [Testing.md](TESTING.md).
 | **Bug** | **Description** |
 | ------- | --------------- |
 | [If the server restarts, and a user has previously logged in, the landing page is still shown initially, when user visit the site again.]() | This issue persists. |
-| [Unable to send emails for password reset due to Gitpod blocking ports (See [Gitpod issue #965](https://github.com/gitpod-io/gitpod/issues/965)). In Heroku deployment, the steps work, but the email is not received. This could be because of an error in finding and installing OAuth templates and copying them into the template folder.](#) | This issue is still unresolved. |
+| [Unable to send emails for the 'Password reset' function due to Gitpod blocking ports and in Heroku deployment. The steps work, but the email is not received. This could be due to an error in finding and installing OAuth templates and copying them into the template folder correctly. The path 'password_change.html' is not found for OAuth templates, even though it is in my account/templates. This issue remains unresolved.](#) | This issue is still unresolved. |
 | [Encountered a Server Error (500) when trying to access the LOGIN or SIGNUP page in the deployed version on Heroku.](#) | This issue is ongoing. Removed my "development" variable setup and if statement and just went with DEBUG = False. |
+| [When a comment is deleted, users are redirected back to the post. However, if they choose to go back by browser or mouse click(mouse4) from the post page, they encounter a 404 error page. This behavior has been documented as a bug in the system.](#) | This issue persists, but handled by my customized 404 page. |
+| [When attempting to upload video or GIF images as profile pictures/blog post in the application hosted on Heroku, users may encounter an "app error" or "server error" during the upload process.](#) | This issue persists. The issue persists, and it is suspected that it may be related to file format requirements or size restrictions. |
 
 
 
@@ -717,6 +720,9 @@ The official Django documentation has been an invaluable resource throughout the
 ### W3 Schools:
 - [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
 
+### Bootstrap docs:
+- [Increase knowledge in bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+
 ### Geeksforgeeks: 
 - [Using crisp form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
 
@@ -748,10 +754,10 @@ I'd like to give recognition to the individuals who supported me in completing t
 
 * My family, for their patience and assistance in identifying spelling mistakes and testing issues. Their support has been invaluable in improving the quality of this project.
 * Testers [Debbie B](https://github.com/DebbieBergstrom) and [Sandra B](https://github.com/SandraBergstrom) for their significant contributions in providing feedback, identifying errors, and offering valuable insights.
-* [Brian](https://github.com/Brain), my Code Institute Mentor, for his exceptional guidance and expertise, which greatly contributed to my growth as a developer.
+* [Brian](https://github.com/), my Code Institute Mentor, for his exceptional guidance and expertise, which greatly contributed to my growth as a developer.
 * [Alan Bushell](https://github.com/Alan-Bushell), our cohort facilitator, for his dedication and weekly meetings where he has provided guidance, support, and encouragement to our cohort.
 
-[Code Institute Slack Channel:](#) I received feedback from numerous users in a channel with over 3,000 members where I shared my Gamers Insight project's readme. I am genuinely appreciative of the valuable feedback I received from the community.
+[Code Institute Slack Channel:](https://codeinstitute.net/) I received feedback from numerous users in a channel with over 3,000 members where I shared my Gamers Insight project's readme. I am genuinely appreciative of the valuable feedback I received from the community.
 
 I am truly grateful for their contributions, which have greatly enriched my learning and development.
 
