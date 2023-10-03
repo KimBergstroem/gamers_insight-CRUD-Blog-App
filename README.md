@@ -86,7 +86,7 @@ Gamers Insight is a Django web application aimed at creating a vibrant platform 
 - **Empowering Gamers:** Providing a dedicated space for gamers to contribute their reviews, articles, and discussions about different games.
 - **User-Centric Experience:** Offering users an engaging and intuitive interface that encourages exploration and interaction.
 - **Content Organization:** Enabling users to categorize and manage their articles, reviews, and discussions effectively.
-- **User Profiles:** Allowing users to create personalized profiles, showcase their gaming preferences, and keep track of their contributions.
+- **User Profiles:** This allow users to create personalized profiles, showcase their gaming preferences, and keep track of their contributions.
 - **Interactive Engagement:** Facilitating user interactions through comments, reviews, and discussions to foster a sense of community.
 - **Administrator Control:** Equipping administrators with the tools to manage user accounts, moderate content, and ensure a safe environment.
 - **Analytics and Insights:** Implementing analytics to understand user engagement, popular content, and areas for improvement.
@@ -121,7 +121,7 @@ Gamers Insight is designed for the following target audience:
 - Gaming enthusiasts and gamers looking for insights and reviews about various games.
 - Individuals interested in exploring diverse gaming experiences and genres.
 - Users who want to share their own game reviews, opinions, and experiences.
-- Players seeking a platform to engage in discussions about their favorite games.
+- Players seek a platform to engage in discussions about their favorite games.
 - Individuals who wish to stay updated with the latest gaming trends and discussions.
 
 By catering to the interests and needs of gamers, Gamers Insight aims to become a hub for gaming enthusiasts to connect, share, and explore the gaming world.
@@ -131,9 +131,9 @@ When using Gamers Insight, users can expect the following features and character
 
 - A user-friendly interface that provides intuitive navigation and easy access to gaming content.
 - High-quality game reviews and articles that offer detailed insights and opinions.
-- Responsive design ensuring a visually appealing experience across different devices.
-- Personalized features, such as user profiles to showcase gaming preferences and track contributions.
-- Interactive engagement through comments and discussions, fostering a sense of community.
+- Responsive design ensures a visually appealing experience across different devices.
+- Personalized features, such as user profiles showcase gaming preferences and track contributions.
+- Interactive engagement through comments and discussions, fosters a sense of community.
 - Notifications for new content and discussions to keep users informed and engaged.
 
 Gamers Insight strives to create an immersive and interactive environment for users to share, discover, and discuss their passion for gaming.
@@ -223,7 +223,7 @@ We aspire to create an environment where users can delve into the intricate worl
 ### Design Choices
 Our design choices were carefully crafted with gamers in mind. We've created an environment that captures the essence of the gaming community.
 
-### Colour
+### Color
 Our decision to adopt the 60-30-10 rule in our UI design is driven by its ability to create a cohesive and engaging user experience. This approach guarantees consistency by allocating 60% of our color palette to the dominant color, fostering brand recognition and trust. The 30% dedicated to the secondary color enables us to strike a visual balance, allowing for variations in content, headers, and backgrounds without overwhelming users. The remaining 10% allocated to the accent color serves to highlight interactive elements and calls to action, though we recommend choosing a contrasting shade for improved visibility and user engagement. This strategy ensures that our web application not only looks appealing but also functions effectively, guiding users to key elements while maintaining a harmonious and dependable design.
 ![Color Palette image](/docs/readme.md/readme-color-palette.png)
 **Dominant (60%):** 
@@ -270,13 +270,13 @@ We've designed this space to be your gaming sanctuary, where you can share, disc
 Clicking on your profile image in the navigation bar opens up access to specific profile-related features:
 
 - **My Insights:** The "My Insights" page is your own personal space like a profile. Here, you can view and manage the insights you've contributed to the Gamers Insight Blog.<br>
-- **Create Post:** Ready to share your own gaming wisdom? The "Create Post" page is where you can craft your own insights and contribute to our gaming community. Share your knowledge and experiences with fellow gamers! Share the secrets of different games what you have knowledge about!<br>
+- **Create Post:** Ready to share your own gaming wisdom? The "Create Post" page is where you can craft your own insights and contribute to our gaming community. Share your knowledge and experiences with fellow gamers! Share the secrets of different games that you have knowledge about!<br>
 - **Log Out:** When your gaming session is done, the "Log Out" option is here to help. Click here to safely log out and return to the real world after an epic gaming reading.<br>
 
 The structured design of the Gamers Insight Blog guarantees a seamless and enjoyable user experience. It empowers you to explore, contribute, and manage your gaming insights effortlessly, all while immersing yourself in the gaming community. Welcome to a world where gaming knowledge shines!
 
 ### Wireframes
-The wireframes serve as a visual blueprint for our web application, outlining the structure and functionality of each page. They provide a detailed representation of the user interface and overall user experience. These wireframes were meticulously crafted using Figma, a design tool renowned for its ability to facilitate rapid and intuitive prototyping. Click on each page for view the wireframe.
+The wireframes serve as a visual blueprint for our web application, outlining the structure and functionality of each page. They provide a detailed representation of the user interface and overall user experience. These wireframes were meticulously crafted using Figma, a design tool renowned for its ability to facilitate rapid and intuitive prototyping. Click on each page to view the wireframe.
 
 <details><summary>Landing page</summary>
 <img src="docs/wireframes/wireframe-landing-page.png">
@@ -322,7 +322,7 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 - Python
 
 ### Frameworks
-- Django: A high-level Python web framework used for building the Gamers Insight Blog webbapplication.
+- Django: A high-level Python web framework used for building the Gamers Insight Blog web application.
 - Crispy Forms: A Django package used for rendering forms in a more efficient and customizable way.
 - Bootstrap v5.0: A popular CSS framework used for creating responsive and visually appealing user interfaces.
 - Cloudinary: A cloud-based media management platform used for storing and serving images in the Blog Collective project.
@@ -337,9 +337,9 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 - **Heroku**: A cloud platform that enables deployment and hosting of web applications. Heroku was used for deploying the Gamers Insight project to a live server.
 - **Adobe Photoshop**: A professional image editing software used for advanced image manipulation.
 - **Figma**: An online collaborative design tool that offers a wide range of design and prototyping capabilities. Figma was used for creating mockups, prototypes, and design assets for the Gamers Insight website.
-- **DBdiagram**: An online database design and diagramming tool that simplifies the process of creating and visualizing database schemas. dbdiagram.io was used for designing and documenting the database schema of the Gamers Insight project.
-- **Google Fonts**: A collection of free and open-source fonts used for typography on the Gamers Insight's website.
-- **Font Awesome**: A library of icons used for adding scalable vector icons to the Gamers Insight's website.
+- **DB diagram**: An online database design and diagramming tool that simplifies the process of creating and visualizing database schemas. dbdiagram.io was used for designing and documenting the database schema of the Gamers Insight project.
+- **Google Fonts**: A collection of free and open-source fonts used for typography on Gamers Insight's website.
+- **Font Awesome**: A library of icons used for adding scalable vector icons to Gamers Insight's website.
 - **Mailtrap**: In this project, Mailtrap was integrated to power the contact form, providing a secure environment for users to reach out to Gamers Insights via email.
 
 
@@ -393,7 +393,7 @@ To streamline project management, GitHub Projects is employed as a central hub. 
 Transforming user stories into GitHub issues captures user-centric functionalities. These issues interlink with respective user stories, simplifying access to criteria, tasks, and discussions.
 
 ### Bug Tracking for Seamless Development
-Bugs uncovered during development are documented as GitHub issues, offering insights into each bug's characteristics, impact, and reproduction steps. By hyperlinking these issues in the README.md, users can stay updated on bug resolutions and contribute insights.
+Bugs uncovered during development are documented as GitHub issues, offering insights into each bug's characteristics, impact, and reproduction steps. By hyperlinking these issues in README.md, users can stay updated on bug resolutions and contribute insights.
 
 ### Iterative Development Approach
 The Gamers Insight project adheres to an iterative development approach, facilitating continuous enhancements within a predefined timeline. Despite its condensed schedule, the project accommodates future iterations and expansions.
@@ -424,7 +424,7 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 - Visitors can easily navigate to different sections available for unauthorized users of the website through the navigation bar. Visitors can also access our social media through the footer section.<details><summary>See Screenshot **Navbar**</summary><img src="docs/features/features-navbar-unauth.png"></details><details><summary>See Screenshot **Footer**</summary><img src="docs/features/features-footer.png"></details>
 
 ### Blog Pages:
-- When the user has logged in they will be directed to the Blog main page where they can scroll blog article cards. <details><summary>See Screenshot **Main**</summary><img src="docs/features/features-blog-page.png"></details>
+- When the user has logged in they will be directed to the Blog main page where they can scroll through blog article cards. <details><summary>See Screenshot **Main**</summary><img src="docs/features/features-blog-page.png"></details>
 
 ### Blog Detail Page:
 - The blog details page displays comprehensive information about each article, including details about the writer and the article's creation date.<details><summary>See Screenshot **Post detail**</summary><img src="docs/features/features-blog-detail-page.png"></details>
@@ -433,10 +433,10 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 - Users can express their appreciation for a well-written blog post by liking it, which not only supports the author but also recognizes the quality of the content.<details><summary>See Screenshot **Like**</summary><img src="docs/features/features-blog-editing.png"></details>
 
-- Users can actively participate in the community by leaving comments on recipes. This provides a platform for sharing thoughts, suggestions, and feedback, fostering a vibrant and engaging community. User also have option to delete comment.<details><summary>See Screenshot **Comment**</summary><img src="docs/features/features-comment.png"></details>
+- Users can actively participate in the community by leaving comments on recipes. This provides a platform for sharing thoughts, suggestions, and feedback, fostering a vibrant and engaging community. Users also have the option to delete comments.<details><summary>See Screenshot **Comment**</summary><img src="docs/features/features-comment.png"></details>
 
 ### User Account Management:
-- The account sign-up form allows new users to create an account and join the Gamers Insight community. The form has validation to make sure that the user enters the correct information needed. This is a django built in validation system. Such validation is:
+- The account sign-up form allows new users to create an account and join the Gamers Insight community. The form has validation to make sure that the user enters the correct information needed. This is a Django built-in validation system. Such validation is:
 
     - **Username**: Required and has a maximum of 150 characters or fewer. Only letters, digits, and @/./+/-/_ are allowed.
     - **Email**: Required and must be in a valid email format.
@@ -457,13 +457,13 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 - Users can access their profile page, where they can edit, delete, or change their password.<details><summary>See Screenshot **My Profile**</summary><img src="docs/features/features-profile.png"></details><details><summary>See Screenshot **Update Profile**</summary><img src="docs/features/features-update-profile.png"></details><details><summary>See Screenshot **Change Password**</summary><img src="docs/features/features-change-password.png"></details><details><summary>See Screenshot **Delete Account**</summary><img src="docs/features/features-delete-account.png"></details>
 
-- Users can view all their articles on a single page. This page will also display all users Liked articles. If there is no post created or liked, that will be displayed.<details><summary>See Screenshot **My Articles**</summary><img src="docs/features/features-my-articles.png"></details><details><summary>See Screenshot **None Articles/Likes**</summary><img src="docs/features/features-my-articles-none.png"></details>
+- Users can view all their articles on a single page. This page will also display all user's Liked articles. If there is no post created or liked, that will be displayed.<details><summary>See Screenshot **My Articles**</summary><img src="docs/features/features-my-articles.png"></details><details><summary>See Screenshot **None Articles/Likes**</summary><img src="docs/features/features-my-articles-none.png"></details>
 
-- Users can also use the "Logout" option to sign out of their account. Upon doing so, they will be directed to a confirmation page where they can confirm the logout.<details><summary>See Screenshot **Logout**</summary><img src="docs/features/features-logout.png"></details>
+- Users can also use the "Logout" option to sign out of their accounts. Upon doing so, they will be directed to a confirmation page where they can confirm the logout.<details><summary>See Screenshot **Logout**</summary><img src="docs/features/features-logout.png"></details>
 
 
 ### Navigation:
-- The navigation bar provides convenient access to various sections and pages of Gamers Insight, dynamically adjusting its options based on the user's authorization status. Authorized users also have the ability to submit queries to Gamers Insight using the Contact Us form. Users will have confirmation message when successfully submited form.<details><summary>See Screenshot **Contact Us**</summary><img src="docs/features/features-contactus.png"></details><details><summary>See Screenshot **Contact Us Submitted**</summary><img src="docs/features/features-contact-success.png"></details>
+- The navigation bar provides convenient access to various sections and pages of Gamers Insight, dynamically adjusting its options based on the user's authorization status. Authorized users also have the ability to submit queries to Gamers Insight using the Contact Us form. Users will have a confirmation message when successfully submit the form.<details><summary>See Screenshot **Contact Us**</summary><img src="docs/features/features-contactus.png"></details><details><summary>See Screenshot **Contact Us Submitted**</summary><img src="docs/features/features-contact-success.png"></details>
 
 - Both unauthorized and authorized users have access to the About Us page. However, depending on whether you are logged in or not, the call-to-action button displayed varies between "Log In" and "Create Post."<details><summary>See Screenshot **About Us Authorized**</summary><img src="docs/features/features-about-unauth.png"></details><details><summary>See Screenshot **About Us Unauthorized**</summary><img src="docs/features/features-about-auth.png"></details>
 
@@ -483,7 +483,7 @@ Here are some exciting features that I would like to add to the Gamers Insight i
   Enable users to effortlessly share their favorite blog articles on various social media platforms, expanding the reach and visibility of Gamers Insight.
 
 - **Multilingual Support:**  
-  Implement multi-language support to make the Gamers Insight accessible to users from diverse regions and cultural backgrounds, facilitating a more inclusive user experience.
+  Implement multi-language support to make Gamers Insight accessible to users from diverse regions and cultural backgrounds, facilitating a more inclusive user experience.
 
 - **Email Confirmation for Account Creation:**  
   Introduce email confirmation during the account creation process to enhance security and verify user identities effectively.
@@ -492,7 +492,7 @@ Here are some exciting features that I would like to add to the Gamers Insight i
   Implement a password reset function to provide users with a seamless and secure way to recover their account access.
 
 <br>
-These future enhancements aim to enrich the Gamers Insight's user experience, foster community engagement, and expand its reach to a global audience.
+These future enhancements aim to enrich Gamers Insight's user experience, foster community engagement, and expand its reach to a global audience.
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
@@ -517,11 +517,11 @@ All testing was carried out in [Testing.md](TESTING.md).
 
 | **Bug** | **Description** |
 | ------- | --------------- |
-| [If the server restarts, and a user has previously logged in, the landing page is still shown initially, when user visit the site again.]() | This issue persists. |
+| [If the server restarts and a user has previously logged in, the landing page is still shown initially, when the user visits the site again.]() | This issue persists. |
 | [Unable to send emails for the 'Password reset' function due to Gitpod blocking ports and in Heroku deployment. The steps work, but the email is not received. This could be due to an error in finding and installing OAuth templates and copying them into the template folder correctly. The path 'password_change.html' is not found for OAuth templates, even though it is in my account/templates. This issue remains unresolved.](#) | This issue is still unresolved. |
 | [Encountered a Server Error (500) when trying to access the LOGIN or SIGNUP page in the deployed version on Heroku.](#) | This issue is ongoing. Removed my "development" variable setup and if statement and just went with DEBUG = False. |
-| [When a comment is deleted, users are redirected back to the post. However, if they choose to go back by browser or mouse click(mouse4) from the post page, they encounter a 404 error page. This behavior has been documented as a bug in the system.](#) | This issue persists, but handled by my customized 404 page. |
-| [When attempting to upload video or GIF images as profile pictures/blog post in the application hosted on Heroku, users may encounter an "app error" or "server error" during the upload process.](#) | This issue persists. The issue persists, and it is suspected that it may be related to file format requirements or size restrictions. |
+| [When a comment is deleted, users are redirected back to the post However, if they choose to go back by browser or mouse click(mouse4) from the post page, they encounter a 404 error page. This behavior has been documented as a bug in the system.](#) | This issue persists, but handled by my customized 404 page. |
+| [When attempting to upload video or GIF images as profile pictures/blog posts in the application hosted on Heroku, users may encounter an "app error" or "server error" during the upload process.](#) | This issue persists. The issue persists, and it is suspected that it may be related to file format requirements or size restrictions. |
 
 
 
@@ -529,7 +529,7 @@ All testing was carried out in [Testing.md](TESTING.md).
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-| [Couldn't run django.allauth, and couldn't get it to work.](#) | Added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY, as this is a new requirement from allauth. |
+| [Couldn't run Django.allauth, and couldn't get it to work.](#) | Added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY, as this is a new requirement from allauth. |
 | [Couldn't run "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory"](#) | Resolved by using the shell, typing "python" -> "import site" -> "print(site.getsitepackages())" -> Copying the path and then redoing the command in the shell for installing the templates of auth. |
 | [Couldn't style my crispy form as desired and couldn't add Bootstrap classes.](#) | Added every input separately inside a div and used "as_crispy_field". For example, added margin space to every input box and form-row. |
 | [My stylesheet is not loading or cannot be found on Heroku. The error message is "its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."](#) | Resolved by setting DEBUG to False if development is not found with an if statement. |
@@ -598,8 +598,8 @@ To integrate Cloudinary into your project, follow these steps:
    - In Heroku settings, add `CLOUDINARY_URL` to config vars.
 
  **Django Settings:**
-   - In `INSTALLED_APPS`, add `cloudinary_storage`, `django.contrib.staticfiles`, and `cloudinary` in this order.
-   - Configure static files settings in `settings.py`: URL, storage path, directory path, root path, media URL, and default file storage.
+   - In `INSTALLED_APPS`, add `cloudinary_storage`, `Django.contrib.staticfiles`, and `cloudinary` in this order.
+   - Configure static file settings in `settings.py`: URL, storage path, directory path, root path, media URL, and default file storage.
 
  **Templates Directory Link:**
    - Link the file to the templates directory in Heroku with `TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')`.
@@ -618,7 +618,7 @@ To integrate Cloudinary into your project, follow these steps:
     - Push all changes to GitHub.
 
  **Manual Deployment:**
-    - In the Heroku deployment tab, deploy to Heroku manually the first time, and closely monitor the process.
+    - In the Heroku deployment tab, deploy to Heroku manually the first time and closely monitor the process.
     - Once successful, you can set up automatic deployments.
 
 ### Version Control
@@ -694,11 +694,11 @@ To clone the repository, follow these steps:
 </p>
 
 # Credits
-I would like to express my gratitude to the following resources, which have been a huge help for me in the development of the Gamer Insight - Blog.
+I would like to express my gratitude to the following resources, which have been a huge help to me in the development of the Gamer Insight - Blog.
 
 ### Media
 Images are taken from the following page:
-- [Leonardo.ai](https://leonardo.ai/) **Used as landing page hero image**
+- [Leonardo.ai](https://leonardo.ai/) **Used as a landing page hero image**
 
 
 ### Django Documentation:
@@ -713,7 +713,7 @@ The official Django documentation has been an invaluable resource throughout the
 - [Model instance reference](https://docs.djangoproject.com/en/4.2/ref/models/instances/)
 - [Signals](https://docs.djangoproject.com/en/4.2/topics/signals/)
 - [Using mixins with class-based views](https://docs.djangoproject.com/en/4.2/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object)
-- [Using widgets in form](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
+- [Using widgets in the form](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
 - [Date string form](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date)
 
 
@@ -721,27 +721,27 @@ The official Django documentation has been an invaluable resource throughout the
 - [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
 
 ### Bootstrap docs:
-- [Increase knowledge in bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Increase knowledge of bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ### Geeksforgeeks: 
 - [Using crisp form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
 
 ### Various tutorials and YouTube channels:
-I would like to extend my appreciation to the authors of the tutorials and YouTube channels that have shared their knowledge and expertise in Django development, enabling me to learn and apply best practices in building the Gamers Insight.
+I would like to extend my appreciation to the authors of the tutorials and YouTube channels that have shared their knowledge and expertise in Django development, enabling me to learn and apply best practices in building Gamers Insight.
 - [Python Django Tutorial: Full-Featured Web App Part 1 - Getting Started](https://www.youtube.com/watch?v=UmljXZIypDchttps://www.youtube.com/watch?v=UmljXZIypDc)
 - [Python and Django - Django Blog ](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
 - [Django Tutorial - Setup](https://www.youtube.com/watch?v=Z4D3M-NSN58&list=PLzMcBGfZo4-kQkZp-j9PNyKq7Yw5VYjq9)
 - [Style The Login Page With Bootstrap](https://www.youtube.com/watch?v=0Z_3APyKwQ4)
 - [User Profile Update Display View with Image](https://www.youtube.com/watch?v=7DU-uhhYI6Y&list=PLSPMgrv4IuJ5wS0xSQzKUB038MYIx9ufI&index=12)
-- [Style The Post detials view](https://www.bootdey.com/snippets/tagged/blog)
+- [Style The Post details view](https://www.bootdey.com/snippets/tagged/blog)
 
 ### Content
 
-- Paragraphs / text for the webpage/readme was written together with [ChatGPT](https://chat.openai.com/)
+- Paragraphs/text for the webpage/readme was written together with [ChatGPT](https://chat.openai.com/)
 
-- Tips and inspiration on how to create a better readme.md file [kera-cudmore powerpoint](https://docs.google.com/presentation/d/19_7r_To5bu7UjnZD87hrzWQi63Ij0YpaRH1XFnPZZe8/edit#slide=id.g35f391192_00)
+- Tips and inspiration on how to create a better readme.md file [kera-cudmore PowerPoint](https://docs.google.com/presentation/d/19_7r_To5bu7UjnZD87hrzWQi63Ij0YpaRH1XFnPZZe8/edit#slide=id.g35f391192_00)
 
-- English spellchecker as Google chrome extension [Grammarly](https://www.grammarly.com/)
+- English spellchecker as Google Chrome extension [Grammarly](https://www.grammarly.com/)
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
@@ -749,7 +749,7 @@ I would like to extend my appreciation to the authors of the tutorials and YouTu
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-# Acknowledgements
+# Acknowledgments
 I'd like to give recognition to the individuals who supported me in completing this project:
 
 * My family, for their patience and assistance in identifying spelling mistakes and testing issues. Their support has been invaluable in improving the quality of this project.

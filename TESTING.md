@@ -28,11 +28,11 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
 
 ### HTML Validation
 
-W3C Markup Validation is a service offered by the W3C, which enables you to assess the compliance of your HTML code with the official standards. This service identifies syntax errors, improper tag usage, and other issues that might impact the structure and meaning of your web pages. By utilizing W3C Markup Validation, you can ensure that your HTML code is well-structured and conforms to established web standards.
+W3C Markup Validation is a service offered by W3C, which enables you to assess the compliance of your HTML code with the official standards. This service identifies syntax errors, improper tag usage, and other issues that might impact the structure and meaning of your web pages. By utilizing W3C Markup Validation, you can ensure that your HTML code is well-structured and conforms to established web standards.
 
 Google Chrome web browser and the 'Inspect' function were used to capture the HTML page from our template, which was then validated against the W3C Validator.
 
-In this project, a rich text editor called "Summernote" are used to allow users to create and update posts with HTML content. While Summernote enhances the user experience, it introduces some complexities when validating our HTML code.
+In this project, a rich text editor called "Summernote" is used to allow users to create and update posts with HTML content. While Summernote enhances the user experience, it introduces some complexities when validating our HTML code.
 
 When users create or update posts, they have the flexibility to input HTML, which can sometimes lead to unconventional HTML structures or attributes. These unconventional structures are detected as errors when we validate our HTML code using external tools like the W3C validator.
 
@@ -50,10 +50,10 @@ Due to the interaction between Summernote and the need to ensure the security of
 |contactus_success.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-contact-success.png)</details>| ✅
 |profile.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-profile.png)</details>| ✅
 |my_articles.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-myarticles.png)</details>| ✅
-|post_create.html| Bad value true for attribute hidden on element textarea., Attribute cols not allowed on element div at this point.,  Bad value 100% for attribute width on element iframe: Expected a digit but saw % instead., The frameborder attribute on the iframe element is obsolete. Use CSS instead.  | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-post_create.png)</details>| ✅
+|post_create.html| Bad value true for attribute hidden on element textarea., Attribute cols are not allowed on element div at this point.,  Bad value 100% for attribute width on element iframe: Expected a digit but saw % instead., The frame border attribute on the iframe element is obsolete. Use CSS instead.  | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-post_create.png)</details>| ✅
 |logout.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-logout.png)</details>| ✅
 |post_delete.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-post_delete.png)</details>| ✅
-|post_update.html| Bad value true for attribute hidden on element textarea., Attribute cols not allowed on element div at this point.,  Bad value 100% for attribute width on element iframe: Expected a digit but saw % instead., The frameborder attribute on the iframe element is obsolete. Use CSS instead. | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-post_update.png)</details>| ✅
+|post_update.html| Bad value true for attribute hidden on element textarea., Attribute cols are not allowed on element div at this point.,  Bad value 100% for attribute width on element iframe: Expected a digit but saw % instead., The frame border attribute on the iframe element is obsolete. Use CSS instead. | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-post_update.png)</details>| ✅
 |profile_delete.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-profile_delete.png)</details>| ✅
 |profile_update.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-profile_update.png)</details>| ✅
 |password_change.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-password_change.png)</details>| ✅
@@ -92,9 +92,9 @@ Within the settings file, one URL was identified as being excessively long. The 
 
 During the evaluation, the following issues were identified:
 
-- **Errors**: The website generated 4 errors, which was related to the footer `<a>` (anchor) tags. There was no `aria-label` or text describing them. This was, of course, added to fix the errors.
+- **Errors**: The website generated 4 errors, which were related to the footer `<a>` (anchor) tags. There was no `aria-label` or text describing them. This was, of course, added to fix the errors.
 
-- **Contrast Warning**: Received a contrast warning for primary button, which was blue used by Bootstrap's class "btn-primary". This color was not good against my dark purple background. Solution was to increase the primary button's blue color to a lighter shade.
+- **Contrast Warning**: Received a contrast warning for the primary button, which was blue used by Bootstrap's class "btn-primary". This color was not good against my dark purple background. The Solution was to increase the primary button's blue color to a lighter shade.
 
 <center> 
 
@@ -146,7 +146,7 @@ The performance scores were assessed for both desktop and mobile devices. Below 
 
 ### Mobile Performance
 - Average performance score: 92/100
-- The pages showed slightly lower performance compared to desktop, but still maintained a satisfactory score.
+- The pages showed slightly lower performance compared to the desktop but still maintained a satisfactory score.
 
 | **Tested** | **Performance** | **View Result** | **Pass** |
 --- | --- | --- | :---:
@@ -180,33 +180,33 @@ The website was tested on the following devices:
 
 <ins>Mobile</ins>
 1. Samsung s22 ultra 
-2. Iphone X 
+2. iPhone X 
 3. Samsung galaxy s22
-4. Iphone 14 pro max
+4. iPhone 14 Pro max
 
 <ins>Desktop</ins>
-1. Samsung galaxy book 360
-2. HP elite book 830 g9
-3. HP victus gaming desktop
+1. Samsung Galaxy Book 360
+2. HP Elite book 830 g9
+3. HP Victus gaming desktop
 
 <ins>Monitors</ins>
-1. 49 inch Samsung CHG9 ultra wide
-2. 27 inch Benq zowie XL2746S
-3. 27 inch Dell ultrasharp U2723QE
+1. 49-inch Samsung CHG9 ultra-wide
+2. 27-inch Benq zowie XL2746S
+3. 27-inch Dell ultrasharp U2723QE
 
-In addition, the website was tested using Google Chrome Developer Tools Device Toggeling option for all available device options.
+In addition, the website was tested using the Google Chrome Developer Tools Device Toggling option for all available device options.
 
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Browser compability
+## Browser compatibility
 The website was tested on the following:
 
 <ins>Browsers</ins>
 1. Microsoft Edge
 2. Google Chrome 	
-3. Mozilla firefox 	
+3. Mozilla Firefox 	
 4. Safari
 
 <p align="center">
@@ -226,7 +226,7 @@ The website was tested on the following:
 | [Easily Navigate and Find Content](https://github.com/KimBergstroem/PP4/issues/1) | Implemented a big navbar with navigation links that clearly state their purpose. Included two prominent login and sign-up buttons. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/test-userstories-first-navbar.png)</details> |
 | [Visually Appealing Homepage](https://github.com/KimBergstroem/PP4/issues/2) | Created a landing page featuring a small animation of a magic book image and an engaging call-to-action header. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/test-userstories-first-homep.png)</details> |
 | [Search for Specific Games or Topics](https://github.com/KimBergstroem/PP4/issues/3) | Displayed category buttons on the homepage, enabling users to easily navigate content by category. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/test-userstories-first-category.png)</details> |
-| [Create a Personalized Profile](https://github.com/KimBergstroem/PP4/issues/5) | Automatically redirected first-time users to their profile page upon login, where they have the option to update their profile to their liking. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/test-userstories-first-profileupdate.png)</details> |
+| [Create a Personalized Profile](https://github.com/KimBergstroem/PP4/issues/5) | Automatically redirect first-time users to their profile page upon login, where they have the option to update their profile to their liking. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/test-userstories-first-profileupdate.png)</details> |
 
 **Returning Visitors**
 
@@ -256,12 +256,12 @@ The website was tested on the following:
 
 &nbsp;
 
-### User Experience and improvements
+### User Experience and Improvements
 I engaged in user testing involving individuals from the Slack group called "#peer-code-review" from Code Institute to collect feedback regarding their website experience. I requested them to complete the following tasks and share their feedback on their overall experience:
 
 I also asked family members and friends. 
 
-Total users attended to the testing: 8
+Total users attended the testing: 8
 
 | Test                   | Result  |
 |------------------------|---------|
@@ -287,9 +287,9 @@ Provided feedback and reported any issues or improvements they encountered durin
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|:--------:|
 | Navbar               | Social links are not opened in a new TAB                                                                                                                                                                                                           | Added 'target="_blank"' to the `a` tags.                                                                                                                                                  | Social links now open in a new tab. | ✅  |
 | Max Length           | Max length should be reduced in different fields (Check all inputs forms models) Content Excerpt                                                                                                                                               | Added 'max_length=' both in `form.py` and `models.py` for client and server-side validation.                                                                                                                                                           | Max length reduced for various fields to improve validation. | ✅  |
-| Post Details Icon    | Post details: Thumbs up is a heart instead, maybe confusing. Stick with the same icon.                                                                                                                                                          | Changed to a thumbs-up icon to match the blog post page.                                                                                                                                 | Post details now use a consistent thumbs-up icon.        | ✅  |
-| Author Link          | In `index.html` (blog main page), the Author name is not clickable, and the like comment icons look like they should be clickable. Present them in a different way maybe?                                                                      | I removed the clickable link to the user's author profile for the post. I kept the icon display as it is for design purposes, which is a common way to display 'liked' posts and the number of comments. Additionally, I added a tooltip mouse hover card that explains to users that they need to visit the post detail page if they want to like the post.                                                                                        | Author name is no longer clickable; icons remain the same. | ✅  |
-| Comment Max Length   | Post Details - Comment input has no max length, fix max length.                                                                                                                                                                                  | Added `max_length=300` in my Comment(model) for the comment field in post_details. Also added custom CSS media queries to present the comment in different screens so that no overflow breaks the comment field. | Comment input now has a max length, and it's presented properly on different screens.                     | ✅  |
+| Post Details Icon    | Post details: Thumbs up is a heart instead, which may be confusing. Stick with the same icon.                                                                                                                                                          | Changed to a thumbs-up icon to match the blog post page.                                                                                                                                 | Post details now use a consistent thumbs-up icon.        | ✅  |
+| Author Link          | In `index.html` (blog main page), the Author name is not clickable, and the like comment icons look like they should be clickable. Present them in a different way maybe?                                                                      | I removed the clickable link to the user's author profile for the post. I kept the icon display as it is for design purposes, which is a common way to display 'liked' posts and the number of comments. Additionally, I added a tooltip mouse hovercard that explains to users that they need to visit the post detail page if they want to like the post.                                                                                        | Author's name is no longer clickable; icons remain the same. | ✅  |
+| Comment Max Length   | Post Details - Comment input has no max length, fix max length.                                                                                                                                                                                  | Added `max_length=300` in my Comment(model) for the comment field in post_details. Also added custom CSS media queries to present the comment on different screens so that no overflow breaks the comment field. | Comment input now has a max length, and it's presented properly on different screens.                     | ✅  |
 | Profile picture | Users who update their profile picture should also see it displayed in the profile menu icon at the top right corner of the website. | Initially, attempted to display the user's profile picture instead of the current icon, but I found that it didn't look as good as the existing settings. Therefore, I decided to keep the profile icon as it is. | The profile icon remains unchanged for a better user experience. | ✅ |
 | Delete / Edit | In the post_detail page, the "Edit" and "Delete" post and comment text are not displayed very well. I would prefer icons for better visualization. | Added more spacing between the words and also included icons for "Delete" and "Edit" for improved visualization. | "Edit" and "Delete" now have both text and icons. | ✅ |  
 | Responsive           | Responsive needs to be fixed - Profile picture (nav menu collapse), Category buttons, Navbar in the smallest screens, it pops out of GAMERS INSIGHT and not in the same row. | Added custom styles with media queries to quickly fix responsiveness issues. Used small Bootstrap classes in some cases.                                                                                                                           | Responsive design improvements implemented.                | ✅  |
@@ -303,10 +303,10 @@ Provided feedback and reported any issues or improvements they encountered durin
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Logo | Redirects to landing_page.html page | Clicked on logo | Landing page loads | ✅ |
-| Home | Redirects to the landing page | Clicked on link "Home" | Landing page loads | ✅ |
-| About | Redirects to the about page with join now button | Clicked on link "About" | About page loads and shows the join now button | ✅ |
-| Login | Redirects to the login page | Clicked on link "Login" | Login page loads and form displays | ✅ |
-| Sign up | Redirects to the signup page and form | Clicked on the link "Sign up" | Sign-up page loads and form displays | ✅ |
+| Home | Redirects to the landing page | Clicked on the link "Home" | Landing page loads | ✅ |
+| About | Redirects to the About page with the Join Now button | Clicked on the link "About" | About page loads and shows the Join Now button | ✅ |
+| Login | Redirects to the login page | Clicked on the link "Login" | Login page loads and form displays | ✅ |
+| Sign up | Redirects to the signup page and form | Clicked on the link "Sign up" | Sign-up page loads and the form displays | ✅ |
 
 
 **`Navbar authorized user`**
@@ -314,9 +314,9 @@ Provided feedback and reported any issues or improvements they encountered durin
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Logo | Redirects to index.html(articles) page | Clicked on logo | Index page loads | ✅ |
-| Articles | Redirects to the blog post page | Clicked on link "Articles" | Index.html page loads with a view of blog posts | ✅ |
-| About | Redirects to the about page with create post button | Clicked on link "About" | About page loads and shows the create post button | ✅ |
-| Profile image/icon | Triggers the dropdown menu | Clicked on image | The dropdown menu is displayed | ✅ |
+| Articles | Redirect to the blog post page | Clicked on the link "Articles" | Index.html page loads with a view of blog posts | ✅ |
+| About | Redirects to the About page with the Create Post button | Clicked on the link "About" | About page loads and shows the Create Post button | ✅ |
+| Profile image/icon | Triggers the dropdown menu | Clicked on the image | The dropdown menu is displayed | ✅ |
 
 **`Landing page`**
 
@@ -328,19 +328,19 @@ Provided feedback and reported any issues or improvements they encountered durin
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Profile | Redirects to the profile page with the user's information and editable form | Clicked on "Profile" link | Profile page loads, displaying user's information and an editable form | ✅ |
-| My Articles | Redirects to the page displaying the user's created posts and liked post history | Clicked on the "My Articles" link | "My Articles" page loads, showing user's created blog posts and liked post list | ✅ |
-| Create Post | Redirects to the page where the user can create a blog post with an editable form | Clicked on the "Create Post" link | "Create Post" page loads, displaying the create post form | ✅ |
+| Profile | Redirects to the profile page with the user's information and editable form | Clicked on the "Profile" link | Profile page loads, displaying the user's information and an editable form | ✅ |
+| My Articles | Redirects to the page displaying the user's created posts and liked post history | Clicked on the "My Articles" link | "My Articles" page loads, showing the user's created blog posts and liked post list | ✅ |
+| Create Post | Redirects to the page where the user can create a blog post with an editable form | Clicked on the "Create Post" link | "Create Post" page loads, displaying the Create Post form | ✅ |
 | Logout | Redirects the user to a logout confirmation page | Clicked on "Logout" | User is redirected to a page confirming the logout | ✅ |
 
 **`Index page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| All Category button | Redirects to the page displaying all blog posts | Clicked on "All Category" button | Successfully redirected to the page displaying all blog posts | ✅ |
-| My "FPS" button | Redirects to the page displaying all blog posts with the category "FPS" | Clicked on "FPS" button | Successfully redirected to the page displaying blog posts with FPS as the category | ✅ |
-| My "MMO" button | Redirects to the page displaying all blog posts with the category "MMO" | Clicked on "MMO" button | Successfully redirected to the page displaying blog posts with MMO as the category | ✅ |
-| My "RPG" button | Redirects to the page displaying all blog posts with the category "RPG" | Clicked on "RPG" button | Successfully redirected to the page displaying blog posts with RPG as the category | ✅ |
+| All Category button | Redirects to the page displaying all blog posts | Clicked on the "All Category" button | Successfully redirected to the page displaying all blog posts | ✅ |
+| My "FPS" button | Redirects to the page displaying all blog posts with the category "FPS" | Clicked on the "FPS" button | Successfully redirected to the page displaying blog posts with FPS as the category | ✅ |
+| My "MMO" button | Redirects to the page displaying all blog posts with the category "MMO" | Clicked on the "MMO" button | Successfully redirected to the page displaying blog posts with MMO as the category | ✅ |
+| My "RPG" button | Redirects to the page displaying all blog posts with the category "RPG" | Clicked on the "RPG" button | Successfully redirected to the page displaying blog posts with RPG as the category | ✅ |
 | Article card image link | Redirects to the blog post detail page | Clicked on the image link of an article card | Successfully redirected to the blog post detail page | ✅ |
 | Article card title link | Redirects to the blog post detail page | Clicked on the title link of an article card | Successfully redirected to the blog post detail page | ✅ |
 | Article card info button | Redirects to the blog post detail page | Clicked on the info button of an article card | Successfully redirected to the blog post detail page | ✅ |
@@ -357,9 +357,9 @@ Provided feedback and reported any issues or improvements they encountered durin
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Create Post button | Redirects to the Create Post page and editable form | Clicked on "Create Post" button | The Create Post page loads, displaying the editable form | ✅ |
+| Create Post button | Redirects to the Create Post page and editable form | Clicked on the "Create Post" button | The Create Post page loads, displaying the editable form | ✅ |
 
-**`Contact us page authorized user`**
+**`Contact Us page authorized user`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
@@ -369,9 +369,9 @@ Provided feedback and reported any issues or improvements they encountered durin
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Username | Field is required and should be a valid username format | Tested with empty field, invalid format | Error message displayed prompting the user to provide a valid username | ✅ |
-| Email | Field is required and should be a valid email format | Tested with empty field, invalid format | Error message displayed prompting the user to provide a valid email address | ✅ |
-| Password | Field is required and should meet password criteria | Tested with empty field, invalid criteria | Error message displayed prompting the user to provide a valid password | ✅ |
+| Username | Field is required and should be a valid username format | Tested with an empty field, invalid format | Error message is displayed prompting the user to provide a valid username | ✅ |
+| Email | Field is required and should be a valid email format | Tested with an empty field, or invalid format | Error message displayed prompting the user to provide a valid email address | ✅ |
+| Password | Field is required and should meet password criteria | Tested with an empty field, invalid criteria | Error message displayed prompting the user to provide a valid password | ✅ |
 | Password confirmation | Field is required and should match the entered password | Tested with empty field, mismatched passwords | Error message displayed prompting the user to confirm the password correctly | ✅ |
 | Sign up button | If the form is valid, the user is redirected to the profile page with a flash message confirming successful registration. If the form is not valid, an error message is displayed. | Clicked the button with valid and non-valid formats | The button functions as expected, redirecting to the appropriate page and displaying the corresponding messages | ✅ |
 | Login text link | Redirects to the login page | Clicked on the "Login" link | The login page and form were successfully loaded | ✅ |
@@ -382,7 +382,7 @@ Provided feedback and reported any issues or improvements they encountered durin
 | --- | --- | --- | --- | --- |
 | Username | The user enters a username | Tested with valid and invalid username input | The username field accepts and saves the valid input. If invalid, it displays an error message | ✅ |
 | Password | The user enters a password | Tested with valid and invalid password input | The password field functions correctly, allowing the user to input a valid password and displays an error message when not valid | ✅ |
-| Forgot password? text link | Clicking the text link redirects to password change page for requesting user's email | Clicked on the "Forgot Password?" text link | Successfully redirected to the password change page with the requested email input | ❌ |
+| Forgot password? text link | Clicking the text link redirects to the password change page for requesting the user's email | Clicked on the "Forgot Password?" text link | Successfully redirected to the password change page with the requested email input | ❌ |
 | Sign up text link | Clicking the text link redirects to the sign-up page | Clicked on the "Sign up" text link | Successfully redirected to the sign-up page with the registration form | ✅ |
 | Login | If the login form is valid, the user is logged in and redirected to the appropriate page. If the form is not valid, an error message is displayed. | Tested with valid and invalid login form input | The login button functions correctly, logging in the user with valid credentials and displaying error messages for invalid credentials | ✅ |
 
@@ -390,15 +390,15 @@ Provided feedback and reported any issues or improvements they encountered durin
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Update | Redirect user to the update profile page with editable form | Clicked on the "Update" button | Redirected to the correct page with an editable "Update Profile" form | ✅ |
+| Update | Redirect the user to the update profile page with an editable form | Clicked on the "Update" button | Redirected to the correct page with an editable "Update Profile" form | ✅ |
 | Change password | Redirect to the change password page with an editable form for a new password | Clicked on the "Change password" button | Redirected to the change password page and able to change the password | ✅ |
-| Delete | Redirect user to the Delete confirmation page | Clicked on the "Delete" button | Redirected to the correct page with a confirmation message and a back button | ✅ |
+| Delete | Redirect the user to the Delete confirmation page | Clicked on the "Delete" button | Redirected to the correct page with a confirmation message and a back button | ✅ |
 
 **`Update profile page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the profile page, and a flash message should confirm the update | Made changes and clicked on the "Update" button | Changes were successfully saved, redirected to the profile page with the new information displayed, and a flash message confirmed the update | ✅ |
+| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the profile page, and a flash message should confirm the update | Made changes and click on the "Update" button | Changes were successfully saved, redirected to the profile page with the new information displayed, and a flash message confirmed the update | ✅ |
 | Back | Redirects to the profile page without any changes | Clicked on the "Back" button | The profile page loads, displaying the profile information without any changes | ✅ |
 
 **`Change password page`**
@@ -407,15 +407,15 @@ Provided feedback and reported any issues or improvements they encountered durin
 | --- | --- | --- | --- | --- |
 | Password | Field is required and should meet password criteria | Tested with an empty field, invalid criteria, and a similar password as the current password | Error message displayed prompting the user to provide a valid password | ✅ |
 | Forgot password? text link | Clicking the text link redirects to the password change page for requesting the user's email | Clicked on the "Forgot Password?" text link | Successfully redirected to the password change page with the requested email input | ❌ |
-| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the profile page, and a flash message should confirm the change of the new password | Made changes and clicked on the "Update" button | Changes were successfully saved, redirected to the profile page, and a flash message confirmed the update | ✅ |
+| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the profile page, and a flash message should confirm the change of the new password | Made changes and click on the "Update" button | Changes were successfully saved, redirected to the profile page, and a flash message confirmed the update | ✅ |
 | Back | Redirects to the profile page without any changes | Clicked on the "Back" button | The profile page loads, displaying the profile information without any changes | ✅ |
 
 **`Delete profile page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Delete | When "Delete" button is clicked, the user should be logged out and redirected to the landing_page.html with a successful confirmation message flashing | Clicked on "Delete" button | Redirected to the landing page with no access to the account or user and a flashing message confirming the deletion of the user account | ✅ |
-| Cancel | Redirects to the profile page | Clicked on "Back" button | The profile page loads, displaying the profile information | ✅ |
+| Delete | When the "Delete" button is clicked, the user should be logged out and redirected to the landing_page.html with a successful confirmation message flashing | Clicked on the "Delete" button | Redirected to the landing page with no access to the account or user, and a flashing message confirming the deletion of the user account | ✅ |
+| Cancel | Redirects to the profile page | Clicked on the "Back" button | The profile page loads, displaying the profile information | ✅ |
 
 **`Post Detail page`**
 
@@ -423,7 +423,7 @@ Provided feedback and reported any issues or improvements they encountered durin
 | --- | --- | --- | --- | --- |
 | Category text link | Redirect user to the page where all blog posts with the same category are visible | Clicked on the text category link | Successfully clicked the text category link and was redirected to the expected page | ✅ |
 | Comment | The comment is displayed with the date, username, and user profile image | Added a comment | The comment is successfully displayed with the corresponding date, username, and image | ✅ |
-| Delete comment button | Only shown on the user's own comment. Deleting the comment and redirect the user to the same blog post where the comment was made | Clicked on the delete button on the comment field | Only shown on the user's comment field and successfully deleted comment was redirected to the same blog post page | ✅ |
+| Delete comment button | Only shown on the user's own comment. Deleting the comment and redirect the user to the same blog post where the comment was made | Clicked on the delete button on the comment field | Only shown on the user's comment field and successfully deleted comment was redirecting to the same blog post page | ✅ |
 | Edit button | Only shown on the user's own blog post. Takes the user to the created post form with pre-filled fields | Clicked on the Edit button | Only shown on the user's blog post and successfully redirected to the blog post form with the fields pre-filled | ✅ |
 | Delete button | Only shown on the user's own blog post. Redirects to the delete confirmation page | Clicked on the delete button | Only shown on the user's blog post and successfully redirected to the delete confirmation page | ✅ |
 | Thumbs up icon | Toggles between liked or Unliked with blue text color different for confirmation IF liked | Clicked on the thumbs up icon | Successfully clicked the thumbs up icon and have the icon and Liked text in blue color as confirmation | ✅ |
@@ -432,15 +432,15 @@ Provided feedback and reported any issues or improvements they encountered durin
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the blog post detail page, and a flash message should confirm the update | Made changes and clicked on the "Update" button | Changes were successfully saved, redirected to the blog post detail page, and a flash message confirmed the update | ✅ |
-| Back | Redirects to the blog post detail page | Clicked on "Back" button | The blog post detail page loads, displaying the blog post | ✅ |
+| Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the blog post detail page, and a flash message should confirm the update | Made changes and click on the "Update" button | Changes were successfully saved, redirected to the blog post detail page, and a flash message confirmed the update | ✅ |
+| Back | Redirects to the blog post detail page | Clicked on the "Back" button | The blog post detail page loads, displaying the blog post | ✅ |
 
 **`Delete post page`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Delete button | Deletes the blog post and redirects to the index.html page where all the articles are displayed | Clicked on the delete button | The blog post was successfully deleted, and I was redirected to the index.html page | ✅ |
-| Cancel button | Redirects to the blog post detail page | Clicked on "Cancel" button | The blog post detail page loads, displaying the blog post | ✅ |
+| Cancel button | Redirects to the blog post detail page | Clicked on the "Cancel" button | The blog post detail page loads, displaying the blog post | ✅ |
 
 **`403, 404, 405, 500 Page`**
 
