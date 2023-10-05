@@ -16,7 +16,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
-# SECURITY WARNING: don't run with debug turned on in production!
 # development = os.environ.get('DEVELOPMENT', False)
 
 DEBUG = False
@@ -101,11 +100,11 @@ ROOT_URLCONF = "game_insight.urls"
 
 TEMPLATES = [
     {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMPLATES_DIR],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -119,7 +118,9 @@ TEMPLATES = [
 WSGI_APPLICATION = "game_insight.wsgi.application"
 
 
-DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 # Use an SQLite database for testing to isolate and create test cases
 if 'test' in sys.argv or 'test_coverage' in sys.argv:
