@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.db.models.signals import post_save
 from django.core.exceptions import ValidationError
+from django.utils import timezone
+from django.utils.text import slugify
 from django.dispatch import receiver
 from django.urls import reverse
 
@@ -122,6 +124,16 @@ class Post(models.Model):
         """
 
         ordering = ["-created_on"]
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            # Generate a unique slug based on the title and timestamp
+            base_slug = slugify(self.title)
+            timestamp = timezone.now().strftime('%Y%m%d%H%M%S')
+            unique_slug = f"{base_slug}-{timestamp}"
+            self.slug = unique_slug
+            
+        super().save(*args, **kwargs)
 
     def __str__(self):
         """
