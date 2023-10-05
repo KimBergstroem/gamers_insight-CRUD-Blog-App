@@ -501,7 +501,7 @@ Provided feedback and reported any issues or improvements they encountered durin
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | Password | Field is required and should meet password criteria | Tested with an empty field, invalid criteria, and a similar password as the current password | Error message displayed prompting the user to provide a valid password | ✅ |
-| Forgot password? text link | Clicking the text link redirects to the password change page for requesting the user's email | Clicked on the "Forgot Password?" text link | Successfully redirected to the password change page with the requested email input | ❌ |
+| Forgot password? text link | Clicking the text link redirects to the password reset page for requesting the user's email | Clicked on the "Forgot Password?" text link | Successfully redirected to the password reset page with the requested email input. The reason on why this is set to Fail, is after the submit the email never received at requested email for be able to have the new password. Please see current [Bug#27](https://github.com/KimBergstroem/PP4/issues/27) | ❌ |
 | Update | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the profile page, and a flash message should confirm the change of the new password | Made changes and click on the "Update" button | Changes were successfully saved, redirected to the profile page, and a flash message confirmed the update | ✅ |
 | Back | Redirects to the profile page without any changes | Clicked on the "Back" button | The profile page loads, displaying the profile information without any changes | ✅ |
 
