@@ -54,12 +54,14 @@
                                     <!-- Check for user authentication and compares user id with post author id -->
                                     {% if user.is_authenticated %}
                                     {% if user.id == post.author.id %}
-                                    &#160; | <a class="text-secondary fw-bolder custom-word-spacing"
-                                        href="{% url 'post_update' post.slug %}">
-                                        &#160;<i class="fas fa-edit"></i> Edit </a>&#160; | &#160;
-                                    <a class="text-secondary fw-bolder custom-word-spacing"
-                                        href="{% url 'post_delete' post.slug %}">
-                                        <i class="fas fa-trash-alt"></i> Delete</a>
+                                    <div class="button-container-edit-delete">
+                                        | <a class="text-secondary fw-bolder custom-word-spacing"
+                                            href="{% url 'post_update' post.slug %}">
+                                            &#160;<i class="fas fa-edit"></i> Edit </a>&#160; | &#160;
+                                        <a class="text-secondary fw-bolder custom-word-spacing"
+                                            href="{% url 'post_delete' post.slug %}">
+                                            <i class="fas fa-trash-alt"></i> Delete </a>&#160; |
+                                    </div>
                                     {% endif %}
                                     {% endif %}
                                 </small>
@@ -119,7 +121,7 @@
                     <div class="media">
                         <div class="col-sm-3 col-lg-2 d-none d-sm-block me-4">
                             <img class="img-responsive rounded" src="{{ comment.user.userprofile.profile_picture.url }}"
-                                alt="Profile img"></a>
+                                alt="Profile img" style="width: 100%; height: 125px; object-fit: cover;"></a>
                         </div>
                         <div class="media-body">
                             <h5 class="text-primary d-inline">{{ comment.user.username }}</h5>

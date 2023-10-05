@@ -220,6 +220,10 @@ body {
     object-fit: cover;
 }
 
+.button-container-edit-delete {
+  display: inline-block;
+}
+
 .pagination-container {
     padding-top: 25px;
     margin: 20px;
@@ -259,6 +263,13 @@ body {
         margin-top: 0px;
         padding: 20px;
     }
+}
+
+@media (max-width: 375px) {
+  .button-container-edit-delete {
+      display: block;
+      font-size: 12px;
+  }
 }
 
 /* Category menu displays in different screens */
