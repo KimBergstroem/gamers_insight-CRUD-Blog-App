@@ -225,7 +225,7 @@ When creating the database structure schema for this project, I utilized the [db
 
 #### Post Table
 - Represents blog posts created by users.
-- Fields: post_id (primary key), title (post title), slug (post slug), author_id (foreign key to User), update_on (post update date), content (post content), featured_image (featured image URL), excerpt (post excerpt), Created_on (post creation date), status (post status), likes (many-to-many relationship with User for post likes), category_id (many-to-many relationship with GameCategory for post categorization).
+- Fields: post_id (primary key), title (post title), slug (post slug), author_id (foreign key to User), update_on (post update date), content (post content), featured_image (featured image URL), excerpt (post excerpt), Created_on (post creation date), status (post status), likes (many-to-many relationship with User for post likes), category_id (foreign key to GameCategory), device (post device 'PC', 'XBOX', 'PLAYSTATION', 'NITENDO', Charfield).
 
 #### Comment Table
 - Represents comments on blog posts.
