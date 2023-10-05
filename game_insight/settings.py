@@ -26,8 +26,6 @@ ALLOWED_HOSTS = [
     "8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu105.gitpod.io",
 ]
 
-TEST_APPS = ['blog.tests']
-
 # Application definition
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -123,6 +121,7 @@ DATABASES = {
 }
 
 # Use an SQLite database for testing to isolate and create test cases
+"""
 if 'test' in sys.argv or 'test_coverage' in sys.argv:
     DATABASES = {
         'default': {
@@ -136,7 +135,9 @@ else:
             os.environ.get('DATABASE_URL')
         )
     }
+"""
 
+# TEST_APPS = ['blog.tests']
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
