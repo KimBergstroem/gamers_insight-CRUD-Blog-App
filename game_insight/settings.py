@@ -46,16 +46,15 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "profile"
 LOGOUT_REDIRECT_URL = "/"
 
 # Email Settings
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get("EMAIL_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+# Setup for email configuration
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'EMAIL_USER'
+EMAIL_HOST_PASSWORD = 'EMAIL_PASSWORD'
+EMAIL_PORT = '2525'
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
@@ -120,19 +119,6 @@ WSGI_APPLICATION = "game_insight.wsgi.application"
 
 
 DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
-
-""" if development:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-
-else:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    } """
 
 
 # Password validation
