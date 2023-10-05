@@ -363,7 +363,11 @@ Provided feedback and reported any issues or improvements they encountered durin
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Create Post button | Redirects to the Create Post page and editable form | Clicked on "Create Post" button | The Create Post page loads, displaying the editable form | ✅ |
+| Name | Field is required and should be a valid name format | Tested with an empty field, invalid format | Error message is displayed prompting the user to provide a valid name | ✅ |
+| Email | Field is required and should be a valid email format | Tested with an empty field, or invalid format | Error message displayed prompting the user to provide a valid email address | ✅ |
+| Subject | Field is required and can't be left empty | Tested with an empty field, invalid criteria | Error message displayed prompting the user to provide a subject | ✅ |
+| Submit | If the form is valid, the user is redirected to the Thank you for submission page with a confirmation. | Clicked the submit button with valid and non-valid formats | The submit button functions as expected, redirecting to the appropriate confirmation page and displaying the corresponding messages | ✅ |
+
 
 **`Sign up page`**
 
