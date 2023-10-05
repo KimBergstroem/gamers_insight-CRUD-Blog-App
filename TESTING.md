@@ -7,18 +7,30 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
 [Project Repository](https://github.com/KimBergstroem/PP4)<br>
 
 
+## Table of Content
 
-## CONTENTS
+* 📄[Code Validation](#code-validation)
+  + [HTML Validation](#html-validation)
+  + [CSS Validation](#css-validation)
+  + [Python Validaton](#--pep8-validator--)
+* 📄[Accessibility](#accessibility)
+  + [Wave](#--wave--)
+* 📄[Performance](#performance)
+  + [Desktop Performance](#desktop-performance)
+  + [Mobile Performance](#mobile-performance)
+* 📄[Performing tests on various devices](#performing-tests-on-various-devices)
+* 📄[Browser compatibility](#browser-compatibility)
+* 📄[Automated Testing](#automated-testing)
+  + [test_views.py](#test-viewspy)
+  + [test_models.py](#test-modelspy)
+  + [test_urls.py](#test-urlspy)
+* 📄[Manual Testing](#manual-testing)
+  + [Testing user stories](#testing-user-stories)
+  + [User Experience and Improvements](#user-experience-and-improvements)
+  + [Full Testing](#full-testing)
+* 📄[Summary](#summary)
 
-* [**Automated Testing**](#automated-testing)
-  * [W3C Validator](#w3c-validator)
-  * [JavaScript Validator](#javaScript-validator)
-  * [PEP8 Validator](#javaScript-validator)
-  * [Lighthouse](#lighthouse)
-  * [Wave Accessibility Test](#wave)
-* [**Manual Testing**](#manual-testing)
-  * [Testing User Stories](#testing-user-stories)
-  * [Full Testing](#full-testing)
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc and modified by myself</a></i></small>
 
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
@@ -30,13 +42,13 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
 
 W3C Markup Validation is a service offered by W3C, which enables you to assess the compliance of your HTML code with the official standards. This service identifies syntax errors, improper tag usage, and other issues that might impact the structure and meaning of your web pages. By utilizing W3C Markup Validation, you can ensure that your HTML code is well-structured and conforms to established web standards.
 
-Google Chrome web browser and the 'Inspect' function were used to capture the HTML page from our template, which was then validated against the W3C Validator.
+Google Chrome web browser and the 'Inspect' function were used to capture the HTML page from the webb applications templates, which was then validated against the W3C Validator.
 
 In this project, a rich text editor called "Summernote" is used to allow users to create and update posts with HTML content. While Summernote enhances the user experience, it introduces some complexities when validating our HTML code.
 
-When users create or update posts, they have the flexibility to input HTML, which can sometimes lead to unconventional HTML structures or attributes. These unconventional structures are detected as errors when we validate our HTML code using external tools like the W3C validator.
+When users create or update posts, they have the flexibility to input HTML, which can sometimes lead to unconventional HTML structures or attributes. These unconventional structures are detected as errors when I validate our HTML code using external tools like the W3C validator.
 
-Due to the interaction between Summernote and the need to ensure the security of our application. To protect against security threats and potential attacks, we've implemented safeguards such as using the '|safe' filter in our forms. This filter prevents user-entered HTML from compromising the security of our application.
+Due to the interaction between Summernote and the need to ensure the security of application. To protect against security threats and potential attacks, implemented safeguards such as using the `|safe` filter in our forms. This filter prevents user-entered HTML from compromising the security of application.
 
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
@@ -66,7 +78,7 @@ Due to the interaction between Summernote and the need to ensure the security of
 |CSS file | No errors |<details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-style.png)</details>| ✅
 |Whole webpage | No errors  |[Result](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgame-insight-1cff11f2b2d5.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv#warnings)| ✅
 
-### **PEP8 Validator** 
+### Python Validaton 
 [PEP 8](https://pep8ci.herokuapp.com/) serves as a comprehensive style guide for writing Python code, emphasizing consistency and readability as its core principles. It offers guidance on code formatting, variable and function naming conventions, and various best practices. Adhering to PEP 8 principles contributes to enhancing code quality, making it more readable and maintainable.
 
 Within the settings file, one URL was identified as being excessively long. The other lines that exceeded the recommended length were automatically generated by Django. All other files were free from errors and issues.
@@ -80,6 +92,11 @@ Within the settings file, one URL was identified as being excessively long. The 
 |blog/forms.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-forms.png) | ✅
 |blog/urls.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-urls.png)| ✅
 |blog/admin.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-admin.png)| ✅
+|blog/tests/test_views.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-test-views.png)| ✅
+|blog/tests/test_models.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-test-models.png)| ✅
+|blog/tests/test_urls.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-test-urls.png)| ✅
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
@@ -96,22 +113,22 @@ During the evaluation, the following issues were identified:
 
 - **Contrast Warning**: Received a contrast warning for the primary button, which was blue used by Bootstrap's class "btn-primary". This color was not good against my dark purple background. The Solution was to increase the primary button's blue color to a lighter shade.
 
-<center> 
 
-![Wave image](/docs/test.md/test-accessibility.png) 
-
-</center>
+<p align="center">
+  <img src="docs/test.md/test-accessibility.png" />
+</p>
 
 By using the WAVE tool, I gained valuable insights into the accessibility of my website. While I have chosen not to address certain errors at this time, I remain committed to creating an inclusive user experience and will continue to explore ways to improve accessibility in the future.
 
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
 ## Performance
-We conducted a comprehensive evaluation of [The Gamers Insight website](https://game-insight-1cff11f2b2d5.herokuapp.com/) using [Google Lighthouse in Google Chrome Developer Tools](https://developer.chrome.com/docs/lighthouse/). This evaluation was performed in Google Chrome browser's incognito mode to eliminate all potential impacts from other addons and cached files.
+I conducted a comprehensive evaluation of [The Gamers Insight website](https://game-insight-1cff11f2b2d5.herokuapp.com/) using [Google Lighthouse in Google Chrome Developer Tools](https://developer.chrome.com/docs/lighthouse/). This evaluation was performed in Google Chrome browser's incognito mode to eliminate all potential impacts from other addons and cached files.
 
-Known Errors Impacting `index.html` and `post_detail.html` Pages the most, but even edit/delete post pages. We are using Cloudinary as an image and storage server for users to upload their images. The following errors were identified during Lighthouse validation, and they currently cannot be changed. These errors have had an impact on the overall performance of these pages:
+Known Errors Impacting `index.html` and `post_detail.html` Pages the most, but even edit/delete post pages. Using Cloudinary as an image and storage server for users to upload their images. The following errors were identified during Lighthouse validation, and they currently cannot be changed. These errors have had an impact on the overall performance of these pages:
 
 - Serving images in next-gen formats
 - Properly sizing images
@@ -171,6 +188,7 @@ The performance scores were assessed for both desktop and mobile devices. Below 
 
 In terms of performance, the Gamers Insight website delivered strong results, ensuring a seamless user experience on both desktop and mobile platforms.
 
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
@@ -196,6 +214,7 @@ The website was tested on the following devices:
 
 In addition, the website was tested using the Google Chrome Developer Tools Device Toggling option for all available device options.
 
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
@@ -209,6 +228,78 @@ The website was tested on the following:
 3. Mozilla Firefox 	
 4. Safari
 
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/readme.md/readme-divider3.png" />
+</p>
+
+
+## Automated Testing
+
+Automated testing was a critical phase conducted towards the end of the project to gain a deeper understanding of automated testing practices and to uncover any hidden bugs or errors that might have slipped through. This phase focused on testing the essential components and functionalities of the project, with a particular emphasis on the CRUD (Create, Read, Update, Delete) operations and various URL patterns and view paths.
+
+If more time was existing in this project, I would also create tests for all user stories.
+
+
+I created a folder called "tests" inside of my blog application.
+In this folder I created three separate files, each corresponding to a specific aspect of the project that needed testing. 
+For conducting the tests, I leveraged Django's built-in testing framework and used the `django.test.TestCase` class as the foundation. This framework provides a robust and standardized environment for writing and executing tests, making it easier to assess the project's functionality and reliability.
+
+Before the testing process, it was needed to configure the project's settings in the "settings.py" file in order for the automated testing to work properly. I added this two condition:
+
+- `TEST_APPS = ['blog.tests']` 
+- `if 'test' in sys.argv or 'test_coverage' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(
+            os.environ.get('DATABASE_URL')
+        )
+    }`
+
+&nbsp;
+
+### test_views.py
+
+![screenshot](docs/test.md/automated-test/test-test_views.png)
+
+### test_models.py
+
+![screenshot](docs/test.md/automated-test/test-test_models.png)
+
+### test_urls.py
+
+![screenshot](docs/test.md/automated-test/test-test_urls.png)
+
+My initial tests passed without errors, the testing process did reveal some bugs and errors. You can find details about these issues, documented in my readme file, click [here](README.md)
+
+To measure code coverage and assess how much of the project's codebase is tested, I used the Coverage.py tool. Here are the steps to view the coverage report in HTML format:
+
+Installing the Coverage.py using pip
+- `Pip install coverage`
+
+To check coverage in the HTML format run in the terminal:
+
+- `coverage run --source='.' manage.py test`
+  - This will create a `.coverage` file in your root directory
+- `coverage html`
+  - This will create a folder in your root directory called `htmlcov`
+  - Right-click on it and select "Open with Live Server" to view the detailed coverage report.
+
+
+My tests have achieved 89% code coverage, but there's always room for improvement and further testing that can help improve this score.
+
+<p align="center">
+  <img src="docs/test.md//automated-test/test-coverage-report.png" />
+</p>
+
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
@@ -452,6 +543,7 @@ Provided feedback and reported any issues or improvements they encountered durin
 | --- | --- | --- | --- | --- |
 | Go home button | Correct "error message" displays and redirects the user to index.html page where the articles are | Edited a non-URL path in the web browser and then clicked on the Go home button | Correct error handling message was displayed for the user, and when the Go home button was clicked, the user was redirected to the index page where articles are displayed | ✅ |
 
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
@@ -462,23 +554,27 @@ Testing The Gamers Insight web application, conducted a comprehensive evaluation
 
 ### HTML Validation
 
-- Our HTML validation tests were mostly successful, with only a few minor issues detected. These issues were related to unconventional HTML structures introduced by the Summernote rich text editor, but they have been handled appropriately.
+- HTML validation tests were mostly successful, with only a few minor issues detected. These issues were related to unconventional HTML structures introduced by the Summernote rich text editor, but they have been handled appropriately.
 
 ### CSS Validation
 
-- Our CSS code was free from errors, ensuring compliance with web standards and promoting consistent design and layout.
+- CSS code was free from errors, ensuring compliance with web standards and promoting consistent design and layout.
 
 ### Accessibility
 
-- The WAVE Web Accessibility Evaluation Tool helped identify potential accessibility issues, including errors and contrast warnings. We addressed these issues promptly to improve the overall accessibility of the website.
+- The WAVE Web Accessibility Evaluation Tool helped identify potential accessibility issues, including errors and contrast warnings. I addressed these issues promptly to improve the overall accessibility of the website.
 
 ### Performance
 
-- Our performance tests yielded strong results, indicating excellent performance on both desktop and mobile devices. Some known errors related to image optimization were identified but could not be resolved due to external dependencies.
+- Performance tests yielded strong results, indicating excellent performance on both desktop and mobile devices. Some known errors related to image optimization were identified but could not be resolved due to external dependencies.
 
 ### User Experience
 
 - Engaged in user testing with various scenarios and received positive feedback from testers, addressing any issues they encountered.
+
+### Automated Testing
+
+- I conducted automated testing using Django's testing framework, covering essential components, CRUD functionalities, and URL patterns. Automated tests passed successfully, ensuring the reliability of critical features.
 
 ### User Stories
 
@@ -486,7 +582,7 @@ Testing The Gamers Insight web application, conducted a comprehensive evaluation
 
 ### Overall Status
 
-The Gamers Insight web application is in good shape, with most features functioning as expected. Have addressed identified issues and incorporated user feedback to enhance the user experience. Continuous monitoring and testing will help us maintain a stable and user-friendly platform.
+This project Gamers Insight is in good shape, with most features functioning as expected. Have addressed identified issues and incorporated user feedback to enhance the user experience. Continuous monitoring and testing will help us maintain a stable and user-friendly platform.
 
 Remain committed to delivering an exceptional gaming community experience and will continue to work on improving accessibility, performance, and user satisfaction.
 

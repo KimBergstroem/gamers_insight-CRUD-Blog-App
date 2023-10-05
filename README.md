@@ -32,56 +32,81 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
 
 ## Table of Content
 
-1. [Project Goals](#project-goals)
-    1. [User Goals](#user-goals)
-    2. [Site Owner Goals](#site-owner-goals)
-2. [User Experience](#user-experience)
-    1. [Target Audience](#target-audience)
-    2. [User Requirements and Expectations](#user-requirements-and-expectations)
-    3. [User Stories](#user-stories)
-3. [Database](#database)
-    1. [User App](#user-app)
-    2. [Gamers Blog App](#Gamersblog-app)
-4. [Design](#design)
-    1. [Design Choices](#design-choices)
-    2. [Colour](#colours)
-    3. [Fonts](#fonts)
-    4. [Structure](#structure)
-    5. [Wireframes](#wireframes)
-5. [Technologies Used](#technologies-used)
-    1. [Languages](#languages)
-    2. [Frameworks](#frameworks)
-    3. [Database](#database)
-    4. [Tools](#tools)
-    5. [Supporting Libraries and Packages](#supporting-libraries-and-packages)
-6. [Methodology](#methodology)
-    1. [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
-    2. [User Stories as GitHub Issues](#user-stories-as-github-issues)
-    3. [Bug Tracking](#bug-tracking)
-    4. [Iterative Development Approach](#iterative-development-approach)
-    5. [Backlog and Subsequent Iterations](#backlog-and-subsequent-iterations)
-7. [Features](#features)
-    1. [Landing Page](#landing-page)
-    2. [Gamers Blog Pages](#gamersblog-pages)
-    3. [Review Pages](#review-pages)
-    4. [User Account Management](#user-account-management)
-    5. [Blog Management](#Blog-management)
-    6. [Navigation](#navigation)
-    7. [Future Features](#future-features)
-8. [Testing](#testing)
-9. [Bugs](#bugs)
-    1. [Known bugs](#known-bugs)
-    2. [Fixed bugs](#fixed-bugs)
-10. [Deployment](#deployment)
-11. [Credits](#credits)
-12. [Acknowledgements](#acknowledgements)
+- 📄[Project Goals](#project-goals)
+  + [User Goals](#user-goals)
+  + [Site Owner Goals](#site-owner-goals)
+- 📄[User Experience](#user-experience)
+  + [Target Audience](#target-audience)
+  + [User Requirements and Expectations](#user-requirements-and-expectations)
+  + [User Stories](#user-stories)
+    - [Epic 1: User Experience (Visitor)](#epic-1--user-experience--visitor-)
+    - [Epic 2: User Engagement and Interaction (Registered User)](#epic-2--user-engagement-and-interaction--registered-user-)
+    - [Epic 3: Administration and Content Management (Admin/Content Moderator)](#epic-3--administration-and-content-management--admin-content-moderator-)
+- 📄[Database](#database)
+  + [Blog Application Database Schema](#blog-application-database-schema)
+    - [GameCategory Table](#gamecategory-table)
+    - [UserProfile Table](#userprofile-table)
+    - [User Table](#user-table)
+    - [Post Table](#post-table)
+    - [Comment Table](#comment-table)
+- 📄[Design](#design)
+  + [Design Choices](#design-choices)
+  + [Color](#color)
+  + [Fonts](#fonts)
+  + [Structure](#structure)
+    - [Before Logging In:](#before-logging-in-)
+    - [After Logging In:](#after-logging-in-)
+    - [Profile Navigation:](#profile-navigation-)
+  + [Wireframes](#wireframes)
+- 📄[Technologies Used](#technologies-used)
+  + [Languages](#languages)
+  + [Frameworks](#frameworks)
+  + [Database](#database-1)
+  + [Tools](#tools)
+  + [Supporting Libraries and Packages](#supporting-libraries-and-packages)
+- 📄[Methodology](#methodology)
+  + [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
+  + [User Stories as GitHub Issues](#user-stories-as-github-issues)
+  + [Bug Tracking for Seamless Development](#bug-tracking-for-seamless-development)
+  + [Iterative Development Approach](#iterative-development-approach)
+  + [Future Backlog and Progress](#future-backlog-and-progress)
+- 📄[Features](#features)
+  + [Landing Page:](#landing-page-)
+  + [Blog Pages:](#blog-pages-)
+  + [Blog Detail Page:](#blog-detail-page-)
+  + [User Account Management:](#user-account-management-)
+  + [Navigation:](#navigation-)
+  + [Future Features](#future-features)
+- 📄[Testing](#testing)
+- 📄[Bugs](#bugs)
+  + [Known bugs](#known-bugs)
+  + [Fixed bugs](#fixed-bugs)
+- 📄[Deployment](#deployment)
+  + [App Deployment](#app-deployment)
+  + [Cloudinary](#cloudinary)
+  + [Version Control](#version-control)
+  + [Forking the Repository:](#forking-the-repository-)
+  + [Clone of the Repository:](#clone-of-the-repository-)
+- 📄[Credits](#credits)
+  + [Media](#media)
+  + [Django Documentation:](#django-documentation-)
+  + [W3 Schools:](#w3-schools-)
+  + [Bootstrap docs:](#bootstrap-docs-)
+  + [Geeksforgeeks:](#geeksforgeeks-)
+  + [Various tutorials and YouTube channels:](#various-tutorials-and-youtube-channels-)
+  + [Content](#content)
+- 📄[Acknowledgments](#acknowledgments)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc and modified by myself</a></i></small>
+
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
 # Project Goals 
 
-Gamers Insight is a Django web application aimed at creating a vibrant platform for gamers to share their insights, opinions, and experiences about various games. The key objectives of the project include:
+Gamers Insight is a Django web application aimed at creating a vibrant platform for gamers to share their insights, opinions, uncovering cheat codes and experiences about various games. 
+The key objectives of the project include:
 
 - **Empowering Gamers:** Providing a dedicated space for gamers to contribute their reviews, articles, and discussions about different games.
 - **User-Centric Experience:** Offering users an engaging and intuitive interface that encourages exploration and interaction.
@@ -106,7 +131,7 @@ Gamers Insight is a Django web application aimed at creating a vibrant platform 
 - Ensuring user-generated content is moderated for quality and appropriateness.
 - Enhancing user engagement and interaction through intuitive design and features.
 
-Your project "Gamers Insight" aims to create a dynamic hub for gamers to connect, share, and explore the world of gaming through insightful articles, discussions, and reviews.
+Project "Gamers Insight" aims to create an awesome community for gamers to connect, share, and explore the world of gaming through insightful articles, discussions, and reviews.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
@@ -123,8 +148,6 @@ Gamers Insight is designed for the following target audience:
 - Users who want to share their own game reviews, opinions, and experiences.
 - Players seek a platform to engage in discussions about their favorite games.
 - Individuals who wish to stay updated with the latest gaming trends and discussions.
-
-By catering to the interests and needs of gamers, Gamers Insight aims to become a hub for gaming enthusiasts to connect, share, and explore the gaming world.
 
 ### User Requirements and Expectations
 When using Gamers Insight, users can expect the following features and characteristics to fulfill their needs:
@@ -168,7 +191,7 @@ Gamers Insight strives to create an immersive and interactive environment for us
 
 <br>
 
-Organized the user stories and epics into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP4/milestones), which will redirect you to the sprint information.
+The user stories and epics are organized into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP4/milestones), which will redirect you to the sprint information.
 
 ![Sprints](/docs/readme.md/readme-Milstones.png) 
 
@@ -216,29 +239,28 @@ This database schema defines the structure and relationships for a blog applicat
 </p>
 
 # Design
-In the realm of the Gamers Insight Blog, our design philosophy is centered around crafting a sleek and contemporary user interface that spotlights gaming insights. Our inspiration springs from the immersive realms of video games, aiming to deliver a visually captivating experience to users. Our primary goal is to facilitate easy navigation, discovery, and engagement within a vast collection of gaming articles.
-
-We aspire to create an environment where users can delve into the intricate world of gaming, collecting insider information before embarking on their gaming adventures. Whether it's sharing tips, uncovering cheat codes, or simply being a part of our dynamic blog community, Gamers Insight welcomes everyone to join the gaming conversation. It's your portal to the gaming universe, where insights and camaraderie await!
+In the realm of the Gamers Insight Blog, the design philosophy is centered around crafting a sleek and contemporary user interface that spotlights gaming insights. Inspiration springs from the immersive realms of video games, aiming to deliver a visually captivating experience to users. Primary goal is to facilitate easy navigation, discovery, and engagement within a vast collection of gaming articles.
 
 ### Design Choices
-Our design choices were carefully crafted with gamers in mind. We've created an environment that captures the essence of the gaming community.
+Our design choices were carefully crafted with gamers in mind. Created an environment that captures the essence of the gaming community.
 
 ### Color
-Our decision to adopt the 60-30-10 rule in our UI design is driven by its ability to create a cohesive and engaging user experience. This approach guarantees consistency by allocating 60% of our color palette to the dominant color, fostering brand recognition and trust. The 30% dedicated to the secondary color enables us to strike a visual balance, allowing for variations in content, headers, and backgrounds without overwhelming users. The remaining 10% allocated to the accent color serves to highlight interactive elements and calls to action, though we recommend choosing a contrasting shade for improved visibility and user engagement. This strategy ensures that our web application not only looks appealing but also functions effectively, guiding users to key elements while maintaining a harmonious and dependable design.
+Decision to adopt the 60-30-10 rule in our UI design is driven by its ability to create a cohesive and engaging user experience. This approach guarantees consistency by allocating 60% of our color palette to the dominant color, fostering brand recognition and trust. The 30% dedicated to the secondary color enables us to strike a visual balance, allowing for variations in content, headers, and backgrounds without overwhelming users. The remaining 10% allocated to the accent color serves to highlight interactive elements and calls to action, though we recommend choosing a contrasting shade for improved visibility and user engagement. This strategy ensures that our web application not only looks appealing but also functions effectively, guiding users to key elements while maintaining a harmonious and dependable design.
+
 ![Color Palette image](/docs/readme.md/readme-color-palette.png)
 **Dominant (60%):** 
 
-Our choice of a deep blue shade, represented by #13112E as the dominant color, reflects our commitment to creating a unique and immersive gaming experience. This rich hue serves as the foundation for our web application's design, providing a dark and mysterious backdrop that resonates with the gaming community. It symbolizes trust and stability, inviting users to explore a world where they can delve into gaming insights.
+Choice of a deep blue shade, represented by #13112E as the dominant color, reflects our commitment to creating a unique and immersive gaming experience. This rich hue serves as the foundation for our web application's design, providing a dark and mysterious backdrop that resonates with the gaming community. It symbolizes trust and stability, inviting users to explore a world where they can delve into gaming insights.
 
 **Secondary (30%):** 
 
-The secondary color, also #13112E, is an intentional choice to maintain visual harmony and hierarchy throughout our design. It complements the dominant color with subtle variations, reinforcing the immersive atmosphere we aim to create. This choice ensures that our users can navigate seamlessly through our content, discovering gaming insights with ease.
+The secondary color, also #13112E, is an intentional choice to maintain visual harmony and hierarchy throughout our design. It complements the dominant color with subtle variations, reinforcing the immersive atmosphere. This choice ensures that our users can navigate seamlessly through our content, discovering gaming insights with ease.
 
 **Accent (10%):** 
 
-While it might seem unconventional, our selection of #13112E as the accent color carries a unique significance. We've deliberately chosen to keep a consistent blue theme throughout our UI, aligning with the essence of the gaming world. The accent color's role is to draw attention to interactive elements, such as buttons and links, creating a sense of cohesion and enhancing usability within our gaming community.
+While it might seem unconventional, our selection of #13112E as the accent color carries a unique significance. Chosen to keep a consistent blue theme throughout our UI, aligning with the essence of the gaming world. The accent color's role is to draw attention to interactive elements, such as buttons and links, creating a sense of cohesion and enhancing usability within our gaming community.
 
-In short, our choice of colors isn't just about how things look; it's about creating a cool and welcoming place for gamers. We used a dark background as the main color (60%) to make the gaming experience more exciting. The blue colors we picked show that we get what gamers like, and we're focused on making a design that gamers will really like.
+In short, our choice of colors isn't just about how things look; it's about creating a cool and welcoming place for gamers. A dark background is used as the main color (60%) to make the gaming experience more exciting. The blue colors picked, on making a design that gamers will really like.
 
 
 ### Fonts
@@ -263,7 +285,7 @@ Once you've logged into the Gamers Insight Blog, you'll find yourself in the hea
 - **Profile Page:** This is your gaming identity hub. Gaming bio, achievements, and avatar. Customize your profile settings to make it truly yours.
 - **Contact Us:** If you encounter any issues or have questions, our friendly admins are just a message away. Feel free to reach out via the "Contact Us" page, and we'll assist you with any concerns or inquiries you may have.<br>
 
-We've designed this space to be your gaming sanctuary, where you can share, discover, and discuss gaming insights with fellow gamers.
+Designed this space to be your gaming sanctuary, where you can share, discover, and discuss gaming insights with fellow gamers.
 
 #### Profile Navigation:
 
@@ -273,7 +295,6 @@ Clicking on your profile image in the navigation bar opens up access to specific
 - **Create Post:** Ready to share your own gaming wisdom? The "Create Post" page is where you can craft your own insights and contribute to our gaming community. Share your knowledge and experiences with fellow gamers! Share the secrets of different games that you have knowledge about!<br>
 - **Log Out:** When your gaming session is done, the "Log Out" option is here to help. Click here to safely log out and return to the real world after an epic gaming reading.<br>
 
-The structured design of the Gamers Insight Blog guarantees a seamless and enjoyable user experience. It empowers you to explore, contribute, and manage your gaming insights effortlessly, all while immersing yourself in the gaming community. Welcome to a world where gaming knowledge shines!
 
 ### Wireframes
 The wireframes serve as a visual blueprint for our web application, outlining the structure and functionality of each page. They provide a detailed representation of the user interface and overall user experience. These wireframes were meticulously crafted using Figma, a design tool renowned for its ability to facilitate rapid and intuitive prototyping. Click on each page to view the wireframe.
@@ -502,9 +523,9 @@ These future enhancements aim to enrich Gamers Insight's user experience, foster
 
 # Testing
 
-The Gamers Insight website underwent a comprehensive testing process to guarantee its functionality, accessibility, and performance. This rigorous evaluation encompassed tasks such as code validation, accessibility assessment, performance testing, cross-device testing, verification of browser compatibility, assessment of user stories, and the integration of user feedback to enhance the overall user experience.
+The Gamers Insight website went through a comprehensive testing process to guarantee its functionality, accessibility, and performance. This included checking the code, such as code validation, accessibility assessment, performance testing, cross-device testing, verification of browser compatibility, assessment of user stories, and the integration of user feedback to enhance the overall user experience.
 
-All testing was carried out in [Testing.md](TESTING.md). 
+All testing, including both manual and automated testing, was carried out and documented in [Testing.md](TESTING.md). 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
@@ -512,16 +533,17 @@ All testing was carried out in [Testing.md](TESTING.md).
 </p>
 
 # Bugs
+The bug section descriptions have been linked with the bug issues in my documentation for better visibility, added color coding, and divided the content into sections, all aimed at enhancing readability. The links are clickable for more reading and solution.
 
 ### Known bugs
 
 | **Bug** | **Description** |
 | ------- | --------------- |
-| [If the server restarts and a user has previously logged in, the landing page is still shown initially, when the user visits the site again.]() | This issue persists. |
-| [Unable to send emails for the 'Password reset' function due to Gitpod blocking ports and in Heroku deployment. The steps work, but the email is not received. This could be due to an error in finding and installing OAuth templates and copying them into the template folder correctly. The path 'password_change.html' is not found for OAuth templates, even though it is in my account/templates. This issue remains unresolved.](#) | This issue is still unresolved. |
-| [Encountered a Server Error (500) when trying to access the LOGIN or SIGNUP page in the deployed version on Heroku.](#) | This issue is ongoing. Removed my "development" variable setup and if statement and just went with DEBUG = False. |
-| [When a comment is deleted, users are redirected back to the post However, if they choose to go back by browser or mouse click(mouse4) from the post page, they encounter a 404 error page. This behavior has been documented as a bug in the system.](#) | This issue persists, but handled by my customized 404 page. |
-| [When attempting to upload video or GIF images as profile pictures/blog posts in the application hosted on Heroku, users may encounter an "app error" or "server error" during the upload process.](#) | This issue persists. The issue persists, and it is suspected that it may be related to file format requirements or size restrictions. |
+| [If the server restarts and a user has previously logged in, the landing page is still shown initially, when the user visits the site again.](https://github.com/KimBergstroem/PP4/issues/26) | This issue persists. |
+| [Unable to send emails for the 'Password reset' function due to Gitpod blocking ports and in Heroku deployment. The steps work, but the email is not received. This could be due to an error in finding and installing OAuth templates and copying them into the template folder correctly. The path 'password_reset.html' is not found for OAuth templates, even though it is in my account/templates. This issue remains unresolved.](https://github.com/KimBergstroem/PP4/issues/27) | This issue is still unresolved. |
+| [Encountered a Server Error (500) when trying to access the LOGIN or SIGNUP page in the deployed version on Heroku.](https://github.com/KimBergstroem/PP4/issues/28) | This issue is ongoing. Removed my "development" variable setup and if statement and just went with DEBUG = False. |
+| [When a comment is deleted, users are redirected back to the post However, if they choose to go back by browser or mouse click(mouse4) from the post page, they encounter a 404 error page. This behavior has been documented as a bug in the system.](https://github.com/KimBergstroem/PP4/issues/29) | This issue persists, but handled by my customized 404 page. |
+| [When attempting to upload video or GIF images as profile pictures/blog posts in the application hosted on Heroku, users may encounter an "app error" or "server error" during the upload process.](https://github.com/KimBergstroem/PP4/issues/30) | This issue persists. The issue persists, and it is suspected that it may be related to file format requirements or size restrictions. |
 
 
 
@@ -529,11 +551,12 @@ All testing was carried out in [Testing.md](TESTING.md).
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-| [Couldn't run Django.allauth, and couldn't get it to work.](#) | Added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY, as this is a new requirement from allauth. |
-| [Couldn't run "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory"](#) | Resolved by using the shell, typing "python" -> "import site" -> "print(site.getsitepackages())" -> Copying the path and then redoing the command in the shell for installing the templates of auth. |
-| [Couldn't style my crispy form as desired and couldn't add Bootstrap classes.](#) | Added every input separately inside a div and used "as_crispy_field". For example, added margin space to every input box and form-row. |
-| [My stylesheet is not loading or cannot be found on Heroku. The error message is "its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."](#) | Resolved by setting DEBUG to False if development is not found with an if statement. |
-| [Clicking submit on the create post button twice quickly results in a URL 404 error response, indicating that the post is already created.](#) | Created error handling pages for 403, 404, 405, and 500. |
+| [Couldn't run Django.allauth, and couldn't get it to work.](https://github.com/KimBergstroem/PP4/issues/20) | Added "'allauth.account.middleware.AccountMiddleware'," under the MIDDLEWARE in SETTING.PY, as this is a new requirement from allauth. |
+| [Couldn't run "cp -r ../.pip-modules/lib/python3.8/site-packages/allauth/templates/* ./templates", error message saying "No such file or directory"](https://github.com/KimBergstroem/PP4/issues/21) | Resolved by using the shell, typing "python" -> "import site" -> "print(site.getsitepackages())" -> Copying the path and then redoing the command in the shell for installing the templates of auth. |
+| [Couldn't style my crispy form as desired and couldn't add Bootstrap classes.](https://github.com/KimBergstroem/PP4/issues/22) | Added every input separately inside a div and used "as_crispy_field". For example, added margin space to every input box and form-row. |
+| [My stylesheet is not loading or cannot be found on Heroku. The error message is "its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled."](https://github.com/KimBergstroem/PP4/issues/23) | Resolved by setting DEBUG to False if development is not found with an if statement. |
+| [Clicking submit on the create post button twice quickly results in a URL 404 error response, indicating that the post is already created.](https://github.com/KimBergstroem/PP4/issues/24) | Created error handling pages for 403, 404, 405, and 500. |
+| [Couldn't create a post with the same title as an already existing post. The error message received was:](https://github.com/KimBergstroem/PP4/issues/25) `IntegrityError at /post_create/duplicate key value violates unique constraint "blog_post_slug_key" DETAIL:  Key (slug)=(test) already exists.` | To maintain the uniqueness of slugs for posts, an if statement was added to the code, along with the use of timezone.now(). This ensures that if two posts have the same title, a timestamp is appended to one of them to create a unique slug. |
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
@@ -544,29 +567,29 @@ All testing was carried out in [Testing.md](TESTING.md).
 # Deployment
 
 ### App Deployment
-For deploying your app, Heroku is used. Follow these steps:
+For deploying Your app, Heroku is used. Follow these steps:
 
  **Create a New App:**
-   - Create a new app on your Heroku dashboard.
+   - Create a new app on Heroku dashboard.
 
  **Configure Settings:**
-   - Navigate to "Settings" in your new app.
+   - Navigate to "Settings" in new app.
 
  **Config Vars Setup:**
    - In "Config Vars," add `PORT` as the key and `8000` as its value.
 
  **Add PostgreSQL Database:**
-   - Choose PostgreSQL as your database.
+   - Choose PostgreSQL as database.
 
         Example "ElephantSQL" was used in this project
 
  **Configure DATABASE_URL:**
-   - In "Config Vars," add `DATABASE_URL` and copy the URL from your PostgreSQL dashboard.
+   - In "Config Vars," add `DATABASE_URL` and copy the URL from PostgreSQL dashboard.
 
-     Note: If you are using ElephantSQL as your PostgreSQL provider, you can use the URL provided by ElephantSQL.
+     Note: If using ElephantSQL as PostgreSQL provider, you can use the URL provided by ElephantSQL.
 
  **Environment Variable Setup:**
-   - Create a new file in your workspace called `env.py`.
+   - Create a new file in workspace called `env.py`.
    - Import the `os` library and set the environment variable for `DATABASE_URL` to the Heroku address (or ElephantSQL URL)
    - Add a secret key using `os.environ["SECRET_KEY"] = "your secret key here"`.
 
@@ -574,22 +597,22 @@ For deploying your app, Heroku is used. Follow these steps:
    - Add the secret key to the Heroku app's config vars in the settings.
 
  **Django Settings:**
-   - In `settings.py` of your Django app, import `Path` from `pathlib`, `os`, and `dj_database_url`.
+   - In `settings.py` of Django app, import `Path` from `pathlib`, `os`, and `dj_database_url`.
    - Add `if os.path.isfile("env.py"): import env` to the file.
    - Replace the SECRET_KEY with `SECRET_KEY = os.environ.get('SECRET_KEY')`.
    - Replace the database section with `DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}`.
 
  **Migrate Models:**
-   - In your workspace terminal, migrate the models to the new database connection.
+   - In workspace terminal, migrate the models to the new database connection.
 
 ### Cloudinary
-To integrate Cloudinary into your project, follow these steps:
+To integrate Cloudinary into project, follow these steps:
 
  **Cloudinary Account:**
-   - Log in to your Cloudinary account or create one.
+   - Log in to Cloudinary account or create one.
 
  **Copy CLOUDINARY_URL:**
-   - Copy your `CLOUDINARY_URL`.
+   - Copy `CLOUDINARY_URL`.
 
  **Environment Variable Setup:**
    - In `env.py`, add `os.environ["CLOUDINARY_URL"] = "add cloudinary_url here"`.
@@ -619,18 +642,18 @@ To integrate Cloudinary into your project, follow these steps:
 
  **Manual Deployment:**
     - In the Heroku deployment tab, deploy to Heroku manually the first time and closely monitor the process.
-    - Once successful, you can set up automatic deployments.
+    - Once successful, set up automatic deployments.
 
 ### Version Control
 To manage version control and push code to the main repository on GitHub using GitPod, follow these steps:
 
  **Add Changes:**
-   - In the GitPod terminal, use the command `git add .` to stage your changes.
+   - In the GitPod terminal, use the command `git add .` to stage changes.
 
  **Commit Changes:**
-   - Commit your changes with a descriptive comment using the command:
+   - Commit changes with a descriptive comment using the command:
      ```
-     git commit -m "Your push comment here"
+     git commit -m "Push comment here"
      ```
 
  **Push to GitHub:**
@@ -645,10 +668,10 @@ To manage version control and push code to the main repository on GitHub using G
 
 ### Forking the Repository:
 
-By forking the GitHub Repository, you can create a copy of the original repository without affecting the original. Follow these steps:
+By forking the GitHub Repository, can create a copy of the original repository without affecting the original. Follow these steps:
 
  **GitHub Account Setup:**
-   - Log into your GitHub account or create one if you don't have one.
+   - Log into GitHub account or create one if you don't have one.
 
  **Locate the Repository:**
    - Find the repository at [https://github.com/KimBergstroem/PP4](https://github.com/KimBergstroem/PP4).
@@ -734,6 +757,8 @@ I would like to extend my appreciation to the authors of the tutorials and YouTu
 - [Style The Login Page With Bootstrap](https://www.youtube.com/watch?v=0Z_3APyKwQ4)
 - [User Profile Update Display View with Image](https://www.youtube.com/watch?v=7DU-uhhYI6Y&list=PLSPMgrv4IuJ5wS0xSQzKUB038MYIx9ufI&index=12)
 - [Style The Post details view](https://www.bootdey.com/snippets/tagged/blog)
+- [Automated Testing: Behaviour Driven Development with Naoise Gaffney](https://www.youtube.com/watch?v=tHSJ4-ZqbLs)
+- [Django Testing Tutorial - How To Test Your Django Applications](https://www.youtube.com/playlist?list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM)
 
 ### Content
 
