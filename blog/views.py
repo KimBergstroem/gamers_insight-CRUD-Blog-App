@@ -97,7 +97,6 @@ class ProfileView(LoginRequiredMixin, TemplateView):
     """
     View for displaying the user's profile
     """
-
     template_name = "profile.html"
 
 
@@ -105,7 +104,6 @@ class ProfileUpdateView(LoginRequiredMixin, SuccessMessageMixin, TemplateView):
     """
     View for updating user profile information
     """
-
     model = UserProfile
     user_form = UserForm
     profile_form = ProfileForm
@@ -157,7 +155,6 @@ class ProfileDeleteView(LoginRequiredMixin, DeleteView):
     """
     View for deleting an user profile
     """
-
     model = User
     template_name = "profile_delete.html"
     success_url = reverse_lazy("landing_page")
@@ -180,7 +177,6 @@ class PostList(LoginRequiredMixin, ListView):
     """
     View for displaying a list of blog posts on the homepage
     """
-
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -380,21 +376,21 @@ def CategoryView(request, category_id):
 # ==============================
 # Error handling
 # ==============================
-def handler403(request, exception):
+def handler403(request, exception=None):
     """
     Custom 403 page
     """
     return render(request, "403.html", status=403)
 
 
-def handler404(request, exception):
+def handler404(request, exception=None):
     """
     Custom 404 page
     """
     return render(request, "404.html", status=404)
 
 
-def handler405(request, exception):
+def handler405(request, exception=None):
     """
     Custom 405 page
     """
