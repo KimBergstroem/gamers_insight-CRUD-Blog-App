@@ -1,10 +1,12 @@
 import os
+import sys
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import dj_database_url
 
 if os.path.isfile("env.py"):
     import env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
@@ -24,6 +26,8 @@ ALLOWED_HOSTS = [
     "localhost",
     "8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu105.gitpod.io",
 ]
+
+TEST_APPS = ['blog.tests']
 
 # Application definition
 INSTALLED_APPS = [
@@ -51,8 +55,8 @@ LOGOUT_REDIRECT_URL = "/"
 
 # Setup for email configuration
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = '1fcae4437bcd1d'
-EMAIL_HOST_PASSWORD = '06b789114d1886'
+EMAIL_HOST_USER = 'EMAIL_USER'
+EMAIL_HOST_PASSWORD = 'EMAIL_PASSWORD'
 EMAIL_PORT = '2525'
 
 # Make Messages declared by Bootstrap class
@@ -117,22 +121,23 @@ WSGI_APPLICATION = "game_insight.wsgi.application"
 
 DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
-""" if development:
+# Use an SQLite database for testing to isolate and create test cases
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
 else:
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    } """
+        'default': dj_database_url.parse(
+            os.environ.get('DATABASE_URL')
+        )
+    }
 
 
 # Password validation
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation."
