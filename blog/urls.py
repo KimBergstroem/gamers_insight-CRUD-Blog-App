@@ -9,6 +9,10 @@ from .views import (
     PostDeleteView,
     CommentDeleteView,
     CategoryView,
+    handler403, 
+    handler404, 
+    handler405, 
+    handler500
 )
 
 urlpatterns = [
@@ -71,4 +75,11 @@ urlpatterns = [
     # Category paths
     # ==============================
     path("category/<int:category_id>/", CategoryView, name="category"),
+    # ==============================
+    # Error handling paths
+    # ==============================
+    path('403/', views.handler403, name='handler403'),
+    path('404/', views.handler404, name='handler404'),
+    path('405/', views.handler405, name='handler405'),
+    path('500/', views.handler500, name='handler500'),
 ]
