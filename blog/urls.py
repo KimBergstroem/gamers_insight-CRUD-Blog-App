@@ -9,9 +9,9 @@ from .views import (
     PostDeleteView,
     CommentDeleteView,
     CategoryView,
-    handler403, 
-    handler404, 
-    handler405, 
+    handler403,
+    handler404,
+    handler405,
     handler500
 )
 

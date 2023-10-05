@@ -132,7 +132,7 @@ class Post(models.Model):
             timestamp = timezone.now().strftime('%Y%m%d%H%M%S')
             unique_slug = f"{base_slug}-{timestamp}"
             self.slug = unique_slug
-            
+
         super().save(*args, **kwargs)
 
     def __str__(self):
