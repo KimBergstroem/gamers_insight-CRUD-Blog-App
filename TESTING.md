@@ -245,8 +245,9 @@ I created a folder called "tests" inside of my blog application.
 In this folder I created three separate files, each corresponding to a specific aspect of the project that needed testing. 
 For conducting the tests, I leveraged Django's built-in testing framework and used the `django.test.TestCase` class as the foundation. This framework provides a robust and standardized environment for writing and executing tests, making it easier to assess the project's functionality and reliability.
 
-Before the testing process, it was needed to configure the project's settings in the "settings.py" file in order for the automated testing to work properly. I added this two condition:
+Before the testing process, it was needed to configure the project's settings in the "settings.py" file in order for the automated testing to work properly. I added this two condition, 1 variable and 1 import statement. This was removed from settings.py when uploading the project to production in heroku for keeping the production settings separate from testing settings.
 
+- `import sys`
 - `TEST_APPS = ['blog.tests']` 
 - `if 'test' in sys.argv or 'test_coverage' in sys.argv:
     DATABASES = {
