@@ -10,7 +10,7 @@ Gamers Insight is a dynamic web application tailored for gaming enthusiasts, pro
 
 
 Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
-[Live webpage](https://game-insight-1cff11f2b2d5.herokuapp.com/)<br>
+[Live webpage](https://game-insight-1cff11f2b2d5.herokuapp.com)<br>
 [Project Repository](https://github.com/KimBergstroem/PP4)<br>
 
 
