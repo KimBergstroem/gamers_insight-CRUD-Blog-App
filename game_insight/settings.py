@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
+from urllib.parse import urlparse
 import dj_database_url
 
 if os.path.isfile("env.py"):
@@ -22,6 +23,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "game-insight-1cff11f2b2d5.herokuapp.com",
     "localhost",
+    "127.0.0.1",
     "8000-kimbergstroem-pp4-7oi8scylkjd.ws-eu105.gitpod.io",
 ]
 
@@ -117,9 +119,31 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "game_insight.wsgi.application"
 
-
-DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
-
+# Database
+if 'DATABASE_URL' in os.environ and os.environ.get('DATABASE_URL').startswith('postgres'):
+    # Use PostgreSQL in production
+    tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': tmpPostgres.path.replace('/', ''),
+            'USER': tmpPostgres.username,
+            'PASSWORD': tmpPostgres.password,
+            'HOST': tmpPostgres.hostname,
+            'PORT': tmpPostgres.port or '5432',
+            'OPTIONS': {
+                'sslmode': 'require',
+            }
+        }
+    }
+else:
+    # Use SQLite for local development
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Password validation
 
