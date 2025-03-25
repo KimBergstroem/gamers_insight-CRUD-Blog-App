@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Log In" %}{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-8" style="max-width: 500px;">
+                <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-md-2 mt-md-4 pb-5">
+
+                            <h3 class="fw-bold mb-2 text-uppercase">{% trans "Log In" %}</h3>
+                            <p class="text-white-50 mb-5">Please Enter Your User and Password!</p>
+
+                            <div class="form-outline form-white mb-4 form-group">
+                                <!-- Login form -->
+                                <form class="login" method="POST" action="{% url 'account_login' %}">
+
+                                    {% csrf_token %} <!-- Security token from django against attackers -->
+
+                                    <!-- Display non-field errors excluding '__all__' -->
+                                    {% for error in form.non_field_errors %}
+                                    {% if error != "__all__" %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ error }}
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+
+                                    <div class="form-group">
+                                        {{ form.login.label_tag }}
+                                        <input type="text" id="id_login" class="form-control mb-4"
+                                            name="{{ form.login.name }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        {{ form.password.label_tag }}
+                                        <input type="password" id="id_password" class="form-control mb-4"
+                                            name="{{ form.password.name }}">
+                                    </div>
+
+                                    <!-- Include a hidden input field for redirecting users after login if a custom redirect URL is provided -->
+                                    {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                        value="{{ redirect_field_value }}">
+                                    {% endif %}
+
+                                    <button class="btn btn-signup right px-3 py-1 rounded-3 bg-primary mb-4"
+                                        type="submit">{% trans "Log In" %} &raquo;</button>
+
+                                    <small class="text-muted d-block text-primary">
+                                        <a href="{% url 'account_reset_password' %}">Forgot Password?</a>
+                                    </small>
+                                </form>
+                            </div>
+                            <!-- Sign up Link -->
+                            <div>
+                                <hr class="my-4">
+                                <p class="mb-0">Don't have an account? <a href="{{ signup_url }}"
+                                        class="text-primary fw-bold">Sign Up Now!</a>
+                                </p>
+                                <hr class="my-4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

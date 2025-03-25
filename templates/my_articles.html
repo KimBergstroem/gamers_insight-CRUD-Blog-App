@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Gamers Insight - My Articles {% endblock %}
+
+{% block content %}
+<section>
+    <div class="container my-4 py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-7">
+                <div class="card text-white o-hidden" style="border-radius: 1rem;">
+                    <div class="card-body">
+                        <h3 class="text-gray-900 mb-4 text-white text-center">My Articles</h3>
+                    </div>
+                    <!-- Blog post list -->
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+                        {% for post in request.user.blog_posts.all %}
+                        <div class="col-12 col-md-6 col-lg-4">
+                            {% include 'blogview_template/list_card.html' %}
+                        </div>
+                    {% empty %}
+                    <div class="container text-center mt-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>You haven't created any posts yet.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                    <h3 class="text-gray-900 mb-4 text-white text-center mt-4 mb-4">My Liked Posts</h3>
+                    <!-- Post Likes ul list -->
+                    {% if liked_posts %}
+                    <ul>
+                        {% for post in liked_posts %}
+                        <li>
+                            <a href="{% url 'post_detail' post.slug %}">{{ post.title }} - {{ post.category }} -
+                                <small>{{ post.created_on }}</small></a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <div class="text-center">
+                        <p>You haven't liked any posts yet.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

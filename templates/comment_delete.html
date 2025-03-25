@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %} Gamers Insight - Delete Comment {% endblock %}
+
+{% block content %}
+<section>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-8 col-md-8 col-lg-8 mx-auto" style="max-width: 500px;">
+                <div class="card bg-clr-dom-light text-white shadow-sm" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="mb-md-2 mt-md-4 pb-5">
+
+                            <h3 class="fw-bold mb-4 text-uppercase">Delete Comment</h3>
+                            <p class="text-white-50 mb-5">Are you sure you wanna delete the<br><br> <strong>
+                                {{comment.body }}</strong> ?</p>
+                            <!-- Delete form -->
+                            <form method="post">
+                                {% csrf_token %} <!-- Security token from django against attackers -->
+                                <button class="btn btn-danger right px-3 py-1 rounded-3" type="submit"> <i
+                                        class="fas fa-trash-alt"></i> Delete</button>
+                            </form>
+                            <a class="btn btn-primary px-3 py-1 rounded-3 mt-4" href="{% url 'index' %}">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}

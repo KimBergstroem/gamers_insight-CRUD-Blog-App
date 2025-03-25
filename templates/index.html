@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %} Gamers Insight - Articles {% endblock %}
+
+{% block content %}
+<div class="main-scroll-page">
+    <div class="container container-centered">
+
+        <!-- Category links -->
+        <div class="list-header">
+            <div class="text-center text-white">
+                <h3>Blog Library</h3>
+                <p>Search, Scroll and Read</p>
+            </div>
+            {% include 'blogview_template/category_links.html' %}
+        </div>
+        <br>
+
+        <!-- Blog post list -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for post in post_list %}
+            {% include 'blogview_template/list_card.html' %}
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <div class="row pagination-container">
+            {% if is_paginated %}
+            {% include 'blogview_template/pagination.html' %}
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+{%endblock%}

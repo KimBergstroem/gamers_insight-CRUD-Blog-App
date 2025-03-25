@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Gamers Insight - Post Update {% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<section>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="card bg-clr-dom-light text-white shadow-sm rounded-lg" style="border-radius: 1rem;">
+                    <div class="card-body p-4 text-center">
+                        <h3 class="fw-bold mb-4 text-uppercase text-center">Update Post</h3>
+                        <!-- Update post form -->
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                {{ form.title|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.category|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.device|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.featured_image|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.excerpt|as_crispy_field }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form.content|as_crispy_field|safe }}
+                            </div>
+                            {{ message }}
+                            <button class="btn btn-success btn-block mb-4">Update</button>
+                        </form>
+                        <a class="btn btn-primary px-3 py-1 rounded-3" href="{% url 'post_detail' post.slug %}">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
